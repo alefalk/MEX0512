@@ -1,0 +1,12 @@
+Partition 1 - 100 samples per class, without geographical data
+Accuracy: 48.89%
+---------------------------------------------------
+Partition 2 - 200 samples per class, without geographical data
+Accuracy: 50.17%
+---------------------------------------------------
+Partition 3 - 300 samples per class, without geographical data
+Accuracy: 38.52%
+---------------------------------------------------
+Partition 4 - 478 samples per class, without geographical data
+Accuracy: 56.00%
+---------------------------------------------------

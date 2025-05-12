@@ -1,0 +1,202 @@
+Epoch 1: 
+Test set: Average loss: 3.4012, Accuracy: 668/4320 (0.154630)
+Epoch 2: 
+Test set: Average loss: 3.4004, Accuracy: 311/4320 (0.071991)
+Epoch 3: 
+Test set: Average loss: 3.3751, Accuracy: 283/4320 (0.065509)
+Epoch 4: 
+Test set: Average loss: 3.1278, Accuracy: 507/4320 (0.117361)
+Epoch 5: 
+Test set: Average loss: 2.9403, Accuracy: 625/4320 (0.144676)
+Epoch 6: 
+Test set: Average loss: 2.7688, Accuracy: 874/4320 (0.202315)
+Epoch 7: 
+Test set: Average loss: 2.6028, Accuracy: 1155/4320 (0.267361)
+Epoch 8: 
+Test set: Average loss: 2.4120, Accuracy: 1416/4320 (0.327778)
+Epoch 9: 
+Test set: Average loss: 2.2275, Accuracy: 1657/4320 (0.383565)
+Epoch 10: 
+Test set: Average loss: 2.0586, Accuracy: 1984/4320 (0.459259)
+Epoch 11: 
+Test set: Average loss: 1.9109, Accuracy: 2186/4320 (0.506019)
+Epoch 12: 
+Test set: Average loss: 1.7965, Accuracy: 2345/4320 (0.542824)
+Epoch 13: 
+Test set: Average loss: 1.6970, Accuracy: 2449/4320 (0.566898)
+Epoch 14: 
+Test set: Average loss: 1.6203, Accuracy: 2535/4320 (0.586806)
+Epoch 15: 
+Test set: Average loss: 1.5504, Accuracy: 2608/4320 (0.603704)
+Epoch 16: 
+Test set: Average loss: 1.5030, Accuracy: 2650/4320 (0.613426)
+Epoch 17: 
+Test set: Average loss: 1.4587, Accuracy: 2690/4320 (0.622685)
+Epoch 18: 
+Test set: Average loss: 1.4266, Accuracy: 2707/4320 (0.626620)
+Epoch 19: 
+Test set: Average loss: 1.4006, Accuracy: 2714/4320 (0.628241)
+Epoch 20: 
+Test set: Average loss: 1.3790, Accuracy: 2734/4320 (0.632870)
+Epoch 21: 
+Test set: Average loss: 1.3621, Accuracy: 2748/4320 (0.636111)
+Epoch 22: 
+Test set: Average loss: 1.3484, Accuracy: 2744/4320 (0.635185)
+Epoch 23: 
+Test set: Average loss: 1.3365, Accuracy: 2758/4320 (0.638426)
+Epoch 24: 
+Test set: Average loss: 1.3201, Accuracy: 2771/4320 (0.641435)
+Epoch 25: 
+Test set: Average loss: 1.3196, Accuracy: 2770/4320 (0.641204)
+Epoch 26: 
+Test set: Average loss: 1.3127, Accuracy: 2780/4320 (0.643519)
+Epoch 27: 
+Test set: Average loss: 1.3005, Accuracy: 2771/4320 (0.641435)
+Epoch 28: 
+Test set: Average loss: 1.2967, Accuracy: 2789/4320 (0.645602)
+Epoch 29: 
+Test set: Average loss: 1.2928, Accuracy: 2775/4320 (0.642361)
+Epoch 30: 
+Test set: Average loss: 1.2923, Accuracy: 2785/4320 (0.644676)
+Epoch 31: 
+Test set: Average loss: 1.2859, Accuracy: 2780/4320 (0.643519)
+Epoch 32: 
+Test set: Average loss: 1.2827, Accuracy: 2799/4320 (0.647917)
+Epoch 33: 
+Test set: Average loss: 1.2821, Accuracy: 2814/4320 (0.651389)
+Epoch 34: 
+Test set: Average loss: 1.2835, Accuracy: 2802/4320 (0.648611)
+Epoch 35: 
+Test set: Average loss: 1.2815, Accuracy: 2804/4320 (0.649074)
+Epoch 36: 
+Test set: Average loss: 1.2791, Accuracy: 2810/4320 (0.650463)
+Epoch 37: 
+Test set: Average loss: 1.2762, Accuracy: 2811/4320 (0.650694)
+Epoch 38: 
+Test set: Average loss: 1.2815, Accuracy: 2799/4320 (0.647917)
+Epoch 39: 
+Test set: Average loss: 1.2784, Accuracy: 2805/4320 (0.649306)
+Epoch 40: 
+Test set: Average loss: 1.2765, Accuracy: 2808/4320 (0.650000)
+Epoch 41: 
+Test set: Average loss: 1.2739, Accuracy: 2818/4320 (0.652315)
+Epoch 42: 
+Test set: Average loss: 1.2738, Accuracy: 2817/4320 (0.652083)
+Epoch 43: 
+Test set: Average loss: 1.2721, Accuracy: 2803/4320 (0.648843)
+Epoch 44: 
+Test set: Average loss: 1.2688, Accuracy: 2793/4320 (0.646528)
+Epoch 45: 
+Test set: Average loss: 1.2730, Accuracy: 2803/4320 (0.648843)
+Epoch 46: 
+Test set: Average loss: 1.2782, Accuracy: 2828/4320 (0.654630)
+Epoch 47: 
+Test set: Average loss: 1.2711, Accuracy: 2827/4320 (0.654398)
+Epoch 48: 
+Test set: Average loss: 1.2654, Accuracy: 2824/4320 (0.653704)
+Epoch 49: 
+Test set: Average loss: 1.2697, Accuracy: 2828/4320 (0.654630)
+Epoch 50: 
+Test set: Average loss: 1.2727, Accuracy: 2817/4320 (0.652083)
+Epoch 51: 
+Test set: Average loss: 1.2751, Accuracy: 2799/4320 (0.647917)
+Epoch 52: 
+Test set: Average loss: 1.2681, Accuracy: 2814/4320 (0.651389)
+Epoch 53: 
+Test set: Average loss: 1.2652, Accuracy: 2819/4320 (0.652546)
+Epoch 54: 
+Test set: Average loss: 1.2680, Accuracy: 2825/4320 (0.653935)
+Epoch 55: 
+Test set: Average loss: 1.2681, Accuracy: 2837/4320 (0.656713)
+Epoch 56: 
+Test set: Average loss: 1.2646, Accuracy: 2833/4320 (0.655787)
+Epoch 57: 
+Test set: Average loss: 1.2627, Accuracy: 2829/4320 (0.654861)
+Epoch 58: 
+Test set: Average loss: 1.2688, Accuracy: 2821/4320 (0.653009)
+Epoch 59: 
+Test set: Average loss: 1.2669, Accuracy: 2827/4320 (0.654398)
+Epoch 60: 
+Test set: Average loss: 1.2737, Accuracy: 2828/4320 (0.654630)
+Epoch 61: 
+Test set: Average loss: 1.2699, Accuracy: 2832/4320 (0.655556)
+Epoch 62: 
+Test set: Average loss: 1.2692, Accuracy: 2829/4320 (0.654861)
+Epoch 63: 
+Test set: Average loss: 1.2673, Accuracy: 2831/4320 (0.655324)
+Epoch 64: 
+Test set: Average loss: 1.2712, Accuracy: 2822/4320 (0.653241)
+Epoch 65: 
+Test set: Average loss: 1.2829, Accuracy: 2824/4320 (0.653704)
+Epoch 66: 
+Test set: Average loss: 1.2713, Accuracy: 2825/4320 (0.653935)
+Epoch 67: 
+Test set: Average loss: 1.2685, Accuracy: 2842/4320 (0.657870)
+Epoch 68: 
+Test set: Average loss: 1.2708, Accuracy: 2813/4320 (0.651157)
+Epoch 69: 
+Test set: Average loss: 1.2641, Accuracy: 2822/4320 (0.653241)
+Epoch 70: 
+Test set: Average loss: 1.2638, Accuracy: 2839/4320 (0.657176)
+Epoch 71: 
+Test set: Average loss: 1.2666, Accuracy: 2842/4320 (0.657870)
+Epoch 72: 
+Test set: Average loss: 1.2640, Accuracy: 2850/4320 (0.659722)
+Epoch 73: 
+Test set: Average loss: 1.2645, Accuracy: 2842/4320 (0.657870)
+Epoch 74: 
+Test set: Average loss: 1.2610, Accuracy: 2852/4320 (0.660185)
+Epoch 75: 
+Test set: Average loss: 1.2602, Accuracy: 2855/4320 (0.660880)
+Epoch 76: 
+Test set: Average loss: 1.2619, Accuracy: 2847/4320 (0.659028)
+Epoch 77: 
+Test set: Average loss: 1.2631, Accuracy: 2854/4320 (0.660648)
+Epoch 78: 
+Test set: Average loss: 1.2616, Accuracy: 2845/4320 (0.658565)
+Epoch 79: 
+Test set: Average loss: 1.2611, Accuracy: 2855/4320 (0.660880)
+Epoch 80: 
+Test set: Average loss: 1.2616, Accuracy: 2853/4320 (0.660417)
+Epoch 81: 
+Test set: Average loss: 1.2586, Accuracy: 2869/4320 (0.664120)
+Epoch 82: 
+Test set: Average loss: 1.2600, Accuracy: 2862/4320 (0.662500)
+Epoch 83: 
+Test set: Average loss: 1.2603, Accuracy: 2861/4320 (0.662269)
+Epoch 84: 
+Test set: Average loss: 1.2576, Accuracy: 2858/4320 (0.661574)
+Epoch 85: 
+Test set: Average loss: 1.2611, Accuracy: 2859/4320 (0.661806)
+Epoch 86: 
+Test set: Average loss: 1.2616, Accuracy: 2868/4320 (0.663889)
+Epoch 87: 
+Test set: Average loss: 1.2648, Accuracy: 2857/4320 (0.661343)
+Epoch 88: 
+Test set: Average loss: 1.2645, Accuracy: 2853/4320 (0.660417)
+Epoch 89: 
+Test set: Average loss: 1.2596, Accuracy: 2865/4320 (0.663194)
+Epoch 90: 
+Test set: Average loss: 1.2573, Accuracy: 2868/4320 (0.663889)
+Epoch 91: 
+Test set: Average loss: 1.2611, Accuracy: 2860/4320 (0.662037)
+Epoch 92: 
+Test set: Average loss: 1.2598, Accuracy: 2872/4320 (0.664815)
+Epoch 93: 
+Test set: Average loss: 1.2577, Accuracy: 2875/4320 (0.665509)
+Epoch 94: 
+Test set: Average loss: 1.2579, Accuracy: 2864/4320 (0.662963)
+Epoch 95: 
+Test set: Average loss: 1.2573, Accuracy: 2871/4320 (0.664583)
+Epoch 96: 
+Test set: Average loss: 1.2588, Accuracy: 2881/4320 (0.666898)
+Epoch 97: 
+Test set: Average loss: 1.2586, Accuracy: 2876/4320 (0.665741)
+Epoch 98: 
+Test set: Average loss: 1.2569, Accuracy: 2867/4320 (0.663657)
+Epoch 99: 
+Test set: Average loss: 1.2589, Accuracy: 2876/4320 (0.665741)
+Epoch 100: 
+Test set: Average loss: 1.2596, Accuracy: 2870/4320 (0.664352)
+
+Best Accuracy: 0.6668981313705444 for epoch 96
