@@ -1,12 +1,24 @@
-Partition 1 - 100 samples per class, without geograpgical data except long/lat which are one hot encoded
-Accuracy: 44.00%
+Partition 1 - 100 samples per class, with long lat one hot encoded
+Accuracy: 45.67%
+Precision Score: 0.5769274750294145
+Precision Score: 0.45666666666666667
+Precision Score: 0.4417797219506061
 ---------------------------------------------------
-Partition 2 - 200 samples per class, without geograpgical data except long/lat which are one hot encoded
-Accuracy: 47.83%
+Partition 2 - 200 samples per class, with long lat one hot encoded
+Accuracy: 46.28%
+Precision Score: 0.5674799804345534
+Precision Score: 0.4627777777777778
+Precision Score: 0.42887778628456463
 ---------------------------------------------------
-Partition 3 - 300 samples per class, without geograpgical data except long/lat which are one hot encoded
-Accuracy: 48.63%
+Partition 3 - 300 samples per class, with long lat one hot encoded
+Accuracy: 47.67%
+Precision Score: 0.6448286534887845
+Precision Score: 0.4766666666666667
+Precision Score: 0.4599623515786632
 ---------------------------------------------------
-Partition 4 - 478 samples per class, without geograpgical data except long/lat which are one hot encoded
-Accuracy: 49.19%
+Partition 4 - 478 samples per class, with long lat one hot encoded
+Accuracy: 57.50%
+Precision Score: 0.7161764499214903
+Precision Score: 0.575
+Precision Score: 0.5767193523358266
 ---------------------------------------------------

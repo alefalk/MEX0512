@@ -10,7 +10,10 @@ import shutil
 import dataset
 import ndf
 import pandas as pd
-
+from sklearn.metrics import precision_score, recall_score, f1_score, confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
 
 def parse_arg():
     logging.basicConfig(
@@ -42,23 +45,23 @@ def prepare_db(opt):
     print("Use %s dataset" % (opt.dataset))
 
     if opt.dataset == 'gtd100':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/train1/train100.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/test1/test100.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train100.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test100.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd200':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/train/train200.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/test/test200.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train200.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test200.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd300':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/train/train300.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/test/test300.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train300.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test300.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd478':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/train/train478.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/DNDF_OneHotLongLatCombined/test/test478.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train478.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test478.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
     else:
         raise NotImplementedError
@@ -97,11 +100,12 @@ def prepare_optim(model, opt):
 
 def train(model, optim, db, opt):
     torch.cuda.empty_cache()
-    open(f"results/OneHotLongLatCombined/result_{opt.dataset}", "w")
-    max_acc = 0
+    open(f"results/result_{opt.dataset}", "w")
+    max = 0
     max_epoch = 0
-    y_true_all = []
-    y_pred_all = []
+    best_preds = []
+    best_targets = []
+    best_labels = []
     for epoch in range(1, opt.epochs + 1):
         # Update \Pi
         if not opt.jointly_training:
@@ -179,42 +183,56 @@ def train(model, optim, db, opt):
         model.eval()
         test_loss = 0
         correct = 0
-        test_loader = torch.utils.data.DataLoader(db['eval'], batch_size=opt.batch_size, shuffle=True)
+        all_preds = []
+        all_targets = []
+
+        test_loader = torch.utils.data.DataLoader(db['eval'], batch_size=opt.batch_size, shuffle=False)
         with torch.no_grad():
             for data, target in test_loader:
                 if opt.cuda:
                     data, target = data.cuda(), target.cuda()
                 data, target = Variable(data), Variable(target)
                 output = model(data)
-                test_loss += F.nll_loss(torch.log(output), target, reduction='sum').item()  # sum up batch loss
-                pred = output.data.max(1, keepdim=True)[1]  # predicted labels
+                test_loss += F.nll_loss(torch.log(output), target, reduction='sum').item()
+
+                pred = output.data.max(1, keepdim=True)[1]
                 correct += pred.eq(target.data.view_as(pred)).cpu().sum()
 
-                # Save true and predicted labels
-                y_true_all.append(target.cpu())
-                y_pred_all.append(pred.squeeze(1).cpu())
+                all_preds.extend(pred.cpu().numpy().flatten().tolist())
+                all_targets.extend(target.cpu().numpy().flatten().tolist())
 
-            test_loss /= len(test_loader.dataset)
-            text = '\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.6f})\n'.format(
-                test_loss, correct, len(test_loader.dataset),
-                correct / len(test_loader.dataset))
-            print(text)
+        test_loss /= len(test_loader.dataset)
 
-            if max_acc < (correct / len(test_loader.dataset)):
-                max_acc = (correct / len(test_loader.dataset))
-                max_epoch = epoch
+        precision = precision_score(all_targets, all_preds, average='weighted', zero_division=0)
+        recall = recall_score(all_targets, all_preds, average='weighted', zero_division=0)
+        f1 = f1_score(all_targets, all_preds, average='weighted', zero_division=0)
+        
+        accuracy = correct / len(test_loader.dataset)
 
-            with open(f"results/OneHotLongLatCombined/result_{opt.dataset}", "a") as f:
-                f.write(f'Epoch {epoch}: {text}')                           
+        text = (
+            f'\nTest set: Average loss: {test_loss:.4f}, '
+            f'Accuracy: {correct}/{len(test_loader.dataset)} ({accuracy:.4f})\n'
+        )
+        print(text)
 
-    with open(f"results/OneHotLongLatCombined/result_{opt.dataset}", "a") as f:
-        f.write(f'\nBest Accuracy: {max_acc} for epoch {max_epoch}\n') 
+        if max < (correct / len(test_loader.dataset)):
+            max = (correct / len(test_loader.dataset))
+            max_epoch = epoch
+            best_precision = precision
+            best_recall = recall
+            best_f1 = f1
+            best_preds = all_preds.copy()
+            best_targets = all_targets.copy()
+            best_labels = db['eval'].labels  # list of label names from test set
 
-    # 🔥 New: Return all labels at the end
-    y_true_all = torch.cat(y_true_all, dim=0).numpy()
-    y_pred_all = torch.cat(y_pred_all, dim=0).numpy()
+        with open(f"results/result_{opt.dataset}", "a") as f:
+            f.write(f'Epoch {epoch}: {text}')                         
 
-    return y_true_all, y_pred_all                          
+    with open(f"results/result_{opt.dataset}", "a") as f:
+        f.write(f'\nBest Accuracy: {max:.6f} at epoch {max_epoch}\n')
+        f.write(f'Best Precision: {best_precision:.4f}, Recall: {best_recall:.4f}, F1 Score: {best_f1:.4f}\n')
+
+    return best_preds, best_targets, best_labels
 
 
 def main():
@@ -230,10 +248,8 @@ def main():
     db = prepare_db(opt)
     model = prepare_model(opt)
     optim = prepare_optim(model, opt)
-    y_true, y_pred = train(model, optim, db, opt)
-
-    return y_true, y_pred
-
+    best_preds, best_targets, best_labels = train(model, optim, db, opt)
+    return best_preds, best_targets, best_labels
 
 
 if __name__ == '__main__':

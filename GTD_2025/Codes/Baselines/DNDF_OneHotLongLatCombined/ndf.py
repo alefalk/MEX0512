@@ -24,7 +24,7 @@ class GTDFeatureLayer200(nn.Sequential):
         super(GTDFeatureLayer200, self).__init__()
         self.shallow = shallow
         if shallow:
-            self.add_module('linear', nn.Linear(6305, 1024)) 
+            self.add_module('linear', nn.Linear(3173, 1024)) 
         else:
             raise  NotImplementedError
 
@@ -36,7 +36,7 @@ class GTDFeatureLayer300(nn.Sequential):
         super(GTDFeatureLayer300, self).__init__()
         self.shallow = shallow
         if shallow:
-            self.add_module('linear', nn.Linear(8724, 1024)) 
+            self.add_module('linear', nn.Linear(4392, 1024)) 
         else:
             raise  NotImplementedError
 
@@ -48,7 +48,7 @@ class GTDFeatureLayer478(nn.Sequential):
         super(GTDFeatureLayer478, self).__init__()
         self.shallow = shallow
         if shallow:
-            self.add_module('linear', nn.Linear(12511, 1024)) 
+            self.add_module('linear', nn.Linear(6309, 1024)) 
         else:
             raise  NotImplementedError
 

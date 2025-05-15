@@ -1,0 +1,24 @@
+Partition 1 - 100 samples per class, with longitude and latitude data
+Accuracy: 90.33%
+Precision Score: 0.9057833674876776
+Precision Score: 0.9033333333333333
+Precision Score: 0.9005831001032507
+---------------------------------------------------
+Partition 2 - 200 samples per class, with longitude and latitude data
+Accuracy: 91.89%
+Precision Score: 0.9207895055964136
+Precision Score: 0.9188888888888889
+Precision Score: 0.917878142173297
+---------------------------------------------------
+Partition 3 - 300 samples per class, with longitude and latitude data
+Accuracy: 91.41%
+Precision Score: 0.9151185990174809
+Precision Score: 0.914074074074074
+Precision Score: 0.9130887388339064
+---------------------------------------------------
+Partition 4 - 478 samples per class, with longitude and latitude data
+Accuracy: 93.03%
+Precision Score: 0.9314452345226583
+Precision Score: 0.930324074074074
+Precision Score: 0.930048449877869
+---------------------------------------------------

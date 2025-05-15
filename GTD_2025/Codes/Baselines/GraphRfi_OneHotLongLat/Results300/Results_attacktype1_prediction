@@ -1,0 +1,4 @@
+Best acc: 0.7806439995765686 in epoch 218 for attacktype1 prediction
+Best recall: 0.7806440591812134 in epoch 218 for attacktype1 prediction
+Best precision: 0.8603072166442871 in epoch 218 for attacktype1 prediction
+Best f1: 0.7904048562049866 in epoch 218 for attacktype1 prediction

@@ -12,10 +12,6 @@ class GradientBoosterGTD:
         self.train = pd.read_csv(trainpath, encoding='ISO-8859-1')
         self.test = pd.read_csv(testpath, encoding='ISO-8859-1')
 
-        self.train = self.train.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity', 'iyear', 'imonth', 'iday'])
-        self.test = self.test.drop(columns=['Unnamed: 0', 'country', 'city', 'region', 'provstate', 'latitude', 'longitude', 'natlty1', 'specificity',  'iyear', 'imonth', 'iday'])
-        print(self.train.columns)
-
     def splitting(self):
         y_train_raw = self.train['gname']
         y_test_raw = self.test['gname']
@@ -95,10 +91,7 @@ def main(trainpath, testpath):
     print("Making predictions...")
     accuracy, y_pred = model.make_predictions(best_model, X_test, y_test)
 
-    y_pred_decoded = model.label_encoder.inverse_transform(y_pred)
-    y_true_decoded = model.label_encoder.inverse_transform(y_test)
-
-    return best_model, accuracy, y_pred_decoded, y_true_decoded
+    return best_model, accuracy, y_pred, y_test
 
 
 if __name__ == "__main__":

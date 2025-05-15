@@ -1,0 +1,20 @@
+Partition 1 - 100 samples per class, without geograpgical data except long/lat
+Precision: 0.9023
+Recall: 0.9022
+F1 Score: 0.8995
+---------------------------------------------------
+Partition 2 - 200 samples per class, without geograpgical data except long/lat
+Precision: 0.9089
+Recall: 0.9028
+F1 Score: 0.8998
+---------------------------------------------------
+Partition 3 - 300 samples per class, without geograpgical data except long/lat
+Precision: 0.9296
+Recall: 0.9278
+F1 Score: 0.9270
+---------------------------------------------------
+Partition 4 - 478 samples per class, without geograpgical data except long/lat
+Precision: 0.9308
+Recall: 0.9278
+F1 Score: 0.9270
+---------------------------------------------------

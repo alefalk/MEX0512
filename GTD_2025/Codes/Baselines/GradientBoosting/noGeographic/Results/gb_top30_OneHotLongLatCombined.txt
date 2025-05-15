@@ -1,12 +1,20 @@
-Partition 1 - 100 samples per class, without geographical data
-Accuracy: 57.78%
+Partition 1 - 100 samples per class, without geograpgical data except long/lat which are one hot encoded
+Precision: 0.6305
+Recall: 0.6167
+F1 Score: 0.6145
 ---------------------------------------------------
-Partition 2 - 200 samples per class, without geographical data
-Accuracy: 50.28%
+Partition 2 - 200 samples per class, without geograpgical data except long/lat which are one hot encoded
+Precision: 0.5928
+Recall: 0.5856
+F1 Score: 0.5775
 ---------------------------------------------------
-Partition 3 - 300 samples per class, without geographical data
-Accuracy: 50.78%
+Partition 3 - 300 samples per class, without geograpgical data except long/lat which are one hot encoded
+Precision: 0.6177
+Recall: 0.6141
+F1 Score: 0.6089
 ---------------------------------------------------
-Partition 4 - 478 samples per class, without geographical data
-Accuracy: 57.25%
+Partition 4 - 478 samples per class, without geograpgical data except long/lat which are one hot encoded
+Precision: 0.6829
+Recall: 0.6745
+F1 Score: 0.6708
 ---------------------------------------------------

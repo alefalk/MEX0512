@@ -1,0 +1,4 @@
+Best acc: 0.7186964154243469 in epoch 164 for weaptype1 prediction
+Best recall: 0.7186963558197021 in epoch 164 for weaptype1 prediction
+Best precision: 0.8130639791488647 in epoch 164 for weaptype1 prediction
+Best f1: 0.7224578857421875 in epoch 164 for weaptype1 prediction
