@@ -60,9 +60,10 @@ class RF_nog:
 
     def make_predictions(self, best_rfc, X_test, y_test):
         y_pred_gbc = best_rfc.predict(X_test)
+        y_proba = best_rcf.predict_proba(Xtest)
         accuracy_gbc = accuracy_score(y_test, y_pred_gbc)
         print(f"Accuracy: {accuracy_gbc * 100:.2f}%")
-        return accuracy_gbc, y_pred_gbc
+        return accuracy_gbc, y_pred_gbc, y_proba
 
 
 def main(trainpath, testpath):
@@ -78,9 +79,9 @@ def main(trainpath, testpath):
     best_rfc = model.train_best_params_rf(best_params, X_train, y_train)
 
     print("Making predictions...")
-    accuracy_gbc, y_pred_gbc = model.make_predictions(best_rfc, X_test, y_test)
+    accuracy_gbc, y_pred_gbc, y_proba = model.make_predictions(best_rfc, X_test, y_test)
 
-    return best_rfc, accuracy_gbc, y_pred_gbc, y_test  
+    return best_rfc, accuracy_gbc, y_pred_gbc, y_test, y_proba 
 
 if __name__ == "__main__":
     main()  

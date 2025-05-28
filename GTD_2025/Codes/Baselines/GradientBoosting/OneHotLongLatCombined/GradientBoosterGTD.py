@@ -3,7 +3,9 @@ import numpy as np
 from sklearn.model_selection import RandomizedSearchCV, KFold
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
-from xgboost import XGBClassifier
+from xgboost import XGBClassifier, callback
+import time
+
 
 
 class GradientBoosterGTD:
@@ -60,22 +62,44 @@ class GradientBoosterGTD:
         rs.fit(X_train, y_train)
         return rs.best_params_
 
-    def train_best_params_xgb(self, best_params, X_train, y_train):
-        xgbc = XGBClassifier(
+from xgboost import XGBClassifier, callback
+import time
+
+def train_best_params_xgb(self, best_params, X_train, y_train):
+    print("Best params: ", best_params)
+    times = []
+    class TimingCallback(callback.TrainingCallback):
+        def after_iteration(self, model, epoch, evals_log):
+            if epoch == 0:
+                self.start_time = time.time()
+            else:
+                end_time = time.time()
+                elapsed = end_time - self.start_time
+                times.append(elapsed)
+                print(f"Iteration {epoch}, Time: {elapsed:.4f} seconds")
+                self.start_time = end_time
+            return False 
+
+    xgbc = XGBClassifier(
+        **best_params,
         objective='multi:softprob',
         eval_metric='mlogloss',
-        tree_method='hist',      # Use histogram algorithm
-        device='cuda',           # Run on GPU
+        tree_method='hist',
+        device='cuda',
         random_state=42
     )
-        xgbc.fit(X_train, y_train)
-        return xgbc
+
+    xgbc.fit(X_train, y_train, callbacks=[TimingCallback()])
+
+    self.xgb_timing = times  # Optionally store times in the class
+    return xgbc
 
     def make_predictions(self, model, X_test, y_test):
         y_pred = model.predict(X_test)
+        y_proba = model.predict_proba(Xtest)
         accuracy = accuracy_score(y_test, y_pred)
         print(f"Accuracy: {accuracy * 100:.2f}%")
-        return accuracy, y_pred
+        return accuracy, y_pred, y_proba
 
 
 def main(trainpath, testpath):
@@ -89,9 +113,9 @@ def main(trainpath, testpath):
     best_model = model.train_best_params_xgb(best_params, X_train, y_train)
 
     print("Making predictions...")
-    accuracy, y_pred = model.make_predictions(best_model, X_test, y_test)
+    accuracy, y_pred, y_proba = model.make_predictions(best_model, X_test, y_test)
 
-    return best_model, accuracy, y_pred, y_test
+    return best_model, accuracy, y_pred, y_test, y_proba, model.xgb_timing
 
 
 if __name__ == "__main__":

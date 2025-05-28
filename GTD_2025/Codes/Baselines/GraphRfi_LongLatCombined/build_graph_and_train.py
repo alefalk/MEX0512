@@ -7,7 +7,12 @@ import pandas as pd
 import numpy as np
 from scipy.sparse import coo_matrix
 from ndf import GTD100FeatureLayer, GTD200FeatureLayer, GTD300FeatureLayer, GTD478FeatureLayer, Forest, NeuralDecisionForest
-from torchmetrics.classification import Precision, Recall, F1Score
+from torchmetrics.classification import Precision, Recall, F1Score, AUROC
+from sklearn.metrics import roc_auc_score
+from tqdm import tqdm
+import time
+
+
 
 class GCNRegressor(torch.nn.Module):
     def __init__(self, in_channels, hidden_channels):
@@ -92,7 +97,6 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
     if args['partition'] == "gtd100":
         feat_layer = GTD100FeatureLayer(dropout_rate=args['feat_dropout'])
     elif args['partition'] == "gtd200":
-        print("hej")
         feat_layer = GTD200FeatureLayer(dropout_rate=args['feat_dropout'])
     elif args['partition'] == "gtd300":
         feat_layer = GTD300FeatureLayer(dropout_rate=args['feat_dropout'])
@@ -127,9 +131,10 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
     row_train_mask = train_mask[row_to_node_index]
     row_test_mask = test_mask[row_to_node_index]
 
-    
+    epoch_logs = []
 
-    for epoch in range(args['epochs']):
+    for epoch in tqdm(range(args['epochs']), desc="Training epochs"):
+        start_time = time.time()
         #Train GCN and NRF
         model.train()
         neural_forest.train()
@@ -165,35 +170,60 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
             input_features = torch.cat([non_geo_features, per_row_pred_error], dim=1)
             out_forest = neural_forest(input_features)
             pred_labels = out_forest[row_test_mask].argmax(dim=1)
+            pred_proba = F.softmax(out_forest[row_test_mask], dim=1)
             acc = (pred_labels == y_nrf[row_test_mask]).float().mean().item()
 
             if acc > best_acc:
                 best_acc = acc
                 best_epoch = epoch
                 best_labels = pred_labels
+                best_proba = pred_proba
 
-                y_pred_tensor = pred_labels
+                y_pred_tensor = best_labels
                 y_true_tensor = y_nrf[row_test_mask]
 
-                y_pred = pred_labels.cpu().numpy()
+                y_pred = best_labels.cpu().numpy()
+                y_proba = best_proba.cpu().numpy()
                 y_true = y_nrf[row_test_mask].cpu().numpy()
 
                 y_pred_decoded = [index_to_label[i] for i in y_pred]
                 y_true_decoded = [index_to_label[i] for i in y_true]
-
 
                 # Initialize and move metrics to device
                 metric_precision = Precision(task='multiclass', average='weighted', num_classes=30).to(device)
                 metric_recall = Recall(task='multiclass', average='weighted', num_classes=30).to(device)
                 metric_f1 = F1Score(task='multiclass', average='weighted', num_classes=30).to(device)
 
+                micro_precision = Precision(task='multiclass', average='micro', num_classes=30).to(device)
+                micro_recall = Recall(task='multiclass', average='micro', num_classes=30).to(device)
+                micro_f1 = F1Score(task='multiclass', average='micro', num_classes=30).to(device)
+
+                macro_precision = Precision(task='multiclass', average='macro', num_classes=30).to(device)
+                macro_recall = Recall(task='multiclass', average='macro', num_classes=30).to(device)
+                macro_f1 = F1Score(task='multiclass', average='macro', num_classes=30).to(device)
+
                 # Compute values
                 best_precision = metric_precision(y_pred_tensor, y_true_tensor).item()
                 best_recall = metric_recall(y_pred_tensor, y_true_tensor).item()
                 best_f1 = metric_f1(y_pred_tensor, y_true_tensor).item()
 
+                best_precision_micro = micro_precision(y_pred_tensor, y_true_tensor).item()
+                best_recall_micro = micro_recall(y_pred_tensor, y_true_tensor).item()
+                best_f1_micro = micro_f1(y_pred_tensor, y_true_tensor).item()
+
+                best_precision_macro = macro_precision(y_pred_tensor, y_true_tensor).item()
+                best_recall_macro = macro_recall(y_pred_tensor, y_true_tensor).item()
+                best_f1_macro = macro_f1(y_pred_tensor, y_true_tensor).item()
+
+                roc_auc_weighted = roc_auc_score(y_true, y_proba, multi_class='ovr', average='weighted')
+                roc_auc_micro = roc_auc_score(y_true, y_proba, multi_class='ovr', average='micro')
+                roc_auc_macro = roc_auc_score(y_true, y_proba, multi_class='ovr', average='macro')
+
+
         print(f"Epoch {epoch+1:02d} | GCN MSE Loss: {loss1.item():.4f} | NRF Loss: {loss2.item():.4f} | JOINT Loss: {loss.item():.4f} | NRF Acc: {acc:.4f}")
+        epoch_time = time.time() - start_time
+        epoch_logs.append(epoch_time)
 
     print(f"Best acc/epoch: {best_acc}, epoch {best_epoch}")
 
-    return best_acc, best_epoch, best_precision, best_recall, best_f1, y_pred_decoded, y_true_decoded
+    return best_acc, best_epoch, best_precision, best_recall, best_f1, y_pred_decoded, y_true_decoded, best_precision_micro, best_recall_micro, best_f1_micro, best_precision_macro, best_recall_macro, best_f1_macro, roc_auc_weighted, roc_auc_micro, roc_auc_macro, epoch_logs
