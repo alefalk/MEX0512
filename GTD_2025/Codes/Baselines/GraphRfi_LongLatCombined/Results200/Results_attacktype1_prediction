@@ -1,1 +1,5 @@
-Best acc: 0.5929298400878906 in epoch 1499 for attacktype1 prediction
+Best acc: 0.7983 at epoch 992 for attacktype1 prediction
+Weighted Precision: 0.7718, Recall: 0.7983, F1: 0.7698
+Macro Precision: 0.7714, Recall: 0.7822, F1: 0.7587
+Micro Precision: 0.7983, Recall: 0.7983, F1: 0.7983
+AUROC Weighted: 0.9904, Micro: 0.9869, Macro: 0.9895

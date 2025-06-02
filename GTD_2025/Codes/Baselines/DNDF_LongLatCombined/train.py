@@ -36,6 +36,7 @@ def parse_arg():
 
     parser.add_argument('-lr', type=float, default=0.001, help="sgd: 10, adam: 0.001")
     parser.add_argument('-gpuid', type=int, default=-1)
+    parser.add_argument('-verbose', type=int, default=0)
     parser.add_argument('-jointly_training', action='store_true', default=False)
     parser.add_argument('-epochs', type=int, default=10)
     parser.add_argument('-report_every', type=int, default=10)
@@ -48,23 +49,23 @@ def prepare_db(opt):
     print("Use %s dataset" % (opt.dataset))
 
     if opt.dataset == 'gtd100':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train100.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test100.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtrain1/train100.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtest1/test100.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd200':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train200.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test200.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtrain1/train200.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtest1/test200.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd300':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train300.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test300.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtrain1/train300.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtest1/test300.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
 
     elif opt.dataset == 'gtd478':
-        train_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtrain1/train478.csv', target_col='gname')
-        eval_dataset = dataset.UCIgtd('../../../data/top30groups/OneHotLongLatCombined/scaledtest1/test478.csv', target_col='gname')
+        train_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtrain1/train478.csv', target_col='gname')
+        eval_dataset = dataset.UCIgtd('../../../data/top30groups/LongLatCombined/scaledtest1/test478.csv', target_col='gname')
         return {'train': train_dataset, 'eval': eval_dataset}
     else:
         raise NotImplementedError
@@ -110,61 +111,10 @@ def train(model, optim, db, opt):
     best_targets = []
     best_labels = []
     epoch_logs = []
+    no_improvement_count = 0
+    patience = 10
     for epoch in tqdm(range(1, opt.epochs + 1), desc="Training Epochs"):
         start_time = time.time()
-        # Update \Pi
-        if not opt.jointly_training:
-            print("Epoch %d : Two Stage Learing - Update PI" % (epoch))
-            # prepare feats
-            cls_onehot = torch.eye(opt.n_class)
-            feat_batches = []
-            target_batches = []
-            train_loader = torch.utils.data.DataLoader(db['train'], batch_size=opt.batch_size, shuffle=True)
-            with torch.no_grad():
-                for batch_idx, (data, target) in enumerate(train_loader):
-                    if opt.cuda:
-                        data, target, cls_onehot = data.cuda(), target.cuda(), cls_onehot.cuda()
-                    data = Variable(data)
-                    # Get feats
-                    feats = model.feature_layer(data)
-                    feats = feats.view(feats.size()[0], -1)
-                    feat_batches.append(feats)
-                    target_batches.append(cls_onehot[target])
-
-                # Update \Pi for each tree
-                for tree in model.forest.trees:
-                    mu_batches = []
-                    for feats in feat_batches:
-                        mu = tree(feats)  # [batch_size,n_leaf]
-                        mu_batches.append(mu)
-                    for _ in range(20):
-                        new_pi = torch.zeros((tree.n_leaf, tree.n_class))  # Tensor [n_leaf,n_class]
-                        if opt.cuda:
-                            new_pi = new_pi.cuda()
-                        for mu, target in zip(mu_batches, target_batches):
-                            pi = tree.get_pi()  # [n_leaf,n_class]
-                            prob = tree.cal_prob(mu, pi)  # [batch_size,n_class]
-
-                            # Variable to Tensor
-                            pi = pi.data
-                            prob = prob.data
-                            mu = mu.data
-
-                            _target = target.unsqueeze(1)  # [batch_size,1,n_class]
-                            _pi = pi.unsqueeze(0)  # [1,n_leaf,n_class]
-                            _mu = mu.unsqueeze(2)  # [batch_size,n_leaf,1]
-                            _prob = torch.clamp(prob.unsqueeze(1), min=1e-6, max=1.)  # [batch_size,1,n_class]
-
-                            _new_pi = torch.mul(torch.mul(_target, _pi), _mu) / _prob  # [batch_size,n_leaf,n_class]
-                            new_pi += torch.sum(_new_pi, dim=0)
-                        # test
-                        # import numpy as np
-                        # if np.any(np.isnan(new_pi.cpu().numpy())):
-                        #    print(new_pi)
-                        # test
-                        new_pi = F.softmax(Variable(new_pi), dim=1).data
-                        tree.update_pi(new_pi)
-
         # Update \Theta
         model.train()
         train_loader = torch.utils.data.DataLoader(db['train'], batch_size=opt.batch_size, shuffle=True)
@@ -179,7 +129,7 @@ def train(model, optim, db, opt):
             # torch.nn.utils.clip_grad_norm([ p for p in model.parameters() if p.requires_grad],
             #                              max_norm=5)
             optim.step()
-            if batch_idx % opt.report_every == 0:
+            if batch_idx % opt.report_every == 0 and opt.verbose:
                 print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
                     epoch, batch_idx * len(data), len(train_loader.dataset),
                            100. * batch_idx / len(train_loader), loss.item()))
@@ -260,6 +210,14 @@ def train(model, optim, db, opt):
             best_targets = all_targets.copy()
             best_labels = db['eval'].labels  # list of label names from test set
 
+            torch.save(model.state_dict(), f"results/best_model_{opt.dataset}.pt")
+            no_improvement_count = 0
+        else:
+            no_improvement_count += 1
+            if no_improvement_count >= patience:
+                print(f"Early stopping at epoch {epoch}")
+                break
+
         with open(f"results/result_{opt.dataset}", "a") as f:
             f.write(f'Epoch {epoch}: {text}') 
 
@@ -272,7 +230,19 @@ def train(model, optim, db, opt):
         f.write(f'macro Precision: {best_precision_macro:.4f}, Recall: {best_recall_macro:.4f}, F1 Score: {best_f1_macro:.4f}, ROCAUC: {best_rocauc_macro:.4f}\n')
         f.write(f'micro Precision: {best_precision_micro:.4f}, Recall: {best_recall_micro:.4f}, F1 Score: {best_f1_micro:.4f}, ROCAUC: {best_rocauc_micro:.4f}\n')
 
-    return best_preds, best_targets, best_labels, epoch_logs
+    dir_path = f"results/epoch_times_{opt.dataset}"
+    if not os.path.exists(dir_path):
+        os.mkdir(dir_path)
+
+    epoch_file_path = os.path.join(dir_path, "log.txt")
+
+    with open(epoch_file_path, "w") as file:
+        file.write('\n'.join(str(x) for x in epoch_logs))
+
+    model.load_state_dict(torch.load(f"results/best_model_{opt.dataset}.pt"))
+    best_model = model
+
+    return best_model, best_preds, best_targets, best_labels, epoch_logs
 
 
 def main():
@@ -288,8 +258,8 @@ def main():
     db = prepare_db(opt)
     model = prepare_model(opt)
     optim = prepare_optim(model, opt)
-    best_preds, best_targets, best_labels, epoch_logs = train(model, optim, db, opt)
-    return best_preds, best_targets, best_labels, epoch_logs
+    best_model, best_preds, best_targets, best_labels, epoch_logs = train(model, optim, db, opt)
+    return best_model, best_preds, best_targets, best_labels, epoch_logs
 
 
 if __name__ == '__main__':

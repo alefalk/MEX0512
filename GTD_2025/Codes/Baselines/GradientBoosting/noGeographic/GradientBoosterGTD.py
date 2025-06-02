@@ -1,11 +1,10 @@
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import RandomizedSearchCV, KFold
+from sklearn.model_selection import RandomizedSearchCV, KFold, train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier, callback
 import time
-
 
 
 class GradientBoosterGTD:
@@ -62,37 +61,46 @@ class GradientBoosterGTD:
         rs.fit(X_train, y_train)
         return rs.best_params_
 
-from xgboost import XGBClassifier, callback
-import time
+    def train_best_params_xgb(self, best_params, X_train, y_train):
+        print("Best params: ", best_params)
+        times = []
 
-def train_best_params_xgb(self, best_params, X_train, y_train):
-    print("Best params: ", best_params)
-    times = []
-    class TimingCallback(callback.TrainingCallback):
-        def after_iteration(self, model, epoch, evals_log):
-            if epoch == 0:
-                self.start_time = time.time()
-            else:
-                end_time = time.time()
-                elapsed = end_time - self.start_time
-                times.append(elapsed)
-                print(f"Iteration {epoch}, Time: {elapsed:.4f} seconds")
-                self.start_time = end_time
-            return False 
+        # Split off a validation set for early stopping
+        X_tr, X_val, y_tr, y_val = train_test_split(X_train, y_train, test_size=0.2, stratify=y_train, random_state=42)
 
-    xgbc = XGBClassifier(
-        **best_params,
-        objective='multi:softprob',
-        eval_metric='mlogloss',
-        tree_method='hist',
-        device='cuda',
-        random_state=42
-    )
+        class TimingCallback(callback.TrainingCallback):
+            def after_iteration(self, model, epoch, evals_log):
+                if epoch == 0:
+                    self.start_time = time.time()
+                else:
+                    end_time = time.time()
+                    elapsed = end_time - self.start_time
+                    times.append(elapsed)
+                    print(f"Iteration {epoch}, Time: {elapsed:.4f} seconds")
+                    self.start_time = end_time
+                return False 
 
-    xgbc.fit(X_train, y_train, callbacks=[TimingCallback()])
+        xgbc = XGBClassifier(
+            **best_params,
+            objective='multi:softprob',
+            eval_metric='mlogloss',
+            tree_method='hist',
+            device='cuda',
+            random_state=42
+        )
 
-    self.xgb_timing = times  # Optionally store times in the class
-    return xgbc
+        # Add eval_set and early_stopping_rounds
+        xgbc.fit(
+            X_tr, y_tr,
+            eval_set=[(X_val, y_val)],
+            early_stopping_rounds=20,
+            callbacks=[TimingCallback()],
+            verbose=False  # suppress XGBoost's own printing
+        )
+
+        self.xgb_timing = times
+        return xgbc
+
 
     def make_predictions(self, model, X_test, y_test):
         y_pred = model.predict(X_test)

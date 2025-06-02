@@ -1,405 +1,313 @@
 Epoch 1: 
-Test set: Average loss: 3.3996, Accuracy: 88/900 (0.0978)
+Test set: Average loss: 3.3997, Accuracy: 57/900 (0.0633)
 Epoch 2: 
-Test set: Average loss: 3.3961, Accuracy: 121/900 (0.1344)
+Test set: Average loss: 3.3963, Accuracy: 141/900 (0.1567)
 Epoch 3: 
-Test set: Average loss: 3.3883, Accuracy: 157/900 (0.1744)
+Test set: Average loss: 3.3889, Accuracy: 146/900 (0.1622)
 Epoch 4: 
-Test set: Average loss: 3.3729, Accuracy: 128/900 (0.1422)
+Test set: Average loss: 3.3743, Accuracy: 125/900 (0.1389)
 Epoch 5: 
-Test set: Average loss: 3.3491, Accuracy: 113/900 (0.1256)
+Test set: Average loss: 3.3515, Accuracy: 126/900 (0.1400)
 Epoch 6: 
-Test set: Average loss: 3.3227, Accuracy: 114/900 (0.1267)
+Test set: Average loss: 3.3258, Accuracy: 125/900 (0.1389)
 Epoch 7: 
-Test set: Average loss: 3.2984, Accuracy: 144/900 (0.1600)
+Test set: Average loss: 3.3011, Accuracy: 155/900 (0.1722)
 Epoch 8: 
-Test set: Average loss: 3.2750, Accuracy: 178/900 (0.1978)
+Test set: Average loss: 3.2773, Accuracy: 184/900 (0.2044)
 Epoch 9: 
-Test set: Average loss: 3.2524, Accuracy: 202/900 (0.2244)
+Test set: Average loss: 3.2542, Accuracy: 188/900 (0.2089)
 Epoch 10: 
-Test set: Average loss: 3.2291, Accuracy: 223/900 (0.2478)
+Test set: Average loss: 3.2307, Accuracy: 206/900 (0.2289)
 Epoch 11: 
-Test set: Average loss: 3.2062, Accuracy: 249/900 (0.2767)
+Test set: Average loss: 3.2085, Accuracy: 224/900 (0.2489)
 Epoch 12: 
-Test set: Average loss: 3.1860, Accuracy: 255/900 (0.2833)
+Test set: Average loss: 3.1884, Accuracy: 237/900 (0.2633)
 Epoch 13: 
-Test set: Average loss: 3.1678, Accuracy: 263/900 (0.2922)
+Test set: Average loss: 3.1707, Accuracy: 252/900 (0.2800)
 Epoch 14: 
-Test set: Average loss: 3.1511, Accuracy: 274/900 (0.3044)
+Test set: Average loss: 3.1541, Accuracy: 262/900 (0.2911)
 Epoch 15: 
-Test set: Average loss: 3.1358, Accuracy: 277/900 (0.3078)
+Test set: Average loss: 3.1387, Accuracy: 264/900 (0.2933)
 Epoch 16: 
-Test set: Average loss: 3.1215, Accuracy: 287/900 (0.3189)
+Test set: Average loss: 3.1242, Accuracy: 267/900 (0.2967)
 Epoch 17: 
-Test set: Average loss: 3.1078, Accuracy: 296/900 (0.3289)
+Test set: Average loss: 3.1095, Accuracy: 283/900 (0.3144)
 Epoch 18: 
-Test set: Average loss: 3.0949, Accuracy: 297/900 (0.3300)
+Test set: Average loss: 3.0962, Accuracy: 285/900 (0.3167)
 Epoch 19: 
-Test set: Average loss: 3.0814, Accuracy: 305/900 (0.3389)
+Test set: Average loss: 3.0832, Accuracy: 285/900 (0.3167)
 Epoch 20: 
-Test set: Average loss: 3.0694, Accuracy: 305/900 (0.3389)
+Test set: Average loss: 3.0708, Accuracy: 294/900 (0.3267)
 Epoch 21: 
-Test set: Average loss: 3.0571, Accuracy: 313/900 (0.3478)
+Test set: Average loss: 3.0579, Accuracy: 303/900 (0.3367)
 Epoch 22: 
-Test set: Average loss: 3.0454, Accuracy: 314/900 (0.3489)
+Test set: Average loss: 3.0464, Accuracy: 312/900 (0.3467)
 Epoch 23: 
-Test set: Average loss: 3.0334, Accuracy: 319/900 (0.3544)
+Test set: Average loss: 3.0345, Accuracy: 315/900 (0.3500)
 Epoch 24: 
-Test set: Average loss: 3.0227, Accuracy: 325/900 (0.3611)
+Test set: Average loss: 3.0233, Accuracy: 322/900 (0.3578)
 Epoch 25: 
 Test set: Average loss: 3.0114, Accuracy: 326/900 (0.3622)
 Epoch 26: 
-Test set: Average loss: 2.9995, Accuracy: 331/900 (0.3678)
+Test set: Average loss: 3.0011, Accuracy: 336/900 (0.3733)
 Epoch 27: 
-Test set: Average loss: 2.9896, Accuracy: 334/900 (0.3711)
+Test set: Average loss: 2.9892, Accuracy: 342/900 (0.3800)
 Epoch 28: 
-Test set: Average loss: 2.9774, Accuracy: 344/900 (0.3822)
+Test set: Average loss: 2.9779, Accuracy: 342/900 (0.3800)
 Epoch 29: 
-Test set: Average loss: 2.9678, Accuracy: 341/900 (0.3789)
+Test set: Average loss: 2.9670, Accuracy: 347/900 (0.3856)
 Epoch 30: 
-Test set: Average loss: 2.9573, Accuracy: 351/900 (0.3900)
+Test set: Average loss: 2.9557, Accuracy: 351/900 (0.3900)
 Epoch 31: 
-Test set: Average loss: 2.9467, Accuracy: 351/900 (0.3900)
+Test set: Average loss: 2.9451, Accuracy: 357/900 (0.3967)
 Epoch 32: 
-Test set: Average loss: 2.9376, Accuracy: 354/900 (0.3933)
+Test set: Average loss: 2.9340, Accuracy: 369/900 (0.4100)
 Epoch 33: 
-Test set: Average loss: 2.9256, Accuracy: 365/900 (0.4056)
+Test set: Average loss: 2.9237, Accuracy: 371/900 (0.4122)
 Epoch 34: 
-Test set: Average loss: 2.9157, Accuracy: 364/900 (0.4044)
+Test set: Average loss: 2.9125, Accuracy: 378/900 (0.4200)
 Epoch 35: 
-Test set: Average loss: 2.9055, Accuracy: 370/900 (0.4111)
+Test set: Average loss: 2.9019, Accuracy: 383/900 (0.4256)
 Epoch 36: 
-Test set: Average loss: 2.8953, Accuracy: 367/900 (0.4078)
+Test set: Average loss: 2.8917, Accuracy: 388/900 (0.4311)
 Epoch 37: 
-Test set: Average loss: 2.8851, Accuracy: 375/900 (0.4167)
+Test set: Average loss: 2.8806, Accuracy: 389/900 (0.4322)
 Epoch 38: 
-Test set: Average loss: 2.8754, Accuracy: 382/900 (0.4244)
+Test set: Average loss: 2.8711, Accuracy: 391/900 (0.4344)
 Epoch 39: 
-Test set: Average loss: 2.8655, Accuracy: 374/900 (0.4156)
+Test set: Average loss: 2.8603, Accuracy: 389/900 (0.4322)
 Epoch 40: 
-Test set: Average loss: 2.8557, Accuracy: 383/900 (0.4256)
+Test set: Average loss: 2.8497, Accuracy: 398/900 (0.4422)
 Epoch 41: 
-Test set: Average loss: 2.8463, Accuracy: 385/900 (0.4278)
+Test set: Average loss: 2.8406, Accuracy: 401/900 (0.4456)
 Epoch 42: 
-Test set: Average loss: 2.8364, Accuracy: 387/900 (0.4300)
+Test set: Average loss: 2.8292, Accuracy: 401/900 (0.4456)
 Epoch 43: 
-Test set: Average loss: 2.8261, Accuracy: 393/900 (0.4367)
+Test set: Average loss: 2.8183, Accuracy: 405/900 (0.4500)
 Epoch 44: 
-Test set: Average loss: 2.8169, Accuracy: 386/900 (0.4289)
+Test set: Average loss: 2.8092, Accuracy: 408/900 (0.4533)
 Epoch 45: 
-Test set: Average loss: 2.8077, Accuracy: 392/900 (0.4356)
+Test set: Average loss: 2.7988, Accuracy: 411/900 (0.4567)
 Epoch 46: 
-Test set: Average loss: 2.7978, Accuracy: 400/900 (0.4444)
+Test set: Average loss: 2.7878, Accuracy: 410/900 (0.4556)
 Epoch 47: 
-Test set: Average loss: 2.7878, Accuracy: 402/900 (0.4467)
+Test set: Average loss: 2.7781, Accuracy: 410/900 (0.4556)
 Epoch 48: 
-Test set: Average loss: 2.7790, Accuracy: 398/900 (0.4422)
+Test set: Average loss: 2.7689, Accuracy: 411/900 (0.4567)
 Epoch 49: 
-Test set: Average loss: 2.7683, Accuracy: 397/900 (0.4411)
+Test set: Average loss: 2.7583, Accuracy: 413/900 (0.4589)
 Epoch 50: 
-Test set: Average loss: 2.7595, Accuracy: 399/900 (0.4433)
+Test set: Average loss: 2.7483, Accuracy: 415/900 (0.4611)
 Epoch 51: 
-Test set: Average loss: 2.7488, Accuracy: 405/900 (0.4500)
+Test set: Average loss: 2.7381, Accuracy: 420/900 (0.4667)
 Epoch 52: 
-Test set: Average loss: 2.7395, Accuracy: 407/900 (0.4522)
+Test set: Average loss: 2.7294, Accuracy: 414/900 (0.4600)
 Epoch 53: 
-Test set: Average loss: 2.7306, Accuracy: 406/900 (0.4511)
+Test set: Average loss: 2.7192, Accuracy: 412/900 (0.4578)
 Epoch 54: 
-Test set: Average loss: 2.7218, Accuracy: 409/900 (0.4544)
+Test set: Average loss: 2.7097, Accuracy: 416/900 (0.4622)
 Epoch 55: 
-Test set: Average loss: 2.7114, Accuracy: 412/900 (0.4578)
+Test set: Average loss: 2.7012, Accuracy: 419/900 (0.4656)
 Epoch 56: 
-Test set: Average loss: 2.7024, Accuracy: 410/900 (0.4556)
+Test set: Average loss: 2.6914, Accuracy: 426/900 (0.4733)
 Epoch 57: 
-Test set: Average loss: 2.6947, Accuracy: 413/900 (0.4589)
+Test set: Average loss: 2.6823, Accuracy: 428/900 (0.4756)
 Epoch 58: 
-Test set: Average loss: 2.6851, Accuracy: 414/900 (0.4600)
+Test set: Average loss: 2.6731, Accuracy: 428/900 (0.4756)
 Epoch 59: 
-Test set: Average loss: 2.6759, Accuracy: 413/900 (0.4589)
+Test set: Average loss: 2.6649, Accuracy: 428/900 (0.4756)
 Epoch 60: 
-Test set: Average loss: 2.6664, Accuracy: 411/900 (0.4567)
+Test set: Average loss: 2.6548, Accuracy: 428/900 (0.4756)
 Epoch 61: 
-Test set: Average loss: 2.6578, Accuracy: 415/900 (0.4611)
+Test set: Average loss: 2.6459, Accuracy: 430/900 (0.4778)
 Epoch 62: 
-Test set: Average loss: 2.6481, Accuracy: 417/900 (0.4633)
+Test set: Average loss: 2.6368, Accuracy: 430/900 (0.4778)
 Epoch 63: 
-Test set: Average loss: 2.6397, Accuracy: 418/900 (0.4644)
+Test set: Average loss: 2.6276, Accuracy: 432/900 (0.4800)
 Epoch 64: 
-Test set: Average loss: 2.6310, Accuracy: 426/900 (0.4733)
+Test set: Average loss: 2.6194, Accuracy: 435/900 (0.4833)
 Epoch 65: 
-Test set: Average loss: 2.6213, Accuracy: 426/900 (0.4733)
+Test set: Average loss: 2.6113, Accuracy: 434/900 (0.4822)
 Epoch 66: 
-Test set: Average loss: 2.6129, Accuracy: 427/900 (0.4744)
+Test set: Average loss: 2.6025, Accuracy: 433/900 (0.4811)
 Epoch 67: 
-Test set: Average loss: 2.6040, Accuracy: 431/900 (0.4789)
+Test set: Average loss: 2.5933, Accuracy: 430/900 (0.4778)
 Epoch 68: 
-Test set: Average loss: 2.5964, Accuracy: 432/900 (0.4800)
+Test set: Average loss: 2.5864, Accuracy: 434/900 (0.4822)
 Epoch 69: 
-Test set: Average loss: 2.5894, Accuracy: 434/900 (0.4822)
+Test set: Average loss: 2.5761, Accuracy: 431/900 (0.4789)
 Epoch 70: 
-Test set: Average loss: 2.5799, Accuracy: 438/900 (0.4867)
+Test set: Average loss: 2.5698, Accuracy: 430/900 (0.4778)
 Epoch 71: 
-Test set: Average loss: 2.5721, Accuracy: 438/900 (0.4867)
+Test set: Average loss: 2.5594, Accuracy: 437/900 (0.4856)
 Epoch 72: 
-Test set: Average loss: 2.5641, Accuracy: 440/900 (0.4889)
+Test set: Average loss: 2.5521, Accuracy: 436/900 (0.4844)
 Epoch 73: 
-Test set: Average loss: 2.5554, Accuracy: 439/900 (0.4878)
+Test set: Average loss: 2.5434, Accuracy: 436/900 (0.4844)
 Epoch 74: 
-Test set: Average loss: 2.5491, Accuracy: 441/900 (0.4900)
+Test set: Average loss: 2.5346, Accuracy: 436/900 (0.4844)
 Epoch 75: 
-Test set: Average loss: 2.5402, Accuracy: 442/900 (0.4911)
+Test set: Average loss: 2.5279, Accuracy: 437/900 (0.4856)
 Epoch 76: 
-Test set: Average loss: 2.5326, Accuracy: 444/900 (0.4933)
+Test set: Average loss: 2.5195, Accuracy: 437/900 (0.4856)
 Epoch 77: 
-Test set: Average loss: 2.5243, Accuracy: 443/900 (0.4922)
+Test set: Average loss: 2.5106, Accuracy: 436/900 (0.4844)
 Epoch 78: 
-Test set: Average loss: 2.5178, Accuracy: 444/900 (0.4933)
+Test set: Average loss: 2.5041, Accuracy: 438/900 (0.4867)
 Epoch 79: 
-Test set: Average loss: 2.5090, Accuracy: 444/900 (0.4933)
+Test set: Average loss: 2.4960, Accuracy: 436/900 (0.4844)
 Epoch 80: 
-Test set: Average loss: 2.5030, Accuracy: 448/900 (0.4978)
+Test set: Average loss: 2.4868, Accuracy: 439/900 (0.4878)
 Epoch 81: 
-Test set: Average loss: 2.4934, Accuracy: 447/900 (0.4967)
+Test set: Average loss: 2.4794, Accuracy: 441/900 (0.4900)
 Epoch 82: 
-Test set: Average loss: 2.4865, Accuracy: 448/900 (0.4978)
+Test set: Average loss: 2.4717, Accuracy: 440/900 (0.4889)
 Epoch 83: 
-Test set: Average loss: 2.4786, Accuracy: 449/900 (0.4989)
+Test set: Average loss: 2.4643, Accuracy: 439/900 (0.4878)
 Epoch 84: 
-Test set: Average loss: 2.4710, Accuracy: 457/900 (0.5078)
+Test set: Average loss: 2.4559, Accuracy: 439/900 (0.4878)
 Epoch 85: 
-Test set: Average loss: 2.4636, Accuracy: 461/900 (0.5122)
+Test set: Average loss: 2.4483, Accuracy: 438/900 (0.4867)
 Epoch 86: 
-Test set: Average loss: 2.4561, Accuracy: 456/900 (0.5067)
+Test set: Average loss: 2.4409, Accuracy: 439/900 (0.4878)
 Epoch 87: 
-Test set: Average loss: 2.4499, Accuracy: 454/900 (0.5044)
+Test set: Average loss: 2.4320, Accuracy: 440/900 (0.4889)
 Epoch 88: 
-Test set: Average loss: 2.4419, Accuracy: 457/900 (0.5078)
+Test set: Average loss: 2.4257, Accuracy: 442/900 (0.4911)
 Epoch 89: 
-Test set: Average loss: 2.4343, Accuracy: 459/900 (0.5100)
+Test set: Average loss: 2.4189, Accuracy: 443/900 (0.4922)
 Epoch 90: 
-Test set: Average loss: 2.4264, Accuracy: 457/900 (0.5078)
+Test set: Average loss: 2.4110, Accuracy: 440/900 (0.4889)
 Epoch 91: 
-Test set: Average loss: 2.4195, Accuracy: 457/900 (0.5078)
+Test set: Average loss: 2.4047, Accuracy: 447/900 (0.4967)
 Epoch 92: 
-Test set: Average loss: 2.4136, Accuracy: 460/900 (0.5111)
+Test set: Average loss: 2.3965, Accuracy: 444/900 (0.4933)
 Epoch 93: 
-Test set: Average loss: 2.4057, Accuracy: 457/900 (0.5078)
+Test set: Average loss: 2.3903, Accuracy: 448/900 (0.4978)
 Epoch 94: 
-Test set: Average loss: 2.4000, Accuracy: 461/900 (0.5122)
+Test set: Average loss: 2.3824, Accuracy: 450/900 (0.5000)
 Epoch 95: 
-Test set: Average loss: 2.3923, Accuracy: 463/900 (0.5144)
+Test set: Average loss: 2.3761, Accuracy: 448/900 (0.4978)
 Epoch 96: 
-Test set: Average loss: 2.3854, Accuracy: 462/900 (0.5133)
+Test set: Average loss: 2.3695, Accuracy: 449/900 (0.4989)
 Epoch 97: 
-Test set: Average loss: 2.3795, Accuracy: 465/900 (0.5167)
+Test set: Average loss: 2.3619, Accuracy: 455/900 (0.5056)
 Epoch 98: 
-Test set: Average loss: 2.3711, Accuracy: 464/900 (0.5156)
+Test set: Average loss: 2.3541, Accuracy: 453/900 (0.5033)
 Epoch 99: 
-Test set: Average loss: 2.3652, Accuracy: 465/900 (0.5167)
+Test set: Average loss: 2.3494, Accuracy: 458/900 (0.5089)
 Epoch 100: 
-Test set: Average loss: 2.3595, Accuracy: 469/900 (0.5211)
+Test set: Average loss: 2.3423, Accuracy: 459/900 (0.5100)
 Epoch 101: 
-Test set: Average loss: 2.3531, Accuracy: 470/900 (0.5222)
+Test set: Average loss: 2.3335, Accuracy: 460/900 (0.5111)
 Epoch 102: 
-Test set: Average loss: 2.3462, Accuracy: 469/900 (0.5211)
+Test set: Average loss: 2.3294, Accuracy: 464/900 (0.5156)
 Epoch 103: 
-Test set: Average loss: 2.3406, Accuracy: 471/900 (0.5233)
+Test set: Average loss: 2.3222, Accuracy: 462/900 (0.5133)
 Epoch 104: 
-Test set: Average loss: 2.3349, Accuracy: 468/900 (0.5200)
+Test set: Average loss: 2.3144, Accuracy: 463/900 (0.5144)
 Epoch 105: 
-Test set: Average loss: 2.3296, Accuracy: 471/900 (0.5233)
+Test set: Average loss: 2.3107, Accuracy: 461/900 (0.5122)
 Epoch 106: 
-Test set: Average loss: 2.3227, Accuracy: 474/900 (0.5267)
+Test set: Average loss: 2.3051, Accuracy: 468/900 (0.5200)
 Epoch 107: 
-Test set: Average loss: 2.3163, Accuracy: 476/900 (0.5289)
+Test set: Average loss: 2.2971, Accuracy: 469/900 (0.5211)
 Epoch 108: 
-Test set: Average loss: 2.3111, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.2905, Accuracy: 470/900 (0.5222)
 Epoch 109: 
-Test set: Average loss: 2.3053, Accuracy: 478/900 (0.5311)
+Test set: Average loss: 2.2860, Accuracy: 469/900 (0.5211)
 Epoch 110: 
-Test set: Average loss: 2.3010, Accuracy: 480/900 (0.5333)
+Test set: Average loss: 2.2778, Accuracy: 470/900 (0.5222)
 Epoch 111: 
-Test set: Average loss: 2.2947, Accuracy: 476/900 (0.5289)
+Test set: Average loss: 2.2726, Accuracy: 474/900 (0.5267)
 Epoch 112: 
-Test set: Average loss: 2.2891, Accuracy: 479/900 (0.5322)
+Test set: Average loss: 2.2680, Accuracy: 473/900 (0.5256)
 Epoch 113: 
-Test set: Average loss: 2.2854, Accuracy: 478/900 (0.5311)
+Test set: Average loss: 2.2602, Accuracy: 476/900 (0.5289)
 Epoch 114: 
-Test set: Average loss: 2.2786, Accuracy: 483/900 (0.5367)
+Test set: Average loss: 2.2543, Accuracy: 477/900 (0.5300)
 Epoch 115: 
-Test set: Average loss: 2.2729, Accuracy: 480/900 (0.5333)
+Test set: Average loss: 2.2497, Accuracy: 479/900 (0.5322)
 Epoch 116: 
-Test set: Average loss: 2.2686, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.2440, Accuracy: 481/900 (0.5344)
 Epoch 117: 
-Test set: Average loss: 2.2627, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.2378, Accuracy: 481/900 (0.5344)
 Epoch 118: 
-Test set: Average loss: 2.2580, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.2338, Accuracy: 480/900 (0.5333)
 Epoch 119: 
-Test set: Average loss: 2.2534, Accuracy: 477/900 (0.5300)
+Test set: Average loss: 2.2297, Accuracy: 483/900 (0.5367)
 Epoch 120: 
-Test set: Average loss: 2.2457, Accuracy: 483/900 (0.5367)
+Test set: Average loss: 2.2207, Accuracy: 485/900 (0.5389)
 Epoch 121: 
-Test set: Average loss: 2.2419, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.2184, Accuracy: 483/900 (0.5367)
 Epoch 122: 
-Test set: Average loss: 2.2364, Accuracy: 478/900 (0.5311)
+Test set: Average loss: 2.2143, Accuracy: 480/900 (0.5333)
 Epoch 123: 
-Test set: Average loss: 2.2342, Accuracy: 473/900 (0.5256)
+Test set: Average loss: 2.2059, Accuracy: 485/900 (0.5389)
 Epoch 124: 
-Test set: Average loss: 2.2264, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.2017, Accuracy: 483/900 (0.5367)
 Epoch 125: 
-Test set: Average loss: 2.2222, Accuracy: 478/900 (0.5311)
+Test set: Average loss: 2.1977, Accuracy: 482/900 (0.5356)
 Epoch 126: 
-Test set: Average loss: 2.2171, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.1912, Accuracy: 486/900 (0.5400)
 Epoch 127: 
-Test set: Average loss: 2.2139, Accuracy: 476/900 (0.5289)
+Test set: Average loss: 2.1855, Accuracy: 491/900 (0.5456)
 Epoch 128: 
-Test set: Average loss: 2.2074, Accuracy: 474/900 (0.5267)
+Test set: Average loss: 2.1846, Accuracy: 485/900 (0.5389)
 Epoch 129: 
-Test set: Average loss: 2.2034, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.1769, Accuracy: 487/900 (0.5411)
 Epoch 130: 
-Test set: Average loss: 2.1972, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.1731, Accuracy: 492/900 (0.5467)
 Epoch 131: 
-Test set: Average loss: 2.1927, Accuracy: 476/900 (0.5289)
+Test set: Average loss: 2.1677, Accuracy: 493/900 (0.5478)
 Epoch 132: 
-Test set: Average loss: 2.1889, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.1650, Accuracy: 489/900 (0.5433)
 Epoch 133: 
-Test set: Average loss: 2.1842, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.1587, Accuracy: 490/900 (0.5444)
 Epoch 134: 
-Test set: Average loss: 2.1784, Accuracy: 473/900 (0.5256)
+Test set: Average loss: 2.1537, Accuracy: 491/900 (0.5456)
 Epoch 135: 
-Test set: Average loss: 2.1760, Accuracy: 474/900 (0.5267)
+Test set: Average loss: 2.1498, Accuracy: 482/900 (0.5356)
 Epoch 136: 
-Test set: Average loss: 2.1716, Accuracy: 482/900 (0.5356)
+Test set: Average loss: 2.1452, Accuracy: 484/900 (0.5378)
 Epoch 137: 
-Test set: Average loss: 2.1684, Accuracy: 478/900 (0.5311)
+Test set: Average loss: 2.1395, Accuracy: 494/900 (0.5489)
 Epoch 138: 
-Test set: Average loss: 2.1619, Accuracy: 477/900 (0.5300)
+Test set: Average loss: 2.1365, Accuracy: 490/900 (0.5444)
 Epoch 139: 
-Test set: Average loss: 2.1580, Accuracy: 483/900 (0.5367)
+Test set: Average loss: 2.1321, Accuracy: 489/900 (0.5433)
 Epoch 140: 
-Test set: Average loss: 2.1536, Accuracy: 475/900 (0.5278)
+Test set: Average loss: 2.1272, Accuracy: 488/900 (0.5422)
 Epoch 141: 
-Test set: Average loss: 2.1508, Accuracy: 478/900 (0.5311)
+Test set: Average loss: 2.1235, Accuracy: 489/900 (0.5433)
 Epoch 142: 
-Test set: Average loss: 2.1457, Accuracy: 485/900 (0.5389)
+Test set: Average loss: 2.1182, Accuracy: 491/900 (0.5456)
 Epoch 143: 
-Test set: Average loss: 2.1435, Accuracy: 482/900 (0.5356)
+Test set: Average loss: 2.1141, Accuracy: 490/900 (0.5444)
 Epoch 144: 
-Test set: Average loss: 2.1388, Accuracy: 482/900 (0.5356)
+Test set: Average loss: 2.1106, Accuracy: 491/900 (0.5456)
 Epoch 145: 
-Test set: Average loss: 2.1338, Accuracy: 483/900 (0.5367)
+Test set: Average loss: 2.1042, Accuracy: 495/900 (0.5500)
 Epoch 146: 
-Test set: Average loss: 2.1301, Accuracy: 485/900 (0.5389)
+Test set: Average loss: 2.1026, Accuracy: 494/900 (0.5489)
 Epoch 147: 
-Test set: Average loss: 2.1257, Accuracy: 480/900 (0.5333)
+Test set: Average loss: 2.0982, Accuracy: 492/900 (0.5467)
 Epoch 148: 
-Test set: Average loss: 2.1218, Accuracy: 486/900 (0.5400)
+Test set: Average loss: 2.0926, Accuracy: 492/900 (0.5467)
 Epoch 149: 
-Test set: Average loss: 2.1157, Accuracy: 483/900 (0.5367)
+Test set: Average loss: 2.0912, Accuracy: 494/900 (0.5489)
 Epoch 150: 
-Test set: Average loss: 2.1120, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.0879, Accuracy: 489/900 (0.5433)
 Epoch 151: 
-Test set: Average loss: 2.1117, Accuracy: 482/900 (0.5356)
+Test set: Average loss: 2.0840, Accuracy: 490/900 (0.5444)
 Epoch 152: 
-Test set: Average loss: 2.1058, Accuracy: 481/900 (0.5344)
+Test set: Average loss: 2.0798, Accuracy: 489/900 (0.5433)
 Epoch 153: 
-Test set: Average loss: 2.1025, Accuracy: 488/900 (0.5422)
+Test set: Average loss: 2.0774, Accuracy: 489/900 (0.5433)
 Epoch 154: 
-Test set: Average loss: 2.0984, Accuracy: 484/900 (0.5378)
-Epoch 155: 
-Test set: Average loss: 2.0946, Accuracy: 483/900 (0.5367)
-Epoch 156: 
-Test set: Average loss: 2.0910, Accuracy: 483/900 (0.5367)
-Epoch 157: 
-Test set: Average loss: 2.0885, Accuracy: 487/900 (0.5411)
-Epoch 158: 
-Test set: Average loss: 2.0852, Accuracy: 482/900 (0.5356)
-Epoch 159: 
-Test set: Average loss: 2.0811, Accuracy: 484/900 (0.5378)
-Epoch 160: 
-Test set: Average loss: 2.0785, Accuracy: 483/900 (0.5367)
-Epoch 161: 
-Test set: Average loss: 2.0751, Accuracy: 480/900 (0.5333)
-Epoch 162: 
-Test set: Average loss: 2.0718, Accuracy: 484/900 (0.5378)
-Epoch 163: 
-Test set: Average loss: 2.0694, Accuracy: 483/900 (0.5367)
-Epoch 164: 
-Test set: Average loss: 2.0632, Accuracy: 481/900 (0.5344)
-Epoch 165: 
-Test set: Average loss: 2.0619, Accuracy: 482/900 (0.5356)
-Epoch 166: 
-Test set: Average loss: 2.0604, Accuracy: 481/900 (0.5344)
-Epoch 167: 
-Test set: Average loss: 2.0551, Accuracy: 482/900 (0.5356)
-Epoch 168: 
-Test set: Average loss: 2.0527, Accuracy: 485/900 (0.5389)
-Epoch 169: 
-Test set: Average loss: 2.0535, Accuracy: 485/900 (0.5389)
-Epoch 170: 
-Test set: Average loss: 2.0484, Accuracy: 489/900 (0.5433)
-Epoch 171: 
-Test set: Average loss: 2.0424, Accuracy: 484/900 (0.5378)
-Epoch 172: 
-Test set: Average loss: 2.0416, Accuracy: 482/900 (0.5356)
-Epoch 173: 
-Test set: Average loss: 2.0386, Accuracy: 479/900 (0.5322)
-Epoch 174: 
-Test set: Average loss: 2.0349, Accuracy: 481/900 (0.5344)
-Epoch 175: 
-Test set: Average loss: 2.0325, Accuracy: 488/900 (0.5422)
-Epoch 176: 
-Test set: Average loss: 2.0314, Accuracy: 484/900 (0.5378)
-Epoch 177: 
-Test set: Average loss: 2.0251, Accuracy: 484/900 (0.5378)
-Epoch 178: 
-Test set: Average loss: 2.0228, Accuracy: 486/900 (0.5400)
-Epoch 179: 
-Test set: Average loss: 2.0215, Accuracy: 487/900 (0.5411)
-Epoch 180: 
-Test set: Average loss: 2.0185, Accuracy: 488/900 (0.5422)
-Epoch 181: 
-Test set: Average loss: 2.0137, Accuracy: 487/900 (0.5411)
-Epoch 182: 
-Test set: Average loss: 2.0147, Accuracy: 492/900 (0.5467)
-Epoch 183: 
-Test set: Average loss: 2.0117, Accuracy: 485/900 (0.5389)
-Epoch 184: 
-Test set: Average loss: 2.0062, Accuracy: 486/900 (0.5400)
-Epoch 185: 
-Test set: Average loss: 2.0057, Accuracy: 492/900 (0.5467)
-Epoch 186: 
-Test set: Average loss: 2.0041, Accuracy: 485/900 (0.5389)
-Epoch 187: 
-Test set: Average loss: 1.9998, Accuracy: 493/900 (0.5478)
-Epoch 188: 
-Test set: Average loss: 1.9982, Accuracy: 484/900 (0.5378)
-Epoch 189: 
-Test set: Average loss: 1.9965, Accuracy: 489/900 (0.5433)
-Epoch 190: 
-Test set: Average loss: 1.9950, Accuracy: 489/900 (0.5433)
-Epoch 191: 
-Test set: Average loss: 1.9942, Accuracy: 487/900 (0.5411)
-Epoch 192: 
-Test set: Average loss: 1.9891, Accuracy: 496/900 (0.5511)
-Epoch 193: 
-Test set: Average loss: 1.9850, Accuracy: 490/900 (0.5444)
-Epoch 194: 
-Test set: Average loss: 1.9841, Accuracy: 492/900 (0.5467)
-Epoch 195: 
-Test set: Average loss: 1.9824, Accuracy: 491/900 (0.5456)
-Epoch 196: 
-Test set: Average loss: 1.9782, Accuracy: 493/900 (0.5478)
-Epoch 197: 
-Test set: Average loss: 1.9755, Accuracy: 496/900 (0.5511)
-Epoch 198: 
-Test set: Average loss: 1.9746, Accuracy: 491/900 (0.5456)
-Epoch 199: 
-Test set: Average loss: 1.9704, Accuracy: 476/900 (0.5289)
-Epoch 200: 
-Test set: Average loss: 1.9694, Accuracy: 474/900 (0.5267)
+Test set: Average loss: 2.0745, Accuracy: 489/900 (0.5433)
 
-Best Accuracy: 0.551111 at epoch 192
-Weighted Precision: 0.5749, Recall: 0.5511, F1 Score: 0.5408, ROCAUC: 0.9229
-macro Precision: 0.5749, Recall: 0.5511, F1 Score: 0.5408, ROCAUC: 0.9229
-micro Precision: 0.5511, Recall: 0.5511, F1 Score: 0.5511, ROCAUC: 0.9293
+Best Accuracy: 0.550000 at epoch 145
+Weighted Precision: 0.5950, Recall: 0.5500, F1 Score: 0.5322, ROCAUC: 0.9253
+macro Precision: 0.5950, Recall: 0.5500, F1 Score: 0.5322, ROCAUC: 0.9253
+micro Precision: 0.5500, Recall: 0.5500, F1 Score: 0.5500, ROCAUC: 0.9311

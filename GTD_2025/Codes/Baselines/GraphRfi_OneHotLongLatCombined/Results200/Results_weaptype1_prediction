@@ -1,0 +1,5 @@
+Best acc: 0.7491 at epoch 320 for weaptype1 prediction
+Weighted Precision: 0.8150, Recall: 0.7491, F1: 0.7575
+Macro Precision: 0.8062, Recall: 0.7117, F1: 0.7287
+Micro Precision: 0.7491, Recall: 0.7491, F1: 0.7491
+AUROC Weighted: 0.9459, Micro: 0.9358, Macro: 0.9348

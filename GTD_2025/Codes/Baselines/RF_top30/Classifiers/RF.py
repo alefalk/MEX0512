@@ -5,6 +5,8 @@ from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.utils import shuffle
 from sklearn.impute import SimpleImputer
+import time
+
 
 
 
@@ -76,12 +78,16 @@ def main(trainpath, testpath):
     best_params = model.randomizedSearch(X_train, y_train)
 
     print("Training best RF classifier...")
+    start_time = time.time()
     best_rfc = model.train_best_params_rf(best_params, X_train, y_train)
+    end_time = time.time()
+
+    total_time = end_time - start_time
 
     print("Making predictions...")
     accuracy_gbc, y_pred_gbc, y_proba = model.make_predictions(best_rfc, X_test, y_test)
 
-    return best_rfc, accuracy_gbc, y_pred_gbc, y_test, y_proba 
+    return best_rfc, accuracy_gbc, y_pred_gbc, y_test, y_proba, total_time
 
 if __name__ == "__main__":
     main()  

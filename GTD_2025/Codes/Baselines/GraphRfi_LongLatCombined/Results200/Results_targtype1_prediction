@@ -1,1 +1,5 @@
-Best acc: 0.7305837869644165 in epoch 1470 for targtype1 prediction
+Best acc: 0.7335 at epoch 667 for targtype1 prediction
+Weighted Precision: 0.7061, Recall: 0.7335, F1: 0.6927
+Macro Precision: 0.6668, Recall: 0.7106, F1: 0.6617
+Micro Precision: 0.7335, Recall: 0.7335, F1: 0.7335
+AUROC Weighted: 0.9877, Micro: 0.9826, Macro: 0.9866

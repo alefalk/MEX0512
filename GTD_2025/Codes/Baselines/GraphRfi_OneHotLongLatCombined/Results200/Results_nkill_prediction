@@ -1,0 +1,5 @@
+Best acc: 0.7576 at epoch 908 for nkill prediction
+Weighted Precision: 0.8276, Recall: 0.7576, F1: 0.7641
+Macro Precision: 0.8356, Recall: 0.7156, F1: 0.7405
+Micro Precision: 0.7576, Recall: 0.7576, F1: 0.7576
+AUROC Weighted: 0.9608, Micro: 0.9529, Macro: 0.9525

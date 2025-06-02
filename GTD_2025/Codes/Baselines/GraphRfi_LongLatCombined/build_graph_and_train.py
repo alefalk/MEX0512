@@ -89,7 +89,7 @@ def handle_leakage(df):
         test_frames.append(group.iloc[split:])
     return shuffle(pd.concat(train_frames)), shuffle(pd.concat(test_frames))
 
-def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, test_mask, args, row_to_node_index, index_to_label):
+def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, test_mask, args, row_to_node_index, index_to_label, verbose):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = GCNRegressor(data.num_node_features, args['embed_dim']).to(device)
 
@@ -123,7 +123,7 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
     data = data.to(device)
     y_gcn = y_gcn.to(device)
     non_geo_features = non_geo_features.to(device)
-    y_nrf = torch.tensor(y_nrf, dtype=torch.long).to(device)
+    y_nrf = y_nrf.clone().detach().to(torch.long).to(device)
 
     best_acc = -1
     best_epoch = -1
@@ -133,7 +133,15 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
 
     epoch_logs = []
 
-    for epoch in tqdm(range(args['epochs']), desc="Training epochs"):
+    patience = 100
+    no_improvement = 0
+    best_state_dict = None
+
+    epoch_iter = range(args['epochs'])
+    if verbose:
+        epoch_iter = tqdm(epoch_iter, desc="Training epochs")
+
+    for epoch in epoch_iter:
         start_time = time.time()
         #Train GCN and NRF
         model.train()
@@ -179,6 +187,13 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
                 best_labels = pred_labels
                 best_proba = pred_proba
 
+                best_state_dict = {
+                    'gcn': model.state_dict(),
+                    'ndf': neural_forest.state_dict()
+                }
+
+                no_improvement = 0  # reset counter
+
                 y_pred_tensor = best_labels
                 y_true_tensor = y_nrf[row_test_mask]
 
@@ -219,8 +234,13 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
                 roc_auc_micro = roc_auc_score(y_true, y_proba, multi_class='ovr', average='micro')
                 roc_auc_macro = roc_auc_score(y_true, y_proba, multi_class='ovr', average='macro')
 
-
-        print(f"Epoch {epoch+1:02d} | GCN MSE Loss: {loss1.item():.4f} | NRF Loss: {loss2.item():.4f} | JOINT Loss: {loss.item():.4f} | NRF Acc: {acc:.4f}")
+            else:
+                no_improvement += 1
+                if no_improvement >= patience:
+                    print(f"Early stopping at epoch {epoch}")
+                    break
+        if verbose:
+            print(f"Epoch {epoch+1:02d} | GCN MSE Loss: {loss1.item():.4f} | NRF Loss: {loss2.item():.4f} | JOINT Loss: {loss.item():.4f} | NRF Acc: {acc:.4f}")
         epoch_time = time.time() - start_time
         epoch_logs.append(epoch_time)
 
