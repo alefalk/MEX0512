@@ -4,6 +4,7 @@ from sklearn.model_selection import RandomizedSearchCV, KFold, train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 from xgboost import XGBClassifier, callback
+import xgboost
 import time
 
 
@@ -13,18 +14,19 @@ class GradientBoosterGTD:
         self.train = pd.read_csv(trainpath, encoding='ISO-8859-1')
         self.test = pd.read_csv(testpath, encoding='ISO-8859-1')
 
+
     def splitting(self):
         y_train_raw = self.train['gname']
         y_test_raw = self.test['gname']
 
-        # Encode class labels as integers
-        y_train = self.label_encoder.fit_transform(y_train_raw)
-        y_test = self.label_encoder.transform(y_test_raw)
+        y_train = self.label_encoder.fit_transform(y_train_raw).astype(np.float32)
+        y_test = self.label_encoder.transform(y_test_raw).astype(np.float32)
 
-        X_train = self.train.drop(columns=['gname'])
-        X_test = self.test.drop(columns=['gname'])
+        X_train = self.train.drop(columns=['gname']).to_numpy(dtype=np.float32)
+        X_test = self.test.drop(columns=['gname']).to_numpy(dtype=np.float32)
 
         return X_train, X_test, y_train, y_test
+
 
     def randomizedSearchXGB(self, X_train, y_train):
         param_grid = {
@@ -35,6 +37,7 @@ class GradientBoosterGTD:
             'colsample_bytree': [0.6, 0.8, 1.0],
             'gamma': [0, 0.1, 0.3]
         }
+        print(xgboost.__version__)
 
         xgb = XGBClassifier(
             objective='multi:softprob',
@@ -57,29 +60,15 @@ class GradientBoosterGTD:
             n_jobs=-1,
             verbose=2
         )
+        print(XGBClassifier)
 
         rs.fit(X_train, y_train)
         return rs.best_params_
 
     def train_best_params_xgb(self, best_params, X_train, y_train):
         print("Best params: ", best_params)
-        times = []
 
-        # Split off a validation set for early stopping
-        X_tr, X_val, y_tr, y_val = train_test_split(X_train, y_train, test_size=0.2, stratify=y_train, random_state=42)
-
-        class TimingCallback(callback.TrainingCallback):
-            def after_iteration(self, model, epoch, evals_log):
-                if epoch == 0:
-                    self.start_time = time.time()
-                else:
-                    end_time = time.time()
-                    elapsed = end_time - self.start_time
-                    times.append(elapsed)
-                    print(f"Iteration {epoch}, Time: {elapsed:.4f} seconds")
-                    self.start_time = end_time
-                return False 
-
+        # Now define the classifier
         xgbc = XGBClassifier(
             **best_params,
             objective='multi:softprob',
@@ -89,22 +78,18 @@ class GradientBoosterGTD:
             random_state=42
         )
 
-        # Add eval_set and early_stopping_rounds
+        # Train with callbacks
         xgbc.fit(
-            X_tr, y_tr,
-            eval_set=[(X_val, y_val)],
-            early_stopping_rounds=20,
-            callbacks=[TimingCallback()],
-            verbose=False  # suppress XGBoost's own printing
+            X_train, y_train,
+            verbose=False
         )
 
-        self.xgb_timing = times
         return xgbc
 
 
     def make_predictions(self, model, X_test, y_test):
         y_pred = model.predict(X_test)
-        y_proba = model.predict_proba(Xtest)
+        y_proba = model.predict_proba(X_test)
         accuracy = accuracy_score(y_test, y_pred)
         print(f"Accuracy: {accuracy * 100:.2f}%")
         return accuracy, y_pred, y_proba
@@ -123,7 +108,7 @@ def main(trainpath, testpath):
     print("Making predictions...")
     accuracy, y_pred, y_proba = model.make_predictions(best_model, X_test, y_test)
 
-    return best_model, accuracy, y_pred, y_test, y_proba, model.xgb_timing
+    return best_model, accuracy, y_pred, y_test, y_proba, model.label_encoder
 
 
 if __name__ == "__main__":
