@@ -1,0 +1,36 @@
+Subset	Test Accuracy	Epoch	Features Used
+Subset: attacktype1, target1
+Best test Acc: 0.2669
+Best epoch: 1507
+-------------------------------------
+
+Subset: target1, weaptype1
+Best test Acc: 0.3654
+Best epoch: 1919
+-------------------------------------
+
+Subset: target1, nkill
+Best test Acc: 0.2807
+Best epoch: 1674
+-------------------------------------
+
+Subset: attacktype1, target1, weaptype1
+Best test Acc: 0.3606
+Best epoch: 1424
+-------------------------------------
+
+Subset: attacktype1, target1, nkill
+Best test Acc: 0.2689
+Best epoch: 1767
+-------------------------------------
+
+Subset: target1, weaptype1, nkill
+Best test Acc: 0.2977
+Best epoch: 1943
+-------------------------------------
+
+Subset: attacktype1, target1, weaptype1, nkill
+Best test Acc: 0.3264
+Best epoch: 1934
+-------------------------------------
+
