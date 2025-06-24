@@ -1,0 +1,14 @@
+Best Model Hyperparameters:
+  Hidden dim     : 150
+  Learning rate  : 0.01
+  Weight decay   : 0
+  Dropout        : 0.0
+  Activation     : tanh
+
+Performance on Test Set:
+Test Accuracy        : 0.8128
+Precision (weighted) : 0.8120
+Recall (weighted)    : 0.8128
+F1 Score (micro)     : 0.8128
+F1 Score (macro)     : 0.7959
+ROC AUC (weighted)   : 0.9877
