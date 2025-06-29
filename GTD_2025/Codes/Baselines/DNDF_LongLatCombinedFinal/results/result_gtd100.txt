@@ -1,0 +1,17 @@
+
+Best Accuracy: 0.750000
+NeuralDecisionForest(
+  (feature_layer): GTDFeatureLayer100(
+    (linear): Linear(in_features=15, out_features=1024, bias=True)
+  )
+  (forest): Forest(
+    (trees): ModuleList(
+      (0-9): 10 x Tree(
+        (decision): Sequential(
+          (linear1): Linear(in_features=102, out_features=8, bias=True)
+          (sigmoid): Sigmoid()
+        )
+      )
+    )
+  )
+)
