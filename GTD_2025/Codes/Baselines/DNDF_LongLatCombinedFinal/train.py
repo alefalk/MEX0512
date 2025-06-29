@@ -168,10 +168,7 @@ def train(model, optim, db, opt):
     torch.cuda.empty_cache()
     os.makedirs(opt.results_dir, exist_ok=True)
     result_path = os.path.join(opt.results_dir, f"result_{opt.dataset}.txt")
-    best_model_path = os.path.join(opt.results_dir, f"best_model_{opt.dataset}.pt")
-
-    with open(result_path, "w") as f:
-        pass  
+    #best_model_path = os.path.join(opt.results_dir, f"best_model_{opt.dataset}.pt")
 
     max = 0
     best_preds, best_targets, best_labels = [], [], []
@@ -230,7 +227,7 @@ def train(model, optim, db, opt):
 
         if acc > max:
             max = acc
-            torch.save(model.state_dict(), best_model_path)
+            #torch.save(model.state_dict(), best_model_path)
             no_improvement_count = 0
         else:
             no_improvement_count += 1
@@ -240,8 +237,8 @@ def train(model, optim, db, opt):
 
         epoch_logs.append(time.time() - start_time)
 
-    model.load_state_dict(torch.load(best_model_path))
-    best_model = model
+    #model.load_state_dict(torch.load(best_model_path))
+    #best_model = model
 
     if not opt.searching:
         print("Evaluating on test set with best model...")
