@@ -255,7 +255,7 @@ def train(model, optim, db, opt):
         with open(result_path, "a") as f:
             f.write(f"\nBest Accuracy: {max:.6f}\n")
 
-    return "complete"
+    return max
 
 
 def main():

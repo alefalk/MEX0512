@@ -1,0 +1,361 @@
+
+Best Accuracy: 0.821429
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.721429
+
+Best Accuracy: 0.766667
+
+Best Accuracy: 0.764286
+
+Best Accuracy: 0.752381
+
+Best Accuracy: 0.750000
+
+Best Accuracy: 0.819048
+
+Best Accuracy: 0.835714
+
+Best Accuracy: 0.802381
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.771429
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.821429
+
+Best Accuracy: 0.811905
+
+Best Accuracy: 0.833333
+
+Best Accuracy: 0.819048
+
+Best Accuracy: 0.797619
+
+Best Accuracy: 0.823810
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.809524
+
+Best Accuracy: 0.842857
+
+Best Accuracy: 0.776190
+
+Best Accuracy: 0.811905
+
+Best Accuracy: 0.830952
+
+Best Accuracy: 0.816667
+
+Best Accuracy: 0.754762
+
+Best Accuracy: 0.773810
+
+Best Accuracy: 0.719048
+
+Best Accuracy: 0.747619
+
+Best Accuracy: 0.761905
+
+Best Accuracy: 0.761905
+
+Best Accuracy: 0.738095
+
+Best Accuracy: 0.759524
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.816667
+
+Best Accuracy: 0.811905
+
+Best Accuracy: 0.771429
+
+Best Accuracy: 0.766667
+
+Best Accuracy: 0.792857
+
+Best Accuracy: 0.854762
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.819048
+
+Best Accuracy: 0.821429
+
+Best Accuracy: 0.821429
+
+Best Accuracy: 0.764286
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.797619
+
+Best Accuracy: 0.816667
+
+Best Accuracy: 0.809524
+
+Best Accuracy: 0.783333
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.747619
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.750000
+
+Best Accuracy: 0.747619
+
+Best Accuracy: 0.735714
+
+Best Accuracy: 0.735714
+
+Best Accuracy: 0.707143
+
+Best Accuracy: 0.754762
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.780952
+
+Best Accuracy: 0.776190
+
+Best Accuracy: 0.797619
+
+Best Accuracy: 0.740476
+
+Best Accuracy: 0.766667
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.809524
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.780952
+
+Best Accuracy: 0.795238
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.828571
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.816667
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.833333
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.797619
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.721429
+
+Best Accuracy: 0.766667
+
+Best Accuracy: 0.797619
+
+Best Accuracy: 0.723810
+
+Best Accuracy: 0.752381
+
+Best Accuracy: 0.764286
+
+Best Accuracy: 0.778571
+
+Best Accuracy: 0.802381
+
+Best Accuracy: 0.811905
+
+Best Accuracy: 0.776190
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.783333
+
+Best Accuracy: 0.835714
+
+Best Accuracy: 0.809524
+
+Best Accuracy: 0.814286
+
+Best Accuracy: 0.835714
+
+Best Accuracy: 0.823810
+
+Best Accuracy: 0.809524
+
+Best Accuracy: 0.823810
+
+Best Accuracy: 0.761905
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.797619
+
+Best Accuracy: 0.792857
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.826190
+
+Best Accuracy: 0.842857
+
+Best Accuracy: 0.802381
+
+Best Accuracy: 0.833333
+
+Best Accuracy: 0.823810
+
+Best Accuracy: 0.700000
+
+Best Accuracy: 0.714286
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.726190
+
+Best Accuracy: 0.726190
+
+Best Accuracy: 0.735714
+
+Best Accuracy: 0.778571
+
+Best Accuracy: 0.747619
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.783333
+
+Best Accuracy: 0.764286
+
+Best Accuracy: 0.783333
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.776190
+
+Best Accuracy: 0.814286
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.766667
+
+Best Accuracy: 0.816667
+
+Best Accuracy: 0.795238
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.785714
+
+Best Accuracy: 0.807143
+
+Best Accuracy: 0.790476
+
+Best Accuracy: 0.759524
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.792857
+
+Best Accuracy: 0.707143
+
+Best Accuracy: 0.702381
+
+Best Accuracy: 0.766667
+
+Best Accuracy: 0.730952
+
+Best Accuracy: 0.750000
+
+Best Accuracy: 0.704762
+
+Best Accuracy: 0.733333
+
+Best Accuracy: 0.771429
+
+Best Accuracy: 0.745238
+
+Best Accuracy: 0.733333
+
+Best Accuracy: 0.754762
+
+Best Accuracy: 0.778571
+
+Best Accuracy: 0.795238
+
+Best Accuracy: 0.752381
+
+Best Accuracy: 0.778571
+
+Best Accuracy: 0.819048
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.754762
+
+Best Accuracy: 0.826190
+
+Best Accuracy: 0.783333
+
+Best Accuracy: 0.800000
+
+Best Accuracy: 0.788095
+
+Best Accuracy: 0.728571
+
+Best Accuracy: 0.778571
+
+Best Accuracy: 0.783333
+
+Best Accuracy: 0.819048
+
+Best Accuracy: 0.804762
+
+Best Accuracy: 0.809524
+
+Best Accuracy: 0.814286
+
+Best Accuracy: 0.788095
+n_tree: 5, tree_depth: 9, batch_size: 512, hidden_dim: 1024, tree_feature_rate: 0.3, feat_dropout: 0.2, lr: 0.001,            Best_acc: 0.854762

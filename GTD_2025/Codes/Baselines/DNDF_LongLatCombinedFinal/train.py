@@ -19,6 +19,8 @@ import seaborn as sns
 import numpy as np
 from tqdm import tqdm
 import time
+import gc
+
 
 def parse_arg():
     logging.basicConfig(
@@ -258,9 +260,15 @@ def train(model, optim, db, opt):
             f.write(f"\nBest Accuracy: {max:.6f}\n")
             #f.write(str(best_model))
 
-    print(f"Results written to: {opt.results_dir}")
+        del model
+        del optim
+        gc.collect()
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
 
-    return "complete"
+        print(f"Results written to: {opt.results_dir}")
+
+        return "complete"
 
 
 def main():

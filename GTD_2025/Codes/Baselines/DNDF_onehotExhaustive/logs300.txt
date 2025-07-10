@@ -1,0 +1,1497 @@
+Running: n_tree=100, t_depth=7, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+1 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  28%|██▊       | 111/400 [02:13<05:47,  1.20s/it]
+Early stopping at epoch 112
+
+
+Best Accuracy: 0.580159
+
+Running: n_tree=100, t_depth=7, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+2 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  38%|███▊      | 152/400 [05:19<08:41,  2.10s/it]
+Early stopping at epoch 153
+
+Best Accuracy: 0.588095
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+3 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  40%|███▉      | 158/400 [03:49<05:51,  1.45s/it]
+Early stopping at epoch 159
+
+Best Accuracy: 0.575397
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+4 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  26%|██▋       | 105/400 [00:39<01:51,  2.65it/s]
+Early stopping at epoch 106
+
+Best Accuracy: 0.569841
+
+Running: n_tree=10, t_depth=10, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+5 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  58%|█████▊    | 234/400 [01:59<01:24,  1.96it/s]
+Early stopping at epoch 235
+
+Best Accuracy: 0.600000
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+6 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  34%|███▍      | 136/400 [03:46<07:19,  1.66s/it]
+Early stopping at epoch 137
+
+Best Accuracy: 0.584127
+
+Running: n_tree=100, t_depth=7, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+7 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 123/400 [04:17<09:40,  2.10s/it]
+Early stopping at epoch 124
+
+Best Accuracy: 0.596032
+
+Running: n_tree=100, t_depth=7, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+8 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  39%|███▉      | 157/400 [03:07<04:50,  1.19s/it]
+Early stopping at epoch 158
+
+Best Accuracy: 0.581746
+
+Running: n_tree=50, t_depth=8, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+9 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 114/400 [01:28<03:41,  1.29it/s]
+Early stopping at epoch 115
+
+Best Accuracy: 0.582540
+
+Running: n_tree=100, t_depth=7, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+10 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 122/400 [04:15<09:43,  2.10s/it]
+Early stopping at epoch 123
+
+
+Best Accuracy: 0.584921
+
+Running: n_tree=100, t_depth=9, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+11 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  51%|█████▏    | 205/400 [08:33<08:08,  2.51s/it]
+Early stopping at epoch 206
+
+
+Best Accuracy: 0.574603
+
+Running: n_tree=100, t_depth=7, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+12 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  29%|██▉       | 116/400 [04:04<09:58,  2.11s/it]
+Early stopping at epoch 117
+
+Best Accuracy: 0.592857
+
+Running: n_tree=20, t_depth=11, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+13 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  69%|██████▉   | 277/400 [03:33<01:35,  1.29it/s]
+Early stopping at epoch 278
+
+Best Accuracy: 0.592063
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+14 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 110/400 [00:42<01:51,  2.59it/s]
+Early stopping at epoch 111
+
+Best Accuracy: 0.596825
+
+Running: n_tree=10, t_depth=6, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+15 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 107/400 [00:35<01:38,  2.99it/s]
+Early stopping at epoch 108
+
+Best Accuracy: 0.594444
+
+Running: n_tree=10, t_depth=10, hd=768, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+16 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  39%|███▉      | 155/400 [01:19<02:05,  1.95it/s]
+Early stopping at epoch 156
+
+Best Accuracy: 0.588889
+
+Running: n_tree=10, t_depth=7, hd=768, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+17 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  56%|█████▌    | 223/400 [01:43<01:22,  2.15it/s]
+Early stopping at epoch 224
+
+Best Accuracy: 0.573810
+
+Running: n_tree=100, t_depth=11, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+18 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  42%|████▏     | 169/400 [04:40<06:23,  1.66s/it]
+Early stopping at epoch 170
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=5, t_depth=9, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+19 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  36%|███▋      | 145/400 [00:56<01:39,  2.57it/s]
+Early stopping at epoch 146
+
+Best Accuracy: 0.587302
+
+Running: n_tree=10, t_depth=7, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+20 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 108/400 [00:36<01:39,  2.95it/s]
+Early stopping at epoch 109
+
+Best Accuracy: 0.592857
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+21 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  35%|███▌      | 141/400 [03:41<06:46,  1.57s/it]
+Early stopping at epoch 142
+
+Best Accuracy: 0.576984
+
+Running: n_tree=5, t_depth=11, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+22 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  39%|███▉      | 156/400 [01:00<01:34,  2.58it/s]
+Early stopping at epoch 157
+
+Best Accuracy: 0.600000
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+23 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  29%|██▉       | 117/400 [00:58<02:21,  2.00it/s]
+Early stopping at epoch 118
+
+Best Accuracy: 0.585714
+
+Running: n_tree=20, t_depth=8, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+24 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  49%|████▉     | 195/400 [01:26<01:31,  2.24it/s]
+Early stopping at epoch 196
+
+Best Accuracy: 0.580159
+
+Running: n_tree=20, t_depth=9, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+25 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  80%|███████▉  | 318/400 [03:40<00:56,  1.44it/s]
+Early stopping at epoch 319
+
+Best Accuracy: 0.586508
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+26 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  42%|████▏     | 169/400 [04:18<05:52,  1.53s/it]
+Early stopping at epoch 170
+
+Best Accuracy: 0.596032
+
+Running: n_tree=20, t_depth=10, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+27 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  36%|███▌      | 144/400 [01:45<03:06,  1.37it/s]
+Early stopping at epoch 145
+
+Best Accuracy: 0.586508
+
+Running: n_tree=20, t_depth=9, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+28 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███▏      | 125/400 [01:25<03:08,  1.46it/s]
+Early stopping at epoch 126
+
+Best Accuracy: 0.582540
+
+Running: n_tree=20, t_depth=7, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+29 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  35%|███▌      | 140/400 [01:25<02:38,  1.64it/s]
+Early stopping at epoch 141
+
+Best Accuracy: 0.592857
+
+Running: n_tree=100, t_depth=10, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+30 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  38%|███▊      | 152/400 [06:41<10:55,  2.64s/it]
+Early stopping at epoch 153
+
+Best Accuracy: 0.589683
+
+Running: n_tree=10, t_depth=7, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+31 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  42%|████▏     | 166/400 [00:50<01:11,  3.28it/s]
+Early stopping at epoch 167
+
+Best Accuracy: 0.586508
+
+Running: n_tree=100, t_depth=11, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+32 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  51%|█████     | 203/400 [09:34<09:17,  2.83s/it]
+Early stopping at epoch 204
+
+Best Accuracy: 0.588095
+
+Running: n_tree=50, t_depth=11, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+33 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  38%|███▊      | 154/400 [02:23<03:49,  1.07it/s]
+Early stopping at epoch 155
+
+Best Accuracy: 0.584921
+
+Running: n_tree=20, t_depth=7, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+34 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 108/400 [00:47<02:07,  2.29it/s]
+Early stopping at epoch 109
+
+Best Accuracy: 0.589683
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+35 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███▏      | 125/400 [00:55<02:02,  2.25it/s]
+Early stopping at epoch 126
+
+Best Accuracy: 0.581746
+
+Running: n_tree=5, t_depth=6, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+36 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  33%|███▎      | 133/400 [00:43<01:26,  3.09it/s]
+Early stopping at epoch 134
+
+Best Accuracy: 0.576984
+
+Running: n_tree=5, t_depth=7, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+37 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  58%|█████▊    | 232/400 [01:17<00:56,  2.98it/s]
+Early stopping at epoch 233
+
+Best Accuracy: 0.581746
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+38 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 121/400 [00:47<01:48,  2.56it/s]
+Early stopping at epoch 122
+
+Best Accuracy: 0.580952
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+39 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 120/400 [01:40<03:53,  1.20it/s]
+Early stopping at epoch 121
+
+Best Accuracy: 0.581746
+
+Running: n_tree=20, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+40 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███▏      | 125/400 [01:04<02:20,  1.95it/s]
+Early stopping at epoch 126
+
+Best Accuracy: 0.588095
+
+Running: n_tree=10, t_depth=12, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+41 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  39%|███▉      | 156/400 [00:54<01:25,  2.85it/s]
+Early stopping at epoch 157
+
+Best Accuracy: 0.601587
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+42 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 124/400 [01:43<03:49,  1.20it/s]
+Early stopping at epoch 125
+
+Best Accuracy: 0.596032
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+43 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 109/400 [00:29<01:19,  3.68it/s]
+Early stopping at epoch 110
+
+Best Accuracy: 0.584921
+
+Running: n_tree=100, t_depth=9, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+44 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  34%|███▍      | 136/400 [05:35<10:50,  2.46s/it]
+Early stopping at epoch 137
+
+Best Accuracy: 0.582540
+
+Running: n_tree=5, t_depth=7, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+45 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  64%|██████▎   | 254/400 [01:37<00:55,  2.62it/s]
+Early stopping at epoch 255
+
+Best Accuracy: 0.590476
+
+Running: n_tree=50, t_depth=6, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+46 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 123/400 [01:19<02:58,  1.56it/s]
+Early stopping at epoch 124
+
+Best Accuracy: 0.579365
+
+Running: n_tree=50, t_depth=11, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+47 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  47%|████▋     | 189/400 [04:48<05:22,  1.53s/it]
+Early stopping at epoch 190
+
+Best Accuracy: 0.599206
+
+Running: n_tree=20, t_depth=6, hd=768, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+48 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  33%|███▎      | 131/400 [01:14<02:33,  1.76it/s]
+Early stopping at epoch 132
+
+Best Accuracy: 0.593651
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+49 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  41%|████      | 163/400 [03:46<05:28,  1.39s/it]
+Early stopping at epoch 164
+
+Best Accuracy: 0.588095
+
+Running: n_tree=20, t_depth=11, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+50 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  54%|█████▍    | 215/400 [02:50<02:26,  1.26it/s]
+Early stopping at epoch 216
+
+Best Accuracy: 0.584921
+
+Running: n_tree=5, t_depth=8, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+1 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  42%|████▏     | 168/400 [01:16<01:46,  2.18it/s]
+Early stopping at epoch 169
+
+Best Accuracy: 0.572222
+
+Running: n_tree=100, t_depth=10, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+2 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|██▉       | 119/400 [03:30<08:16,  1.77s/it]
+Early stopping at epoch 120
+
+
+Best Accuracy: 0.573810
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+3 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  28%|██▊       | 112/400 [03:15<08:23,  1.75s/it]
+Early stopping at epoch 113
+
+Best Accuracy: 0.579365
+
+Running: n_tree=100, t_depth=9, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+4 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 124/400 [03:24<07:35,  1.65s/it]
+Early stopping at epoch 125
+
+
+Best Accuracy: 0.584127
+
+Running: n_tree=10, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+5 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  27%|██▋       | 107/400 [00:53<02:25,  2.02it/s]
+Early stopping at epoch 108
+
+Best Accuracy: 0.570635
+
+Running: n_tree=20, t_depth=12, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+6 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  34%|███▍      | 137/400 [01:36<03:05,  1.42it/s]
+Early stopping at epoch 138
+
+Best Accuracy: 0.587302
+
+Running: n_tree=50, t_depth=6, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+7 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|██▉       | 118/400 [02:35<06:12,  1.32s/it]
+Early stopping at epoch 119
+
+Best Accuracy: 0.580159
+
+Running: n_tree=20, t_depth=6, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+8 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 111/400 [01:19<03:27,  1.39it/s]
+Early stopping at epoch 112
+
+Best Accuracy: 0.590476
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+9 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  49%|████▉     | 196/400 [04:49<05:00,  1.47s/it]
+Early stopping at epoch 197
+
+
+Best Accuracy: 0.585714
+
+Running: n_tree=10, t_depth=9, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+10 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  71%|███████   | 283/400 [01:56<00:48,  2.43it/s]
+Early stopping at epoch 284
+
+Best Accuracy: 0.578571
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+11 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  38%|███▊      | 152/400 [04:32<07:24,  1.79s/it]
+Early stopping at epoch 153
+
+Best Accuracy: 0.598413
+
+Running: n_tree=100, t_depth=10, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+12 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  44%|████▍     | 177/400 [09:10<11:33,  3.11s/it]
+Early stopping at epoch 178
+
+
+Best Accuracy: 0.584921
+
+Running: n_tree=5, t_depth=9, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+13 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  42%|████▎     | 170/400 [00:58<01:18,  2.92it/s]
+Early stopping at epoch 171
+
+Best Accuracy: 0.567460
+
+Running: n_tree=10, t_depth=8, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+14 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  29%|██▉       | 116/400 [01:05<02:39,  1.78it/s]
+Early stopping at epoch 117
+
+Best Accuracy: 0.591270
+
+Running: n_tree=100, t_depth=8, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+15 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 114/400 [04:58<12:29,  2.62s/it]
+Early stopping at epoch 115
+
+
+Best Accuracy: 0.581746
+
+Running: n_tree=20, t_depth=6, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+16 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  30%|███       | 121/400 [00:58<02:15,  2.07it/s]
+Early stopping at epoch 122
+
+Best Accuracy: 0.580952
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+17 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  43%|████▎     | 171/400 [07:41<10:18,  2.70s/it]
+Early stopping at epoch 172
+
+
+Best Accuracy: 0.574603
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+18 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  57%|█████▋    | 228/400 [09:19<07:02,  2.45s/it]
+Early stopping at epoch 229
+
+
+Best Accuracy: 0.580159
+
+Running: n_tree=5, t_depth=6, hd=768, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+19 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  28%|██▊       | 111/400 [00:38<01:41,  2.85it/s]
+Early stopping at epoch 112
+
+Best Accuracy: 0.586508
+
+Running: n_tree=50, t_depth=6, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+20 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  36%|███▌      | 143/400 [03:00<05:24,  1.26s/it]
+Early stopping at epoch 144
+
+Best Accuracy: 0.579365
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+21 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 108/400 [00:42<01:54,  2.55it/s]
+Early stopping at epoch 109
+
+Best Accuracy: 0.575397
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+22 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  55%|█████▍    | 219/400 [06:29<05:22,  1.78s/it]
+Early stopping at epoch 220
+
+Best Accuracy: 0.576190
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+23 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  34%|███▍      | 137/400 [03:32<06:47,  1.55s/it]
+Early stopping at epoch 138
+
+Best Accuracy: 0.583333
+
+Running: n_tree=5, t_depth=12, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+24 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 124/400 [00:54<02:02,  2.26it/s]
+Early stopping at epoch 125
+
+Best Accuracy: 0.586508
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+25 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  66%|██████▌   | 264/400 [02:31<01:18,  1.74it/s]
+Early stopping at epoch 265
+
+Best Accuracy: 0.584127
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+26 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 109/400 [00:42<01:54,  2.55it/s]
+Early stopping at epoch 110
+
+Best Accuracy: 0.582540
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+27 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|██▉       | 119/400 [00:38<01:31,  3.08it/s]
+Early stopping at epoch 120
+
+Best Accuracy: 0.569841
+
+Running: n_tree=100, t_depth=6, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+28 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 120/400 [02:25<05:39,  1.21s/it]
+Early stopping at epoch 121
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=20, t_depth=10, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+29 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  32%|███▏      | 126/400 [01:43<03:45,  1.21it/s]
+Early stopping at epoch 127
+
+Best Accuracy: 0.584127
+
+Running: n_tree=100, t_depth=7, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+30 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 123/400 [04:51<10:55,  2.37s/it]
+Early stopping at epoch 124
+
+
+Best Accuracy: 0.585714
+
+Running: n_tree=5, t_depth=7, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+31 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  69%|██████▉   | 277/400 [01:49<00:48,  2.54it/s]
+Early stopping at epoch 278
+
+Best Accuracy: 0.580159
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+32 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  46%|████▋     | 186/400 [03:25<03:56,  1.10s/it]
+Early stopping at epoch 187
+
+Best Accuracy: 0.599206
+
+Running: n_tree=5, t_depth=9, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+33 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  47%|████▋     | 187/400 [01:16<01:26,  2.45it/s]
+Early stopping at epoch 188
+
+Best Accuracy: 0.583333
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+34 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  91%|█████████▏| 365/400 [12:22<01:11,  2.03s/it]
+Early stopping at epoch 366
+
+Best Accuracy: 0.581746
+
+Running: n_tree=5, t_depth=6, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+35 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 107/400 [00:31<01:25,  3.44it/s]
+Early stopping at epoch 108
+
+Best Accuracy: 0.573810
+
+Running: n_tree=10, t_depth=8, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+36 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  62%|██████▏   | 247/400 [01:27<00:54,  2.83it/s]
+Early stopping at epoch 248
+
+Best Accuracy: 0.582540
+
+Running: n_tree=100, t_depth=6, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+37 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 124/400 [02:30<05:34,  1.21s/it]
+Early stopping at epoch 125
+
+
+Best Accuracy: 0.584921
+
+Running: n_tree=5, t_depth=11, hd=768, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+38 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  28%|██▊       | 111/400 [00:34<01:30,  3.19it/s]
+Early stopping at epoch 112
+
+Best Accuracy: 0.585714
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+39 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  38%|███▊      | 150/400 [09:35<15:59,  3.84s/it]
+Early stopping at epoch 151
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=100, t_depth=6, hd=768, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+40 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  30%|███       | 120/400 [02:25<05:40,  1.22s/it]
+Early stopping at epoch 121
+
+
+Best Accuracy: 0.587302
+
+Running: n_tree=10, t_depth=7, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+41 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  49%|████▉     | 195/400 [01:37<01:42,  2.00it/s]
+Early stopping at epoch 196
+
+Best Accuracy: 0.573810
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+42 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 113/400 [01:41<04:17,  1.12it/s]
+Early stopping at epoch 114
+
+Best Accuracy: 0.581746
+
+Running: n_tree=10, t_depth=6, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+43 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  48%|████▊     | 190/400 [01:04<01:11,  2.93it/s]
+Early stopping at epoch 191
+
+Best Accuracy: 0.586508
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+44 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 112/400 [00:56<02:24,  1.99it/s]
+Early stopping at epoch 113
+
+Best Accuracy: 0.588889
+
+Running: n_tree=20, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+45 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  33%|███▎      | 132/400 [01:49<03:42,  1.20it/s]
+Early stopping at epoch 133
+
+Best Accuracy: 0.584127
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+46 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  41%|████▏     | 165/400 [01:06<01:34,  2.50it/s]
+Early stopping at epoch 166
+
+Best Accuracy: 0.595238
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+47 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  78%|███████▊  | 313/400 [09:07<02:32,  1.75s/it]
+Early stopping at epoch 314
+
+Best Accuracy: 0.589683
+
+Running: n_tree=20, t_depth=6, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+48 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 114/400 [00:51<02:08,  2.23it/s]
+Early stopping at epoch 115
+
+Best Accuracy: 0.583333
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+49 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  26%|██▋       | 105/400 [00:39<01:52,  2.63it/s]
+Early stopping at epoch 106
+
+Best Accuracy: 0.573016
+
+Running: n_tree=20, t_depth=7, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+50 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  74%|███████▍  | 298/400 [03:31<01:12,  1.41it/s]
+Early stopping at epoch 299
+
+Best Accuracy: 0.588889
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+51 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  50%|█████     | 200/400 [02:58<02:58,  1.12it/s]
+Early stopping at epoch 201
+
+Best Accuracy: 0.592857
+
+Running: n_tree=20, t_depth=6, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+52 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  34%|███▍      | 138/400 [01:29<02:49,  1.54it/s]
+Early stopping at epoch 139
+
+Best Accuracy: 0.597619
+
+Running: n_tree=20, t_depth=9, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+53 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|██▉       | 119/400 [00:59<02:20,  1.99it/s]
+Early stopping at epoch 120
+
+Best Accuracy: 0.577778
+
+Running: n_tree=5, t_depth=6, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+54 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  26%|██▋       | 105/400 [00:30<01:25,  3.44it/s]
+Early stopping at epoch 106
+
+Best Accuracy: 0.559524
+
+Running: n_tree=10, t_depth=6, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+55 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  40%|████      | 160/400 [00:53<01:20,  2.99it/s]
+Early stopping at epoch 161
+
+Best Accuracy: 0.580159
+
+Running: n_tree=20, t_depth=6, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+56 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 112/400 [00:50<02:09,  2.23it/s]
+Early stopping at epoch 113
+
+Best Accuracy: 0.584127
+
+Running: n_tree=5, t_depth=11, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+57 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  48%|████▊     | 192/400 [01:23<01:30,  2.30it/s]
+Early stopping at epoch 193
+
+Best Accuracy: 0.597619
+
+Running: n_tree=50, t_depth=6, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+58 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 112/400 [01:22<03:33,  1.35it/s]
+Early stopping at epoch 113
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=5, t_depth=7, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+59 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  44%|████▍     | 176/400 [01:10<01:29,  2.50it/s]
+Early stopping at epoch 177
+
+Best Accuracy: 0.566667
+
+Running: n_tree=5, t_depth=6, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+60 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 120/400 [00:46<01:48,  2.58it/s]
+Early stopping at epoch 121
+
+Best Accuracy: 0.591270
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+61 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 122/400 [01:04<02:26,  1.90it/s]
+Early stopping at epoch 123
+
+Best Accuracy: 0.584127
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+62 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  29%|██▉       | 116/400 [01:43<04:14,  1.12it/s]
+Early stopping at epoch 117
+
+Best Accuracy: 0.585714
+
+Running: n_tree=100, t_depth=11, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+63 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  35%|███▍      | 139/400 [07:46<14:36,  3.36s/it]
+Early stopping at epoch 140
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=10, t_depth=12, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+64 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  35%|███▍      | 139/400 [01:00<01:54,  2.28it/s]
+Early stopping at epoch 140
+
+Best Accuracy: 0.603968
+
+Running: n_tree=10, t_depth=6, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+65 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  27%|██▋       | 108/400 [00:35<01:37,  3.01it/s]
+Early stopping at epoch 109
+
+Best Accuracy: 0.594444
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+66 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  37%|███▋      | 148/400 [05:59<10:11,  2.43s/it]
+Early stopping at epoch 149
+
+
+Best Accuracy: 0.590476
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+67 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  30%|██▉       | 118/400 [07:18<17:27,  3.72s/it]
+Early stopping at epoch 119
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=100, t_depth=7, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+68 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  28%|██▊       | 110/400 [04:21<11:29,  2.38s/it]
+Early stopping at epoch 111
+
+
+Best Accuracy: 0.576190
+
+Running: n_tree=10, t_depth=6, hd=768, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+69 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  68%|██████▊   | 271/400 [02:08<01:00,  2.12it/s]
+Early stopping at epoch 272
+
+Best Accuracy: 0.576190
+
+Running: n_tree=5, t_depth=10, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+70 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  26%|██▋       | 106/400 [00:34<01:34,  3.10it/s]
+Early stopping at epoch 107
+
+Best Accuracy: 0.584921
+
+Running: n_tree=20, t_depth=7, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+71 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  43%|████▎     | 173/400 [02:04<02:43,  1.39it/s]
+Early stopping at epoch 174
+
+Best Accuracy: 0.590476
+
+Running: n_tree=10, t_depth=6, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+72 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|██▉       | 119/400 [00:40<01:34,  2.97it/s]
+Early stopping at epoch 120
+
+Best Accuracy: 0.585714
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+73 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  54%|█████▎    | 214/400 [02:50<02:28,  1.25it/s]
+Early stopping at epoch 215
+
+Best Accuracy: 0.597619
+
+Running: n_tree=10, t_depth=10, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+74 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  44%|████▍     | 178/400 [01:41<02:06,  1.75it/s]
+Early stopping at epoch 179
+
+Best Accuracy: 0.590476
+
+Running: n_tree=5, t_depth=9, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+75 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  36%|███▌      | 143/400 [00:43<01:18,  3.27it/s]
+Early stopping at epoch 144
+
+Best Accuracy: 0.571429
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+76 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  38%|███▊      | 150/400 [03:51<06:25,  1.54s/it]
+Early stopping at epoch 151
+
+Best Accuracy: 0.578571
+
+Running: n_tree=20, t_depth=8, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+77 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 122/400 [00:59<02:14,  2.06it/s]
+Early stopping at epoch 123
+
+Best Accuracy: 0.573810
+
+Running: n_tree=50, t_depth=6, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+78 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  30%|███       | 121/400 [01:28<03:24,  1.36it/s]
+Early stopping at epoch 122
+
+
+Best Accuracy: 0.588889
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+79 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  30%|██▉       | 119/400 [01:46<04:11,  1.12it/s]
+Early stopping at epoch 120
+
+
+Best Accuracy: 0.583333
+
+Running: n_tree=20, t_depth=11, hd=768, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+80 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  58%|█████▊    | 231/400 [02:07<01:33,  1.81it/s]
+Early stopping at epoch 232
+
+Best Accuracy: 0.584921
+
+Running: n_tree=100, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+81 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  33%|███▎      | 132/400 [06:42<13:37,  3.05s/it]
+Early stopping at epoch 133
+
+
+Best Accuracy: 0.580952
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+82 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  60%|██████    | 241/400 [01:27<00:57,  2.76it/s]
+Early stopping at epoch 242
+
+Best Accuracy: 0.586508
+
+Running: n_tree=20, t_depth=6, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+83 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  42%|████▏     | 168/400 [01:10<01:37,  2.37it/s]
+Early stopping at epoch 169
+
+Best Accuracy: 0.593651
+
+Running: n_tree=100, t_depth=6, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+84 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  34%|███▎      | 134/400 [02:42<05:22,  1.21s/it]
+Early stopping at epoch 135
+
+
+Best Accuracy: 0.587302
+
+Running: n_tree=100, t_depth=11, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+85 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  30%|███       | 121/400 [03:47<08:43,  1.88s/it]
+Early stopping at epoch 122
+
+
+Best Accuracy: 0.572222
+
+Running: n_tree=5, t_depth=6, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+86 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  45%|████▌     | 180/400 [00:56<01:09,  3.19it/s]
+Early stopping at epoch 181
+
+Best Accuracy: 0.580159
+
+Running: n_tree=10, t_depth=7, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+87 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  41%|████      | 164/400 [00:56<01:21,  2.88it/s]
+Early stopping at epoch 165
+
+Best Accuracy: 0.579365
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+88 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  28%|██▊       | 113/400 [02:53<07:19,  1.53s/it]
+Early stopping at epoch 114
+
+Best Accuracy: 0.581746
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+89 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  32%|███▎      | 130/400 [04:15<08:50,  1.96s/it]
+Early stopping at epoch 131
+
+Best Accuracy: 0.591270
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+90 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  26%|██▋       | 106/400 [00:41<01:54,  2.58it/s]
+Early stopping at epoch 107
+
+Best Accuracy: 0.588889
+
+Running: n_tree=10, t_depth=8, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+91 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  70%|██████▉   | 278/400 [01:39<00:43,  2.81it/s]
+Early stopping at epoch 279
+
+Best Accuracy: 0.581746
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+92 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  51%|█████     | 204/400 [01:48<01:44,  1.88it/s]
+Early stopping at epoch 205
+
+Best Accuracy: 0.589683
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+93 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  31%|███       | 123/400 [04:58<11:11,  2.42s/it]
+Early stopping at epoch 124
+
+Best Accuracy: 0.579365
+
+
+Running: n_tree=100, t_depth=8, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+94 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  32%|███▏      | 126/400 [03:01<06:34,  1.44s/it]
+Early stopping at epoch 127
+
+
+Best Accuracy: 0.579365
+
+Running: n_tree=50, t_depth=10, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+95 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  66%|██████▋   | 265/400 [04:39<02:22,  1.05s/it]
+Early stopping at epoch 266
+
+Best Accuracy: 0.599206
+
+Running: n_tree=50, t_depth=6, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+96 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  46%|████▌     | 182/400 [04:10<05:00,  1.38s/it]
+Early stopping at epoch 183
+
+Best Accuracy: 0.588095
+
+Running: n_tree=5, t_depth=6, hd=768, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+97 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  68%|██████▊   | 271/400 [01:22<00:39,  3.30it/s]
+Early stopping at epoch 272
+
+Best Accuracy: 0.582540
+
+Running: n_tree=100, t_depth=8, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+98 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  32%|███▏      | 129/400 [03:07<06:34,  1.46s/it]
+Early stopping at epoch 130
+
+
+Best Accuracy: 0.575397
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+99 / 100
+Use gtd300 dataset
+Patience: 100
+Training Epochs:  32%|███▏      | 126/400 [03:12<06:58,  1.53s/it]
+Early stopping at epoch 127
+
+Best Accuracy: 0.590476
+
+Running: n_tree=50, t_depth=11, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+100 / 100
+Use gtd300 dataset
+
+Patience: 100
+Training Epochs:  56%|█████▋    | 226/400 [04:01<03:06,  1.07s/it]
+Early stopping at epoch 227
+
+Best Accuracy: 0.579365
