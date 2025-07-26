@@ -1,0 +1,858 @@
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+1 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  72%|███████▏  | 289/400 [02:57<01:08,  1.63it/s]
+Early stopping at epoch 290
+
+Best Accuracy: 0.539421
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+2 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  52%|█████▏    | 206/400 [01:52<01:46,  1.83it/s]
+Early stopping at epoch 207
+
+Best Accuracy: 0.502495
+
+Running: n_tree=10, t_depth=9, hd=768, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+3 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [02:01<00:00,  3.30it/s]
+
+Best Accuracy: 0.551896
+
+Running: n_tree=10, t_depth=6, hd=768, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+4 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  42%|████▏     | 168/400 [01:18<01:48,  2.13it/s]
+Early stopping at epoch 169
+
+Best Accuracy: 0.488024
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+5 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  98%|█████████▊| 393/400 [12:44<00:13,  1.95s/it]
+Early stopping at epoch 394
+
+
+Best Accuracy: 0.550898
+
+Running: n_tree=10, t_depth=7, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+6 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  96%|█████████▌| 382/400 [03:10<00:08,  2.00it/s]
+Early stopping at epoch 383
+
+Best Accuracy: 0.497505
+
+Running: n_tree=50, t_depth=10, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+7 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  92%|█████████▏| 368/400 [12:36<01:05,  2.06s/it]
+Early stopping at epoch 369
+
+Best Accuracy: 0.565868
+
+Running: n_tree=100, t_depth=8, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+8 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  88%|████████▊ | 351/400 [10:06<01:24,  1.73s/it]
+Early stopping at epoch 352
+
+
+Best Accuracy: 0.523952
+
+Running: n_tree=100, t_depth=6, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+9 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  94%|█████████▍| 377/400 [17:30<01:04,  2.79s/it]
+Early stopping at epoch 378
+
+
+Best Accuracy: 0.510978
+
+Running: n_tree=100, t_depth=8, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+10 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [22:28<00:00,  3.37s/it]
+
+Best Accuracy: 0.543413
+
+Running: n_tree=20, t_depth=7, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+11 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  78%|███████▊  | 314/400 [02:13<00:36,  2.35it/s]
+Early stopping at epoch 315
+
+Best Accuracy: 0.494511
+
+Running: n_tree=10, t_depth=6, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+12 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  43%|████▎     | 173/400 [00:46<01:00,  3.74it/s]
+Early stopping at epoch 174
+
+Best Accuracy: 0.473054
+
+Running: n_tree=5, t_depth=6, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+13 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  84%|████████▍ | 337/400 [02:07<00:23,  2.64it/s]
+Early stopping at epoch 338
+
+Best Accuracy: 0.473054
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+14 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  56%|█████▌    | 224/400 [01:23<01:05,  2.69it/s]
+Early stopping at epoch 225
+
+Best Accuracy: 0.508483
+
+Running: n_tree=100, t_depth=6, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+15 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  57%|█████▋    | 228/400 [05:25<04:05,  1.43s/it]
+Early stopping at epoch 229
+
+
+Best Accuracy: 0.501497
+
+Running: n_tree=10, t_depth=6, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+16 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  48%|████▊     | 192/400 [00:51<00:55,  3.75it/s]
+Early stopping at epoch 193
+
+Best Accuracy: 0.477046
+
+Running: n_tree=5, t_depth=6, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+17 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  83%|████████▎ | 333/400 [01:07<00:13,  4.93it/s]
+Early stopping at epoch 334
+
+Best Accuracy: 0.452096
+
+Running: n_tree=100, t_depth=11, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+18 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  72%|███████▏  | 287/400 [11:32<04:32,  2.41s/it]
+Early stopping at epoch 288
+
+
+Best Accuracy: 0.559381
+
+Running: n_tree=10, t_depth=12, hd=768, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+19 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  90%|█████████ | 362/400 [02:20<00:14,  2.57it/s]
+Early stopping at epoch 363
+
+Best Accuracy: 0.581337
+
+Running: n_tree=10, t_depth=7, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+20 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [01:48<00:00,  3.69it/s]
+
+Best Accuracy: 0.505988
+
+Running: n_tree=20, t_depth=11, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+21 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  61%|██████▏   | 245/400 [04:17<02:42,  1.05s/it]
+Early stopping at epoch 246
+
+Best Accuracy: 0.538922
+
+Running: n_tree=100, t_depth=7, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+22 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  59%|█████▉    | 236/400 [12:07<08:25,  3.08s/it]
+Early stopping at epoch 237
+
+
+Best Accuracy: 0.504990
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+23 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  80%|███████▉  | 318/400 [03:03<00:47,  1.73it/s]
+Early stopping at epoch 319
+
+Best Accuracy: 0.529940
+
+Running: n_tree=5, t_depth=11, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+24 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [01:37<00:00,  4.11it/s]
+
+Best Accuracy: 0.529441
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+25 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [23:38<00:00,  3.55s/it]
+
+Best Accuracy: 0.572355
+
+Running: n_tree=100, t_depth=7, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+26 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  95%|█████████▌| 381/400 [10:11<00:30,  1.60s/it]
+Early stopping at epoch 382
+
+
+Best Accuracy: 0.518962
+
+Running: n_tree=5, t_depth=11, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+27 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  59%|█████▉    | 236/400 [00:54<00:38,  4.29it/s]
+Early stopping at epoch 237
+
+Best Accuracy: 0.522954
+
+Running: n_tree=10, t_depth=12, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+28 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  69%|██████▉   | 277/400 [02:09<00:57,  2.13it/s]
+Early stopping at epoch 278
+
+Best Accuracy: 0.553892
+
+Running: n_tree=20, t_depth=8, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+29 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  60%|█████▉    | 238/400 [01:48<01:14,  2.19it/s]
+Early stopping at epoch 239
+
+Best Accuracy: 0.530439
+
+Running: n_tree=100, t_depth=9, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+30 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  62%|██████▏   | 249/400 [15:14<09:14,  3.67s/it]
+Early stopping at epoch 250
+
+
+Best Accuracy: 0.537924
+
+Running: n_tree=100, t_depth=11, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+31 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  91%|█████████ | 363/400 [25:46<02:37,  4.26s/it]
+Early stopping at epoch 364
+
+
+Best Accuracy: 0.559880
+
+Running: n_tree=10, t_depth=9, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+32 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  79%|███████▉  | 315/400 [02:44<00:44,  1.91it/s]
+Early stopping at epoch 316
+
+Best Accuracy: 0.539920
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+33 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [02:58<00:00,  2.25it/s]
+
+Best Accuracy: 0.557884
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+34 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  68%|██████▊   | 273/400 [02:42<01:15,  1.68it/s]
+Early stopping at epoch 274
+
+Best Accuracy: 0.549900
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+35 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [14:36<00:00,  2.19s/it]
+
+Best Accuracy: 0.550399
+
+Running: n_tree=10, t_depth=7, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+36 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  62%|██████▏   | 247/400 [01:57<01:12,  2.10it/s]
+Early stopping at epoch 248
+
+Best Accuracy: 0.503992
+
+Running: n_tree=100, t_depth=9, hd=768, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.01
+37 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [12:07<00:00,  1.82s/it]
+
+Best Accuracy: 0.553892
+
+Running: n_tree=20, t_depth=12, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+38 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  80%|████████  | 322/400 [05:32<01:20,  1.03s/it]
+Early stopping at epoch 323
+
+Best Accuracy: 0.567864
+
+Running: n_tree=20, t_depth=10, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+39 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [05:59<00:00,  1.11it/s]
+
+Best Accuracy: 0.533433
+
+Running: n_tree=50, t_depth=7, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+40 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  75%|███████▌  | 301/400 [07:54<02:36,  1.58s/it]
+Early stopping at epoch 302
+
+Best Accuracy: 0.519461
+
+Running: n_tree=20, t_depth=10, hd=768, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+41 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [05:57<00:00,  1.12it/s]
+
+Best Accuracy: 0.560379
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+42 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  94%|█████████▎| 374/400 [05:59<00:25,  1.04it/s]
+Early stopping at epoch 375
+
+Best Accuracy: 0.533433
+
+Running: n_tree=20, t_depth=8, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+43 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [05:18<00:00,  1.26it/s]
+
+Best Accuracy: 0.545409
+
+Running: n_tree=20, t_depth=11, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+44 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs:  64%|██████▍   | 255/400 [02:18<01:18,  1.84it/s]
+Early stopping at epoch 256
+
+Best Accuracy: 0.530439
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+45 / 100
+Use gtd478 dataset
+
+Patience: 100
+Training Epochs:  80%|████████  | 322/400 [01:14<00:18,  4.32it/s]
+Early stopping at epoch 323
+
+Best Accuracy: 0.536926
+
+Running: n_tree=10, t_depth=6, hd=768, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+46 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [01:35<00:00,  4.20it/s]
+
+Best Accuracy: 0.510479
+
+Running: n_tree=100, t_depth=6, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.01
+47 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [09:20<00:00,  1.40s/it]
+
+Best Accuracy: 0.505988
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+48 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [07:30<00:00,  1.13s/it]
+
+Best Accuracy: 0.576846
+
+Running: n_tree=10, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+49 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [02:30<00:00,  2.65it/s]
+
+Best Accuracy: 0.534930
+
+Running: n_tree=100, t_depth=6, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+50 / 100
+Use gtd478 dataset
+Patience: 100
+Training Epochs: 100%|██████████| 400/400 [09:15<00:00,  1.39s/it]
+
+Best Accuracy: 0.515469
+Running: n_tree=100, t_depth=11, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.001
+
+0.5563872255489022
+
+Running: n_tree=10, t_depth=10, hd=768, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.5354291417165669
+
+Running: n_tree=100, t_depth=9, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5444111776447106
+
+Running: n_tree=5, t_depth=13, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5533932135728543
+
+Running: n_tree=100, t_depth=10, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.2, lr=0.01
+
+0.5558882235528942
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.001
+
+0.5414171656686627
+
+Running: n_tree=100, t_depth=8, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5274451097804391
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.001
+
+0.5513972055888223
+
+Running: n_tree=5, t_depth=9, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.001
+
+0.47604790419161674
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+
+0.5723552894211577
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+
+0.531437125748503
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=256, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5803393213572854
+
+Running: n_tree=100, t_depth=13, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+
+0.5713572854291418
+
+Running: n_tree=5, t_depth=8, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.49101796407185627
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5389221556886228
+
+Running: n_tree=20, t_depth=13, hd=768, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.01
+
+0.5853293413173652
+
+Running: n_tree=5, t_depth=9, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+
+0.5074850299401198
+
+Running: n_tree=10, t_depth=12, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+
+0.5543912175648703
+
+Running: n_tree=100, t_depth=9, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.5419161676646707
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=256, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5404191616766467
+
+Running: n_tree=5, t_depth=10, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.001
+
+0.501996007984032
+
+Running: n_tree=20, t_depth=12, hd=768, batch_size=512, feature_rate=0.2, dropout=0.2, lr=0.001
+
+0.5543912175648703
+
+Running: n_tree=10, t_depth=13, hd=768, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.001
+
+0.562375249500998
+
+Running: n_tree=50, t_depth=12, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5653692614770459
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5394211576846307
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.001
+
+0.5708582834331337
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.01
+
+0.5299401197604791
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5449101796407185
+
+Running: n_tree=5, t_depth=10, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.001
+
+0.499001996007984
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.531437125748503
+
+Running: n_tree=5, t_depth=8, hd=768, batch_size=512, feature_rate=0.1, dropout=0.2, lr=0.001
+
+0.4935129740518962
+
+Running: n_tree=100, t_depth=13, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.001
+
+0.5643712574850299
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+
+0.5209580838323353
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.2, lr=0.01
+
+0.5319361277445109
+
+Running: n_tree=10, t_depth=13, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.001
+
+0.562375249500998
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.1, lr=0.001
+
+0.5499001996007984
+
+Running: n_tree=20, t_depth=8, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+
+0.5134730538922155
+
+Running: n_tree=10, t_depth=13, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.001
+
+0.5464071856287425
+
+Running: n_tree=10, t_depth=12, hd=768, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.01
+
+0.5538922155688623
+
+Running: n_tree=20, t_depth=11, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+
+0.5449101796407185
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+
+0.5419161676646707
+
+Running: n_tree=50, t_depth=12, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.01
+
+0.5753493013972056
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+
+0.5668662674650699
+
+Running: n_tree=50, t_depth=8, hd=768, batch_size=256, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.5394211576846307
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5059880239520959
+
+Running: n_tree=10, t_depth=10, hd=768, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+
+0.5204590818363274
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5818363273453094
+
+Running: n_tree=5, t_depth=10, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.01
+
+0.5144710578842315
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5578842315369261
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5658682634730539
+
+Running: n_tree=20, t_depth=12, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.001
+
+0.563872255489022
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.001
+
+0.5394211576846307
+
+Running: n_tree=5, t_depth=8, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.4780439121756487
+
+Running: n_tree=20, t_depth=8, hd=768, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.5149700598802395
+
+Running: n_tree=20, t_depth=11, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.001
+
+0.560379241516966
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.01
+
+0.5124750499001997
+
+Running: n_tree=5, t_depth=9, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+
+0.5503992015968064
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=512, feature_rate=0.1, dropout=0.2, lr=0.001
+
+0.5279441117764471
+
+Running: n_tree=10, t_depth=9, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.001
+
+0.5444111776447106
+
+Running: n_tree=5, t_depth=10, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5189620758483033
+
+Running: n_tree=10, t_depth=13, hd=768, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.001
+
+0.5439121756487026
+
+Running: n_tree=20, t_depth=11, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.2, lr=0.001
+
+0.5489021956087824
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.001
+
+0.5489021956087824
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+
+0.560379241516966
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.001
+
+0.5653692614770459
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.01
+
+0.5184630738522954
+
+Running: n_tree=20, t_depth=11, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.001
+
+0.5673652694610778
+
+Running: n_tree=100, t_depth=8, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.001
+
+0.5643712574850299
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.01
+
+0.5299401197604791
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.01
+
+0.499500998003992
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.01
+
+0.5419161676646707
+
+Running: n_tree=5, t_depth=8, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.001
+
+0.48303393213572854
+
+Running: n_tree=100, t_depth=12, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5663672654690619
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.529441117764471
+
+Running: n_tree=100, t_depth=10, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.001
+
+0.5528942115768463
+
+Running: n_tree=50, t_depth=8, hd=768, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.01
+
+0.5339321357285429
+
+Running: n_tree=10, t_depth=10, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.001
+
+0.5454091816367266
+
+Running: n_tree=5, t_depth=8, hd=1024, batch_size=256, feature_rate=0.4, dropout=0.0, lr=0.01
+
+0.500998003992016
+
+Running: n_tree=20, t_depth=8, hd=768, batch_size=512, feature_rate=0.2, dropout=0.2, lr=0.01
+
+0.5444111776447106
+
+Running: n_tree=50, t_depth=12, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5738522954091816
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5089820359281437
+
+Running: n_tree=5, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.001
+
+0.5249500998003992
+
+Running: n_tree=5, t_depth=9, hd=1024, batch_size=512, feature_rate=0.4, dropout=0.0, lr=0.001
+
+0.49850299401197606
+
+Running: n_tree=10, t_depth=10, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.001
+
+0.5593812375249501
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=512, feature_rate=0.3, dropout=0.0, lr=0.01
+
+0.5494011976047904
+
+Running: n_tree=10, t_depth=9, hd=768, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+
+0.530938123752495
+
+Running: n_tree=5, t_depth=9, hd=768, batch_size=256, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.48602794411177647
+
+Running: n_tree=10, t_depth=12, hd=768, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.5508982035928144
+
+Running: n_tree=100, t_depth=13, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.001
+
+0.5678642714570858
+
+Running: n_tree=5, t_depth=11, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.0, lr=0.001
+
+0.5129740518962076
+
+Running: n_tree=10, t_depth=11, hd=1024, batch_size=256, feature_rate=0.1, dropout=0.1, lr=0.001
+
+0.5379241516966068
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.001
+
+0.5184630738522954
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.5683632734530938
+
+Running: n_tree=20, t_depth=11, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.1, lr=0.01
+
+0.5693612774451098
+
+Running: n_tree=20, t_depth=10, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5459081836327345
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.01
+
+0.5394211576846307
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5364271457085829
+
+Running: n_tree=20, t_depth=13, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.001
+
+0.5848303393213573
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.001
+
+0.5429141716566867
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5503992015968064

@@ -3,10 +3,10 @@
 Model Parameters:
   Dataset: gtd300
   Hidden Dim: 1024
-  n_tree: 20, tree_depth: 10, tree_feature_rate: 0.1
-  Batch size: 256, Dropout: 0.1, LR: 0.01
+  n_tree: 50, tree_depth: 11, tree_feature_rate: 0.4
+  Batch size: 256, Dropout: 0.2, LR: 0.001
 
-Best Accuracy: 0.4781
-Weighted Precision: 0.4850, Recall: 0.4781, F1 Score: 0.4683, ROCAUC: 0.9208
-Macro Precision: 0.4850, Recall: 0.4781, F1 Score: 0.4683, ROCAUC: 0.9208
-Micro Precision: 0.4781, Recall: 0.4781, F1 Score: 0.4781, ROCAUC: 0.9273
+Best Accuracy: 0.4941
+Weighted Precision: 0.4855, Recall: 0.4941, F1 Score: 0.4771, ROCAUC: 0.9229
+Macro Precision: 0.4855, Recall: 0.4941, F1 Score: 0.4771, ROCAUC: 0.9229
+Micro Precision: 0.4941, Recall: 0.4941, F1 Score: 0.4941, ROCAUC: 0.9292

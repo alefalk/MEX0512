@@ -2,11 +2,11 @@
 ========== Final Test Evaluation ==========
 Model Parameters:
   Dataset: gtd300
-  Hidden Dim: 1024
-  n_tree: 20, tree_depth: 10, tree_feature_rate: 0.1
-  Batch size: 256, Dropout: 0.1, LR: 0.01
+  Hidden Dim: 768
+  n_tree: 50, tree_depth: 12, tree_feature_rate: 0.4
+  Batch size: 512, Dropout: 0.2, LR: 0.01
 
-Best Accuracy: 0.9070
-Weighted Precision: 0.9112, Recall: 0.9070, F1 Score: 0.9062, ROCAUC: 0.9963
-Macro Precision: 0.9112, Recall: 0.9070, F1 Score: 0.9062, ROCAUC: 0.9963
-Micro Precision: 0.9070, Recall: 0.9070, F1 Score: 0.9070, ROCAUC: 0.9975
+Best Accuracy: 0.9030
+Weighted Precision: 0.9064, Recall: 0.9030, F1 Score: 0.9020, ROCAUC: 0.9973
+Macro Precision: 0.9064, Recall: 0.9030, F1 Score: 0.9020, ROCAUC: 0.9973
+Micro Precision: 0.9030, Recall: 0.9030, F1 Score: 0.9030, ROCAUC: 0.9982

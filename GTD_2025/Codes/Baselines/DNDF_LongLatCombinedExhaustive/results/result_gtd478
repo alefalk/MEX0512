@@ -3,10 +3,10 @@
 Model Parameters:
   Dataset: gtd478
   Hidden Dim: 768
-  n_tree: 100, tree_depth: 12, tree_feature_rate: 0.3
-  Batch size: 512, Dropout: 0.1, LR: 0.01
+  n_tree: 50, tree_depth: 13, tree_feature_rate: 0.1
+  Batch size: 512, Dropout: 0.2, LR: 0.01
 
-Best Accuracy: 0.9174
-Weighted Precision: 0.9178, Recall: 0.9174, F1 Score: 0.9169, ROCAUC: 0.9973
-Macro Precision: 0.9178, Recall: 0.9174, F1 Score: 0.9169, ROCAUC: 0.9973
-Micro Precision: 0.9174, Recall: 0.9174, F1 Score: 0.9174, ROCAUC: 0.9983
+Best Accuracy: 0.9289
+Weighted Precision: 0.9294, Recall: 0.9289, F1 Score: 0.9288, ROCAUC: 0.9976
+Macro Precision: 0.9294, Recall: 0.9289, F1 Score: 0.9288, ROCAUC: 0.9976
+Micro Precision: 0.9289, Recall: 0.9289, F1 Score: 0.9289, ROCAUC: 0.9985
