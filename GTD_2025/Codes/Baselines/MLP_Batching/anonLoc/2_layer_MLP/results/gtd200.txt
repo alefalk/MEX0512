@@ -1,0 +1,13 @@
+Accuracy: 0.9028
+Precision weighted: 0.9031
+Recall weighted: 0.9028
+F1 Score weighted: 0.9008
+ROCAUC Weighted: 0.9963
+Precision micro: 0.9028
+Recall micro: 0.9028
+F1 Score micro: 0.9028
+ROCAUC micro: 0.9977
+Precision macro: 0.9031
+Recall macro: 0.9028
+F1 Score macro: 0.9008
+ROCAUC macro: 0.9963

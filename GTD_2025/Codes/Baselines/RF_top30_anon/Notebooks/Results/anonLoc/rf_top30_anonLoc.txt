@@ -1,0 +1,60 @@
+Partition 1 - 100 samples per class, with longitude and latitude data
+Accuracy: 53.00%
+Precision Score weighted: 0.526034560173587
+recall Score weighted: 0.53
+f1 Score weighted: 0.5186682153546884
+Precision Score micro: 0.53
+recall Score micro: 0.53
+f1 Score micro: 0.53
+Precision Score macro: 0.526034560173587
+recall Score macro: 0.53
+f1 Score macro: 0.5186682153546884
+roc auc weighted: 0.9342
+roc auc macro: 0.9342
+roc auc micro: 0.9382
+---------------------------------------------------
+Partition 2 - 200 samples per class, with longitude and latitude data
+Accuracy: 57.17%
+Precision Score weighted: 0.570756535969081
+recall Score weighted: 0.5716666666666667
+f1 Score weighted: 0.560914847774396
+Precision Score micro: 0.5716666666666667
+recall Score micro: 0.5716666666666667
+f1 Score micro: 0.5716666666666667
+Precision Score macro: 0.570756535969081
+recall Score macro: 0.5716666666666667
+f1 Score macro: 0.5609148477743958
+roc auc weighted: 0.9405
+roc auc macro: 0.9405
+roc auc micro: 0.9459
+---------------------------------------------------
+Partition 3 - 300 samples per class, with longitude and latitude data
+Accuracy: 50.56%
+Precision Score weighted: 0.5289186803158719
+recall Score weighted: 0.5055555555555555
+f1 Score weighted: 0.4899150056593864
+Precision Score micro: 0.5055555555555555
+recall Score micro: 0.5055555555555555
+f1 Score micro: 0.5055555555555555
+Precision Score macro: 0.5289186803158721
+recall Score macro: 0.5055555555555554
+f1 Score macro: 0.48991500565938656
+roc auc weighted: 0.9304
+roc auc macro: 0.9304
+roc auc micro: 0.9341
+---------------------------------------------------
+Partition 4 - 478 samples per class, with longitude and latitude data
+Accuracy: 55.02%
+Precision Score weighted: 0.5542955568855145
+recall Score weighted: 0.5502314814814815
+f1 Score weighted: 0.5349681977642751
+Precision Score micro: 0.5502314814814815
+recall Score micro: 0.5502314814814815
+f1 Score micro: 0.5502314814814815
+Precision Score macro: 0.5542955568855146
+recall Score macro: 0.5502314814814814
+f1 Score macro: 0.5349681977642752
+roc auc weighted: 0.9367
+roc auc macro: 0.9367
+roc auc micro: 0.9405
+---------------------------------------------------
