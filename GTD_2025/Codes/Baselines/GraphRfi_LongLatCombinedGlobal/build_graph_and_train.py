@@ -41,8 +41,9 @@ def build_graph_data(df, label_index, continuous_col):
     y_gcn = torch.full((N,), -1.0, dtype=torch.float32)
     train_mask = torch.zeros(N, dtype=torch.bool)
     test_mask = torch.zeros(N, dtype=torch.bool)
+    val_mask = torch.zeros(N, dtype=torch.bool)
 
-    train_df, test_df = handle_leakage(df)
+    train_df, val_df, test_df = handle_leakage(df)
 
     for _, row in train_df.iterrows():
         coord = row['longlat']
@@ -50,6 +51,13 @@ def build_graph_data(df, label_index, continuous_col):
             idx = coord_to_index[coord]
             y_gcn[idx] = row[continuous_col]
             train_mask[idx] = True
+
+    for _, row in val_df.iterrows():
+        coord = row['longlat']
+        if coord in coord_to_index:
+            idx = coord_to_index[coord]
+            y_gcn[idx] = row[continuous_col]
+            val_mask[idx] = True
 
     for _, row in test_df.iterrows():
         coord = row['longlat']
@@ -76,20 +84,33 @@ def build_graph_data(df, label_index, continuous_col):
 
     index_to_label = {v: k for k, v in label_index.items()}
 
-    return Data(x=x, edge_index=edge_index), y_gcn, y_nrf, nrf_input, train_mask, test_mask, row_to_node_index, index_to_label
+    return Data(x=x, edge_index=edge_index), y_gcn, y_nrf, nrf_input, train_mask, val_mask, test_mask, row_to_node_index, index_to_label
+
 
 
 
 def handle_leakage(df):
     train_frames = []
+    val_frames = []
     test_frames = []
-    for _, group in df.groupby('gname'):
-        split = int(len(group) * 0.7)
-        train_frames.append(group.iloc[:split])
-        test_frames.append(group.iloc[split:])
-    return shuffle(pd.concat(train_frames)), shuffle(pd.concat(test_frames))
 
-def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, test_mask, args, row_to_node_index, index_to_label, verbose):
+    for _, group in df.groupby('gname'):
+
+        n = len(group)
+        train_end = int(n * 0.6)
+        val_end = int(n * 0.8)
+
+        train_frames.append(group.iloc[:train_end])
+        val_frames.append(group.iloc[train_end:val_end])
+        test_frames.append(group.iloc[val_end:])
+
+    train_df = pd.concat(train_frames)
+    val_df = pd.concat(val_frames)
+    test_df = pd.concat(test_frames)
+
+    return shuffle(train_df), shuffle(val_df), shuffle(test_df)
+
+def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, val_mask, test_mask, args, row_to_node_index, index_to_label, verbose):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     model = GCNRegressor(data.num_node_features, args['embed_dim']).to(device)
 
@@ -129,6 +150,7 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
     best_epoch = -1
 
     row_train_mask = train_mask[row_to_node_index]
+    row_val_mask = val_mask[row_to_node_index]
     row_test_mask = test_mask[row_to_node_index]
 
     epoch_logs = []
@@ -138,8 +160,8 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
     best_state_dict = None
 
     epoch_iter = range(args['epochs'])
-    if verbose:
-        epoch_iter = tqdm(epoch_iter, desc="Training epochs")
+    #if verbose:
+    #    epoch_iter = tqdm(epoch_iter, desc="Training epochs")
 
     for epoch in epoch_iter:
         start_time = time.time()
@@ -177,9 +199,9 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
             per_row_pred_error = pred_error[row_to_node_index]
             input_features = torch.cat([non_geo_features, per_row_pred_error], dim=1)
             out_forest = neural_forest(input_features)
-            pred_labels = out_forest[row_test_mask].argmax(dim=1)
-            pred_proba = F.softmax(out_forest[row_test_mask], dim=1)
-            acc = (pred_labels == y_nrf[row_test_mask]).float().mean().item()
+            pred_labels = out_forest[row_val_mask].argmax(dim=1)
+            pred_proba = F.softmax(out_forest[row_val_mask], dim=1)
+            acc = (pred_labels == y_nrf[row_val_mask]).float().mean().item()
 
             if acc > best_acc:
                 best_acc = acc
@@ -195,11 +217,11 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
                 no_improvement = 0  # reset counter
 
                 y_pred_tensor = best_labels
-                y_true_tensor = y_nrf[row_test_mask]
+                y_true_tensor = y_nrf[row_val_mask]
 
                 y_pred = best_labels.cpu().numpy()
                 y_proba = best_proba.cpu().numpy()
-                y_true = y_nrf[row_test_mask].cpu().numpy()
+                y_true = y_nrf[row_val_mask].cpu().numpy()
 
                 y_pred_decoded = [index_to_label[i] for i in y_pred]
                 y_true_decoded = [index_to_label[i] for i in y_true]
@@ -239,11 +261,49 @@ def train_joint(data, edge_index, y_gcn, y_nrf, non_geo_features, train_mask, te
                 if no_improvement >= patience:
                     print(f"Early stopping at epoch {epoch}")
                     break
-        if verbose:
+        if verbose and epoch % 50 == 0:
             print(f"Epoch {epoch+1:02d} | GCN MSE Loss: {loss1.item():.4f} | NRF Loss: {loss2.item():.4f} | JOINT Loss: {loss.item():.4f} | NRF Acc: {acc:.4f}")
         epoch_time = time.time() - start_time
         epoch_logs.append(epoch_time)
 
     print(f"Best acc/epoch: {best_acc}, epoch {best_epoch}")
 
-    return best_acc, best_epoch, best_precision, best_recall, best_f1, y_pred_decoded, y_true_decoded, best_precision_micro, best_recall_micro, best_f1_micro, best_precision_macro, best_recall_macro, best_f1_macro, roc_auc_weighted, roc_auc_micro, roc_auc_macro, epoch_logs
+    if args['final_evaluation']:
+        print("Predicting on test set")
+
+        # Load best weights
+        model.load_state_dict(best_state_dict['gcn'])
+        neural_forest.load_state_dict(best_state_dict['ndf'])
+
+        model.eval()
+        neural_forest.eval()
+
+        with torch.no_grad():
+            # Run GCN on the full graph
+            gcn_pred = model(data.x.to(device), data.edge_index.to(device))
+            pred_error = (gcn_pred - y_gcn).pow(2).unsqueeze(1)
+
+            # Get per-row prediction error and full input to NRF
+            per_row_pred_error = pred_error[row_to_node_index]
+            input_features = torch.cat([non_geo_features, per_row_pred_error], dim=1)
+
+            # Predict with NRF
+            out_forest = neural_forest(input_features)
+            pred_labels = out_forest[row_test_mask].argmax(dim=1)
+            pred_proba = F.softmax(out_forest[row_test_mask], dim=1)
+
+            # Accuracy
+            test_acc = (pred_labels == y_nrf[row_test_mask]).float().mean().item()
+
+            # Decode for return if needed
+            y_pred = pred_labels.cpu().numpy()
+            y_proba = pred_proba.cpu().numpy()
+            y_true = y_nrf[row_test_mask].cpu().numpy()
+
+            y_pred_decoded = [index_to_label[i] for i in y_pred]
+            y_true_decoded = [index_to_label[i] for i in y_true]
+
+    if not args['final_evaluation']:
+        test_acc = best_acc
+
+    return test_acc, best_epoch, best_precision, best_recall, best_f1, y_pred_decoded, y_true_decoded, best_precision_micro, best_recall_micro, best_f1_micro, best_precision_macro, best_recall_macro, best_f1_macro, roc_auc_weighted, roc_auc_micro, roc_auc_macro, epoch_logs

@@ -5,41 +5,119 @@ from torch.nn.parameter import Parameter
 from collections import OrderedDict
 import numpy as np
 import torch.nn.functional as F
-from torch_geometric.nn import GCNConv, global_mean_pool
 
 
-class GCN(nn.Module):
-    def __init__(self, in_channels, hidden_channels, out_channels, activation_fn=F.relu):
-        super().__init__()
-        self.conv1 = GCNConv(in_channels, hidden_channels)
-        self.conv2 = GCNConv(hidden_channels, hidden_channels)
-        self.classifier = nn.Linear(hidden_channels, out_channels)
-        self.activation_fn = activation_fn
-
-    def forward(self, batch):
-        x, edge_index = batch.x, batch.edge_index
-        #x = self.conv1(x, edge_index)
-        #x = F.relu(x)
-        x = self.activation_fn(self.conv1(x, edge_index))
-        x = self.conv2(x, edge_index)
-
-        # batch.ptr[:-1] extracts central node index
-        center_embeddings = x[batch.ptr[:-1]]
-        out = self.classifier(center_embeddings)
-        return F.log_softmax(out, dim=1)
-
-class GTD100FeatureLayer(nn.Sequential):
-    def __init__(self, in_features=16, dropout_rate=0., shallow=True):
-        super(GTD100FeatureLayer, self).__init__()
+class MNISTFeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate,shallow=False):
+        super(MNISTFeatureLayer, self).__init__()
         self.shallow = shallow
         if shallow:
-            self.add_module('linear', nn.Linear(in_features, 1024))
+            self.add_module('conv1', nn.Conv2d(1, 64, kernel_size=15,padding=1,stride=5))
+        else:
+            self.add_module('conv1', nn.Conv2d(1, 32, kernel_size=3, padding=1))
+            self.add_module('relu1', nn.ReLU())
+            self.add_module('pool1', nn.MaxPool2d(kernel_size=2))
+            self.add_module('drop1', nn.Dropout(dropout_rate))
+            self.add_module('conv2', nn.Conv2d(32, 64, kernel_size=3, padding=1))
+            self.add_module('relu2', nn.ReLU())
+            self.add_module('pool2', nn.MaxPool2d(kernel_size=2))
+            self.add_module('drop2', nn.Dropout(dropout_rate))
+            self.add_module('conv3', nn.Conv2d(64, 128, kernel_size=3, padding=1))
+            self.add_module('relu3', nn.ReLU())
+            self.add_module('pool3', nn.MaxPool2d(kernel_size=2))
+            self.add_module('drop3', nn.Dropout(dropout_rate))
+
+    def get_out_feature_size(self):
+        if self.shallow:
+            return 64*4*4
+        else:
+            return 128*3*3
+
+
+class YelpFeatureLayer(nn.Sequential):
+    def __init__(self, dropout_rate=0., shallow=True):
+        super(YelpFeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(50, 1024))
         else:
             raise NotImplementedError
 
     def get_out_feature_size(self):
         return 1024
 
+
+class GTD100FeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate=0.,shallow=True):
+        super(GTD100FeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(16, 1024))
+        else:
+            raise  NotImplementedError
+
+    def get_out_feature_size(self):
+        return 1024
+
+class GTD200FeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate=0.,shallow=True):
+        super(GTD200FeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(16, 1024))
+        else:
+            raise  NotImplementedError
+
+    def get_out_feature_size(self):
+        return 1024
+
+class GTD300FeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate=0.,shallow=True):
+        super(GTD300FeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(16, 1024))
+        else:
+            raise  NotImplementedError
+
+    def get_out_feature_size(self):
+        return 1024
+
+class GTD478FeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate=0.,shallow=True):
+        super(GTD478FeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(16, 1024))
+        else:
+            raise  NotImplementedError
+
+    def get_out_feature_size(self):
+        return 1024
+
+class UCILetterFeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate=0.,shallow=True):
+        super(UCILetterFeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(100, 1024))
+        else:
+            raise  NotImplementedError
+
+    def get_out_feature_size(self):
+        return 1024
+
+class UCIYeastFeatureLayer(nn.Sequential):
+    def __init__(self,dropout_rate=0.,shallow=True):
+        super(UCIYeastFeatureLayer, self).__init__()
+        self.shallow = shallow
+        if shallow:
+            self.add_module('linear', nn.Linear(8, 1024))
+        else:
+            raise  NotImplementedError
+
+    def get_out_feature_size(self):
+        return 1024
 
 class Tree(nn.Module):
     def __init__(self,depth,n_in_feature,used_feature_rate,n_class, jointly_training=True):

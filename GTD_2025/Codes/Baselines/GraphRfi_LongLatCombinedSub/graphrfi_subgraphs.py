@@ -13,6 +13,7 @@ from tqdm import tqdm
 import time
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from haversine import haversine, Unit
+from sklearn.model_selection import train_test_split
 
 
 
@@ -136,16 +137,6 @@ def build_graph_data(traindata, testdata, continuous_col):
 
     return traindata_list, test_data_list, y_gcn, y_nrf, nrf_input, index_to_label
 
-
-def handle_leakage(df):
-    train_frames = []
-    test_frames = []
-    for _, group in df.groupby('gname'):
-        split = int(len(group) * 0.7)
-        train_frames.append(group.iloc[:split])
-        test_frames.append(group.iloc[split:])
-    return shuffle(pd.concat(train_frames)), shuffle(pd.concat(test_frames))
-
 from torch_geometric.loader import DataLoader
 
 # BYGG UPP INPUT
@@ -184,8 +175,20 @@ def train_joint_subgraph(
 
     neural_forest = NeuralDecisionForest(feat_layer, forest).to(device)
 
+    subgraph_indices = [data.idx.item() for data in train_data_list]
+    subgraph_labels = y_nrf[subgraph_indices].cpu().numpy()
+
+    train_set, val_set = train_test_split(
+        train_data_list,
+        test_size=0.2,
+        stratify=subgraph_labels,
+        random_state=42
+    )
+
+
     # Step 3: Prepare DataLoaders for subgraph batching
-    train_loader = DataLoader(train_data_list, batch_size=args['batch_size'], shuffle=True)
+    train_loader = DataLoader(train_set, batch_size=args['batch_size'], shuffle=True)
+    val_loader = DataLoader(val_set, batch_size=args['batch_size'])
     test_loader = DataLoader(test_data_list, batch_size=args['batch_size'])
 
     # Step 4: Loss function and optimizer
@@ -247,7 +250,7 @@ def train_joint_subgraph(
         all_targets = []
 
         with torch.no_grad():
-            for batch in test_loader:
+            for batch in val_loader:
                 batch = batch.to(device)
                 gcn_pred = model(batch)
                 batch_indices = batch.idx
@@ -321,8 +324,46 @@ def train_joint_subgraph(
         epoch_logs.append(time.time() - start_time)
 
     print(f"Best acc/epoch: {best_acc:.4f} at epoch {best_epoch}")
+
+    if args['final_evaluation']:
+        print("Predicting on test set")
+        model.load_state_dict(best_state_dict['gcn'])
+        neural_forest.load_state_dict(best_state_dict['ndf'])
+        all_preds = []
+        all_probs = []
+        all_targets = []
+        with torch.no_grad():
+            for batch in test_loader:
+                batch = batch.to(device)
+                gcn_pred = model(batch)
+                batch_indices = batch.idx
+                gcn_targets = y_gcn[batch_indices]
+                nrf_targets = y_nrf[batch_indices]
+                other_feats = nrf_input[batch_indices]
+
+                pred_error = (gcn_pred - gcn_targets).pow(2).unsqueeze(1)
+                input_features = torch.cat([other_feats, pred_error], dim=1)
+
+                out = neural_forest(input_features)
+                probs = F.softmax(out, dim=1)
+                preds = out.argmax(dim=1)
+
+                all_preds.append(preds)
+                all_probs.append(probs)
+                all_targets.append(nrf_targets)
+        # Concatenate batched results
+        y_pred_tensor = torch.cat(all_preds)
+        y_proba = torch.cat(all_probs)
+        y_true_tensor = torch.cat(all_targets)
+
+        # Compute accuracy
+        test_acc = (y_pred_tensor == y_true_tensor).float().mean().item()
+
+    if not args["final_evaluation"]:
+        test_acc = best_acc
+
     return (
-        best_acc,
+        test_acc,
         best_epoch,
         precision, recall, f1,
         y_pred_decoded, y_true_decoded,
