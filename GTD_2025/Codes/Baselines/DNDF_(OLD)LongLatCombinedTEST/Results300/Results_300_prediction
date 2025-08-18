@@ -1,0 +1,6 @@
+Best acc: 0.4911 at epoch 1682 for 300 prediction
+Config: {'lr': 0.001, 'n_tree': 100, 'tree_depth': 8, 'tree_feature_rate': 0.3, 'feat_dropout': 0.2, 'embed_dim': 32, 'partition': 'gtd300', 'n_class': 30, 'epochs': 3000, 'final_evaluation': True}
+Weighted Precision: 0.5793, Recall: 0.5417, F1: 0.5279
+Macro Precision: 0.5793, Recall: 0.5417, F1: 0.5279
+Micro Precision: 0.5417, Recall: 0.5417, F1: 0.5417
+AUROC Weighted: 0.9256, Micro: 0.9305, Macro: 0.9256

@@ -1,0 +1,12 @@
+
+========== Final Test Evaluation ==========
+Model Parameters:
+  Dataset: gtd100
+  Hidden Dim: 768
+  n_tree: 50, tree_depth: 8, tree_feature_rate: 0.1
+  Batch size: 256, Dropout: 0.2, LR: 0.01
+
+Best Accuracy: 0.4200
+Weighted Precision: 0.4185, Recall: 0.4200, F1 Score: 0.4041, ROCAUC: 0.8993
+Macro Precision: 0.4185, Recall: 0.4200, F1 Score: 0.4041, ROCAUC: 0.8993
+Micro Precision: 0.4200, Recall: 0.4200, F1 Score: 0.4200, ROCAUC: 0.9053

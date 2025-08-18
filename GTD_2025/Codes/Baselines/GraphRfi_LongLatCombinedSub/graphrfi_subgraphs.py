@@ -19,19 +19,20 @@ from sklearn.model_selection import train_test_split
 
 
 class GCNRegressor(torch.nn.Module):
-    def __init__(self, in_channels, hidden_channels):
+    def __init__(self, in_channels, hidden_channels, activation_fn=F.relu):
         super().__init__()
         self.conv1 = GCNConv(in_channels, hidden_channels)
         self.conv2 = GCNConv(hidden_channels, hidden_channels)
         self.out = torch.nn.Linear(hidden_channels, 1)
+        self.activation_fn = activation_fn
 
     def forward(self, batch):
-        x = F.tanh(self.conv1(batch.x, batch.edge_index))
+        x = self.activation_fn(self.conv1(batch.x, batch.edge_index))
         x = self.conv2(x, batch.edge_index)
-
         center_embeddings = x[batch.center]
         out = self.out(center_embeddings)
         return out.squeeze()
+
 
 def get_subgraph(center_id, edge_index, x_global):
     # Get neighbors (indices) of center node

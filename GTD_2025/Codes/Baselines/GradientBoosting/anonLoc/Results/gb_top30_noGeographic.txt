@@ -1,0 +1,56 @@
+Partition 1 - 100 samples per class, without geograpgical data except long/lat
+Precision weighted: 0.6374
+Precision macro: 0.6374
+Precision micro: 0.6033
+Recall weighted: 0.6033
+Recall macro: 0.6033
+Recall micro: 0.6033
+F1 Score weighted: 0.6056
+F1 Score macro: 0.6056
+F1 Score micro: 0.6033
+roc auc weighted: 0.9347
+roc auc macro: 0.9347
+roc auc micro: 0.9258
+---------------------------------------------------
+Partition 2 - 200 samples per class, without geograpgical data except long/lat
+Precision weighted: 0.5346
+Precision macro: 0.5346
+Precision micro: 0.5206
+Recall weighted: 0.5206
+Recall macro: 0.5206
+Recall micro: 0.5206
+F1 Score weighted: 0.5134
+F1 Score macro: 0.5134
+F1 Score micro: 0.5206
+roc auc weighted: 0.9283
+roc auc macro: 0.9283
+roc auc micro: 0.9262
+---------------------------------------------------
+Partition 3 - 300 samples per class, without geograpgical data except long/lat
+Precision weighted: 0.5378
+Precision macro: 0.5378
+Precision micro: 0.5333
+Recall weighted: 0.5333
+Recall macro: 0.5333
+Recall micro: 0.5333
+F1 Score weighted: 0.5265
+F1 Score macro: 0.5265
+F1 Score micro: 0.5333
+roc auc weighted: 0.9314
+roc auc macro: 0.9314
+roc auc micro: 0.9280
+---------------------------------------------------
+Partition 4 - 478 samples per class, without geograpgical data except long/lat
+Precision weighted: 0.5891
+Precision macro: 0.5891
+Precision micro: 0.5796
+Recall weighted: 0.5796
+Recall macro: 0.5796
+Recall micro: 0.5796
+F1 Score weighted: 0.5728
+F1 Score macro: 0.5728
+F1 Score micro: 0.5796
+roc auc weighted: 0.9514
+roc auc macro: 0.9514
+roc auc micro: 0.9532
+---------------------------------------------------

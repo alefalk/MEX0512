@@ -1,0 +1,202 @@
+
+Running: n_tree=50, t_depth=13, hd=1024, batch_size=128, feature_rate=0.0, dropout=0.0, lr=0.01
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=128, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5913173652694611
+
+Running: n_tree=20, t_depth=10, hd=768, batch_size=256, feature_rate=0.0, dropout=0.3, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=100, t_depth=12, hd=768, batch_size=256, feature_rate=0.0, dropout=0.2, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=10, t_depth=8, hd=768, batch_size=512, feature_rate=0.2, dropout=0.0, lr=0.001
+
+0.5289421157684631
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=256, feature_rate=0.4, dropout=0.3, lr=0.01
+
+0.5389221556886228
+
+Running: n_tree=50, t_depth=8, hd=768, batch_size=128, feature_rate=0.1, dropout=0.0, lr=0.001
+
+0.5583832335329342
+
+Running: n_tree=10, t_depth=8, hd=768, batch_size=128, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5234530938123753
+
+Running: n_tree=20, t_depth=8, hd=768, batch_size=512, feature_rate=0.0, dropout=0.3, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=100, t_depth=13, hd=1024, batch_size=128, feature_rate=0.4, dropout=0.3, lr=0.001
+
+0.593313373253493
+
+Running: n_tree=50, t_depth=8, hd=1024, batch_size=256, feature_rate=0.0, dropout=0.3, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=10, t_depth=13, hd=768, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.01
+
+0.5708582834331337
+
+Running: n_tree=10, t_depth=13, hd=768, batch_size=256, feature_rate=0.4, dropout=0.1, lr=0.001
+
+0.5718562874251497
+
+Running: n_tree=5, t_depth=13, hd=768, batch_size=128, feature_rate=0.4, dropout=0.2, lr=0.01
+
+0.5044910179640718
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.01
+
+0.5693612774451098
+
+Running: n_tree=50, t_depth=10, hd=768, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.001
+
+0.56187624750499
+
+Running: n_tree=5, t_depth=10, hd=768, batch_size=256, feature_rate=0.4, dropout=0.2, lr=0.001
+
+0.49800399201596807
+
+Running: n_tree=10, t_depth=8, hd=768, batch_size=128, feature_rate=0.1, dropout=0.2, lr=0.001
+
+0.5364271457085829
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.1, lr=0.001
+
+0.532435129740519
+
+Running: n_tree=50, t_depth=8, hd=768, batch_size=512, feature_rate=0.4, dropout=0.1, lr=0.001
+
+0.5444111776447106
+
+Running: n_tree=100, t_depth=13, hd=768, batch_size=256, feature_rate=0.0, dropout=0.0, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=20, t_depth=13, hd=1024, batch_size=128, feature_rate=0.3, dropout=0.3, lr=0.01
+
+0.5354291417165669
+
+Running: n_tree=50, t_depth=11, hd=768, batch_size=128, feature_rate=0.1, dropout=0.1, lr=0.01
+
+0.6032934131736527
+
+Running: n_tree=50, t_depth=9, hd=768, batch_size=256, feature_rate=0.0, dropout=0.0, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=128, feature_rate=0.0, dropout=0.3, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=5, t_depth=8, hd=1024, batch_size=256, feature_rate=0.2, dropout=0.2, lr=0.001
+
+0.5254491017964071
+
+Running: n_tree=100, t_depth=10, hd=1024, batch_size=512, feature_rate=0.3, dropout=0.2, lr=0.01
+
+0.5543912175648703
+
+Running: n_tree=10, t_depth=13, hd=768, batch_size=256, feature_rate=0.0, dropout=0.2, lr=0.001
+
+0.03343313373253493
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=256, feature_rate=0.0, dropout=0.3, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=10, t_depth=11, hd=768, batch_size=256, feature_rate=0.3, dropout=0.2, lr=0.01
+
+0.5374251497005988
+
+Running: n_tree=5, t_depth=13, hd=1024, batch_size=512, feature_rate=0.1, dropout=0.0, lr=0.001
+
+0.532435129740519
+
+Running: n_tree=20, t_depth=12, hd=768, batch_size=512, feature_rate=0.3, dropout=0.1, lr=0.01
+
+0.5683632734530938
+
+Running: n_tree=5, t_depth=12, hd=1024, batch_size=128, feature_rate=0.1, dropout=0.0, lr=0.01
+
+0.5703592814371258
+
+Running: n_tree=5, t_depth=10, hd=768, batch_size=256, feature_rate=0.0, dropout=0.2, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=128, feature_rate=0.2, dropout=0.2, lr=0.001
+
+0.5878243512974052
+
+Running: n_tree=5, t_depth=11, hd=768, batch_size=128, feature_rate=0.0, dropout=0.2, lr=0.01
+
+0.03343313373253493
+
+Running: n_tree=50, t_depth=12, hd=768, batch_size=128, feature_rate=0.0, dropout=0.0, lr=0.001
+
+0.03343313373253493
+
+Running: n_tree=100, t_depth=9, hd=1024, batch_size=128, feature_rate=0.0, dropout=0.2, lr=0.001
+
+0.03343313373253493
+
+Running: n_tree=5, t_depth=11, hd=1024, batch_size=128, feature_rate=0.1, dropout=0.2, lr=0.01
+
+0.5434131736526946
+
+Running: n_tree=5, t_depth=8, hd=768, batch_size=512, feature_rate=0.2, dropout=0.1, lr=0.001
+
+0.5029940119760479
+
+Running: n_tree=10, t_depth=8, hd=1024, batch_size=128, feature_rate=0.4, dropout=0.3, lr=0.01
+
+0.468063872255489
+
+Running: n_tree=5, t_depth=10, hd=768, batch_size=256, feature_rate=0.0, dropout=0.0, lr=0.001
+
+0.03343313373253493
+
+Running: n_tree=20, t_depth=11, hd=768, batch_size=128, feature_rate=0.0, dropout=0.3, lr=0.001
+
+0.03343313373253493
+
+Running: n_tree=100, t_depth=11, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.3, lr=0.001
+
+0.5568862275449101
+
+Running: n_tree=20, t_depth=9, hd=768, batch_size=256, feature_rate=0.1, dropout=0.0, lr=0.01
+
+0.5663672654690619
+
+Running: n_tree=50, t_depth=9, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.3, lr=0.01
+
+0.5369261477045908
+
+Running: n_tree=5, t_depth=10, hd=768, batch_size=256, feature_rate=0.0, dropout=0.3, lr=0.001
+
+0.03343313373253493
+
+Running: n_tree=50, t_depth=10, hd=1024, batch_size=128, feature_rate=0.4, dropout=0.3, lr=0.001
+
+0.590818363273453
+
+Running: n_tree=50, t_depth=11, hd=1024, batch_size=256, feature_rate=0.3, dropout=0.0, lr=0.01
+
+0.56187624750499
+
+Running: n_tree=5, t_depth=11, hd=1024, batch_size=512, feature_rate=0.2, dropout=0.3, lr=0.001
+
+0.5134730538922155
+
+Running: n_tree=5, t_depth=11, hd=768, batch_size=128, feature_rate=0.2, dropout=0.3, lr=0.001
+
+0.5543912175648703

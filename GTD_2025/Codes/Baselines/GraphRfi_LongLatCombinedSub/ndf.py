@@ -52,12 +52,12 @@ class GTD100FeatureLayer(nn.Sequential):
         super(GTD100FeatureLayer, self).__init__()
         self.shallow = shallow
         if shallow:
-            self.add_module('linear', nn.Linear(16, 1024))
+            self.add_module('linear', nn.Linear(16, 768))
         else:
             raise  NotImplementedError
 
     def get_out_feature_size(self):
-        return 1024
+        return 768
 
 class GTD200FeatureLayer(nn.Sequential):
     def __init__(self,dropout_rate=0.,shallow=True):

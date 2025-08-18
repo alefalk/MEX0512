@@ -1,0 +1,7 @@
+Final Test Accuracy: 0.9314 at epoch 1447 for weaptype1 prediction
+Final Config: {'lr': 0.001, 'n_tree': 40, 'tree_depth': 10, 'tree_feature_rate': 0.5, 'feat_dropout': 0.1, 'embed_dim': 64, 'partition': 'gtd478', 'n_class': 30, 'epochs': 3000, 'final_evaluation': True}
+
+Weighted Precision: 0.9356, Recall: 0.9327, F1: 0.9310
+Macro Precision: 0.9349, Recall: 0.9211, F1: 0.9241
+Micro Precision: 0.9327, Recall: 0.9327, F1: 0.9327
+AUROC Weighted: 0.9975, Micro: 0.9982, Macro: 0.9973

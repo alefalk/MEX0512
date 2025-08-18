@@ -1,0 +1,6 @@
+Best acc: 0.4892 at epoch 1826 for 200 prediction
+Config: {'lr': 0.001, 'n_tree': 40, 'tree_depth': 10, 'tree_feature_rate': 0.1, 'feat_dropout': 0.0, 'embed_dim': 64}
+Weighted Precision: 0.5251, Recall: 0.5133, F1: 0.5024
+Macro Precision: 0.5251, Recall: 0.5133, F1: 0.5024
+Micro Precision: 0.5133, Recall: 0.5133, F1: 0.5133
+AUROC Weighted: 0.9138, Micro: 0.9200, Macro: 0.9138

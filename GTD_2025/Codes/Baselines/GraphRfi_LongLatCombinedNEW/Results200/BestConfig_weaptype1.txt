@@ -1,0 +1,9 @@
+Best configuration for weaptype1 prediction:
+embed_dim: 32
+n_tree: 40
+tree_feature_rate: 0.5
+best_acc: 0.9265254735946655
+epoch: 999
+macro_f1: 0.916144609451294
+micro_f1: 0.9265255331993103
+weighted_f1: 0.9245636463165283
