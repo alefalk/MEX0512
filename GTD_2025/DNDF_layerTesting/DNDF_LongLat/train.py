@@ -104,26 +104,31 @@ def train_joint(df, args, label_index, verbose):
 
     patience = 300 if args.get('final_evaluation', True) else 100
 
+    # assume you already decided which columns are non-geo features
+    feature_cols = [c for c in df.columns if c not in ["gname"]]
+
+    # Build the full (all-rows) feature tensor once, in df row order
+    nrf_input = torch.tensor(
+        df[feature_cols].astype(float).values, dtype=torch.float32, device=device
+    )
+
+    # features
+    train_row_idx = torch.tensor(train_df.index.values, dtype=torch.long, device=device)
+    feat_train = nrf_input.index_select(0, train_row_idx)
+
+    val_row_idx = torch.tensor(val_df.index.values, dtype=torch.long, device=device)
+    feat_val = nrf_input.index_select(0, val_row_idx)
+
+    test_row_idx = torch.tensor(test_df.index.values, dtype=torch.long, device=device)
+    feat_test = nrf_input.index_select(0, test_row_idx)
+    
     for epoch in range(args['epochs']):
         start_time = time.time()
 
         neural_forest.train()
         optimizer.zero_grad()
 
-        # assume you already decided which columns are non-geo features
-        non_location_cols = [c for c in df.columns if c not in ["gname"]]
-
-        # Build the full (all-rows) feature tensor once, in df row order
-        non_geo_features = torch.tensor(
-            df[non_location_cols].astype(float).values, dtype=torch.float32, device=device
-        )
-
-        # === Use train_df directly ===
-        train_row_idx = torch.tensor(train_df.index.values, dtype=torch.long, device=device)
-
-        feat_train = non_geo_features.index_select(0, train_row_idx)
         out_forest_train = neural_forest(feat_train)
-
 
         # Losses
         train_idx = torch.as_tensor(train_df.index.values, dtype=torch.long, device=device)
@@ -137,9 +142,6 @@ def train_joint(df, args, label_index, verbose):
         # ---- Validation ----
         neural_forest.eval()
         with torch.no_grad():
-            val_row_idx = torch.tensor(val_df.index.values, dtype=torch.long, device=device)
-            feat_val = non_geo_features.index_select(0, val_row_idx)
-            
             out_val = neural_forest(feat_val)
 
             pred_labels = out_val.argmax(dim=1)
@@ -199,13 +201,7 @@ def train_joint(df, args, label_index, verbose):
             neural_forest.load_state_dict(best_state_dict['ndf'])
 
             neural_forest.eval()
-
             with torch.no_grad():
-
-                test_row_idx = torch.tensor(test_df.index.values, dtype=torch.long, device=device)
-
-                feat_test = non_geo_features.index_select(0, test_row_idx)
-
                 out_test = neural_forest(feat_test)     # shape: [#test_rows, n_class]
 
                 pred_labels = out_test.argmax(dim=1)

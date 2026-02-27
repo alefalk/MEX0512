@@ -226,8 +226,8 @@ def train_joint(df, args, label_index, verbose):
                 y_true_decoded = [index_to_label[i] for i in y_true]
     else:
         test_acc = best_acc
-        y_pred_decoded = [index_to_label[i] for i in best_labels.cpu().numpy()]
-        y_true_decoded = [index_to_label[i] for i in y_nrf[row_val_mask].cpu().numpy()]
+        y_pred_decoded = []
+        y_true_decoded = []
 
     # Return everything you were already returning (so your file-writing stays intact)
     return (

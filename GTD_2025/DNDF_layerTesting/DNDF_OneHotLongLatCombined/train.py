@@ -13,6 +13,8 @@ from tqdm import tqdm
 import time
 from haversine import haversine, Unit
 from collections import defaultdict, Counter
+from torch.utils.data import DataLoader, TensorDataset
+
 
 
 def build_graph_data(df, label_index):
@@ -60,17 +62,18 @@ def handle_leakage(df):
     return shuffle(train_df), shuffle(val_df), shuffle(test_df)
 
 def train_joint(df, args, label_index, verbose):
-
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(device)
 
-
+    # Stratified-by-group split (your helper)
     train_df, val_df, test_df = handle_leakage(df)
-    y_nrf = torch.tensor(df['gname'].map(label_index).values, dtype=torch.long)
 
+    # Labels (full df row order)
+    y_nrf = torch.tensor(df['gname'].map(label_index).values, dtype=torch.long, device=device)
     index_to_label = {v: k for k, v in label_index.items()}
 
-    # Select feature extractor
-    input_size = len(df.columns) - 1
+    # ---- Feature extractor selection ----
+    input_size = len(df.columns) - 1  # everything except 'gname'
     feat_layer_cls = {
         "gtd100": GTD100FeatureLayer,
         "gtd200": GTD200FeatureLayer,
@@ -78,9 +81,12 @@ def train_joint(df, args, label_index, verbose):
         "gtd478": GTD478FeatureLayer,
     }[args['partition']]
 
-    feat_layer = feat_layer_cls(out_layer_size = args['out_size_nrf'], input_size = input_size, dropout_rate=args['feat_dropout'])
+    feat_layer = feat_layer_cls(
+        out_layer_size=args['out_size_nrf'],
+        input_size=input_size,
+        dropout_rate=args['feat_dropout']
+    )
 
-    # Create neural decision forest
     forest = Forest(
         n_tree=args['n_tree'],
         tree_depth=args['tree_depth'],
@@ -89,147 +95,159 @@ def train_joint(df, args, label_index, verbose):
         n_class=args['n_class']
     )
     neural_forest = NeuralDecisionForest(feat_layer, forest).to(device)
+    optimizer = torch.optim.AdamW(neural_forest.parameters(), lr=args['lr'], weight_decay=1e-5)
 
-    optimizer = torch.optim.AdamW(list(neural_forest.parameters()), lr=args['lr'])
+    # ---- Build the full feature tensor once (same row order as df) ----
+    non_location_cols = [c for c in df.columns if c != "gname"]
+    non_geo_features = torch.tensor(
+        df[non_location_cols].astype(float).values,
+        dtype=torch.float32,
+        device=device
+    )
 
-    # Dtypes and device
-    y_nrf = y_nrf.to(device).long()
-    #non_geo_features = non_geo_features.to(device)
+    # ---- Index tensors (CPU is fine for DataLoader samples; we move to device when selecting) ----
+    train_idx_all = torch.tensor(train_df.index.values, dtype=torch.long)
+    val_idx_all   = torch.tensor(val_df.index.values,   dtype=torch.long)
+    test_idx_all  = torch.tensor(test_df.index.values,  dtype=torch.long)
 
-    best_acc = -1
+    # ---- DataLoaders over row indices ----
+    bs = args['batch_size']
+    train_loader = DataLoader(TensorDataset(train_idx_all), batch_size=bs, shuffle=True, drop_last=False)
+    val_loader   = DataLoader(TensorDataset(val_idx_all),   batch_size=bs, shuffle=False, drop_last=False)
+    test_loader  = DataLoader(TensorDataset(test_idx_all),  batch_size=bs, shuffle=False, drop_last=False)
+
+    # ---- Training loop with early stopping on val acc ----
+    best_acc = -1.0
     best_epoch = -1
     best_state_dict = None
+    best_precision = best_recall = best_f1 = float('nan')
+    best_precision_micro = best_recall_micro = best_f1_micro = float('nan')
+    best_precision_macro = best_recall_macro = best_f1_macro = float('nan')
+    roc_auc_weighted = roc_auc_micro = roc_auc_macro = float('nan')
     epoch_logs = []
     no_improvement = 0
-
-    patience = 1000 if args.get('final_evaluation', True) else 1000
+    patience = 300 if args.get('final_evaluation', True) else 100
 
     for epoch in range(args['epochs']):
         start_time = time.time()
-
         neural_forest.train()
-        optimizer.zero_grad()
+        running_loss = 0.0
 
-        # assume you already decided which columns are non-geo features
-        non_location_cols = [c for c in df.columns if c not in ["gname"]]
+        for (batch_idx_cpu,) in train_loader:
+            # Move row indices to device and slice batch features/labels
+            batch_idx = batch_idx_cpu.to(device, non_blocking=True)
+            feat_batch = non_geo_features.index_select(0, batch_idx)
+            out_batch = neural_forest(feat_batch)
 
-        # Build the full (all-rows) feature tensor once, in df row order
-        non_geo_features = torch.tensor(
-            df[non_location_cols].astype(float).values, dtype=torch.float32, device=device
-        )
+            y_batch = y_nrf.index_select(0, batch_idx)
 
-        # === Use train_df directly ===
-        train_row_idx = torch.tensor(train_df.index.values, dtype=torch.long, device=device)
+            loss = neural_forest.loss(out_batch, y_batch)
 
-        feat_train = non_geo_features.index_select(0, train_row_idx)
-        out_forest_train = neural_forest(feat_train)
+            optimizer.zero_grad(set_to_none=True)
+            loss.backward()
+            optimizer.step()
 
+            running_loss += loss.item() * batch_idx.size(0)
 
-        # Losses
-        train_idx = torch.as_tensor(train_df.index.values, dtype=torch.long, device=device)
-        loss2 = neural_forest.loss(out_forest_train, y_nrf.index_select(0, train_idx))
-        #loss2 = neural_forest.loss(out_forest_train, y_nrf[row_train_mask])  # row-level NRF loss on train rows
-        loss  = loss2
-
-        loss.backward()
-        optimizer.step()
+        train_loss_epoch = running_loss / len(train_idx_all)
 
         # ---- Validation ----
         neural_forest.eval()
         with torch.no_grad():
-            val_row_idx = torch.tensor(val_df.index.values, dtype=torch.long, device=device)
-            feat_val = non_geo_features.index_select(0, val_row_idx)
-            
-            out_val = neural_forest(feat_val)
+            val_logits_list = []
+            val_targets_list = []
+            for (batch_idx_cpu,) in val_loader:
+                batch_idx = batch_idx_cpu.to(device, non_blocking=True)
+                feat_batch = non_geo_features.index_select(0, batch_idx)
+                out_val_batch = neural_forest(feat_batch)
+                val_logits_list.append(out_val_batch)
+                val_targets_list.append(y_nrf.index_select(0, batch_idx))
+
+            out_val = torch.cat(val_logits_list, dim=0)
+            y_val_true = torch.cat(val_targets_list, dim=0)
 
             pred_labels = out_val.argmax(dim=1)
-            
-            val_idx = torch.as_tensor(val_df.index.values, dtype=torch.long, device=device)
-            y_val_true = y_nrf.index_select(0, val_idx)
             acc = (pred_labels == y_val_true).float().mean().item()
 
             if acc > best_acc:
                 best_acc = acc
                 best_epoch = epoch
-                best_labels = pred_labels
-                best_proba = F.softmax(out_val, dim=1)
-                best_state_dict = {
-                    'ndf': neural_forest.state_dict()
-                }
-                no_improvement = 0
+                best_state_dict = {'ndf': neural_forest.state_dict()}
 
                 # Metrics on validation split
-                y_true_tensor = y_nrf.index_select(0, val_idx)
-                y_pred_tensor = pred_labels
-                y_proba = best_proba.detach().cpu().numpy()
-                y_true = y_true_tensor.detach().cpu().numpy()
+                # Use torchmetrics on device for preds/targets
+                best_precision = Precision(task='multiclass', average='weighted', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
+                best_recall    = Recall(   task='multiclass', average='weighted', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
+                best_f1        = F1Score(  task='multiclass', average='weighted', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
 
-                best_precision = Precision(task='multiclass', average='weighted', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-                best_recall    = Recall(   task='multiclass', average='weighted', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-                best_f1        = F1Score(  task='multiclass', average='weighted', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
+                best_precision_micro = Precision(task='multiclass', average='micro', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
+                best_recall_micro    = Recall(   task='multiclass', average='micro', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
+                best_f1_micro        = F1Score(  task='multiclass', average='micro', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
 
-                best_precision_micro = Precision(task='multiclass', average='micro', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-                best_recall_micro    = Recall(   task='multiclass', average='micro', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-                best_f1_micro        = F1Score(  task='multiclass', average='micro', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-
-                best_precision_macro = Precision(task='multiclass', average='macro', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-                best_recall_macro    = Recall(   task='multiclass', average='macro', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
-                best_f1_macro        = F1Score(  task='multiclass', average='macro', num_classes=args['n_class']).to(device)(y_pred_tensor, y_true_tensor).item()
+                best_precision_macro = Precision(task='multiclass', average='macro', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
+                best_recall_macro    = Recall(   task='multiclass', average='macro', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
+                best_f1_macro        = F1Score(  task='multiclass', average='macro', num_classes=args['n_class']).to(device)(pred_labels, y_val_true).item()
 
                 # ROC-AUC (OVR) on validation
-                roc_auc_weighted = roc_auc_score(y_true, y_proba, multi_class='ovr', average='weighted')
-                roc_auc_micro    = roc_auc_score(y_true, y_proba, multi_class='ovr', average='micro')
-                roc_auc_macro    = roc_auc_score(y_true, y_proba, multi_class='ovr', average='macro')
+                y_proba_val = F.softmax(out_val, dim=1).detach().cpu().numpy()
+                y_true_val  = y_val_true.detach().cpu().numpy()
+                try:
+                    roc_auc_weighted = roc_auc_score(y_true_val, y_proba_val, multi_class='ovr', average='weighted')
+                    roc_auc_micro    = roc_auc_score(y_true_val, y_proba_val, multi_class='ovr', average='micro')
+                    roc_auc_macro    = roc_auc_score(y_true_val, y_proba_val, multi_class='ovr', average='macro')
+                except ValueError:
+                    # Handle rare case where a class is missing in the current val split
+                    roc_auc_weighted = roc_auc_micro = roc_auc_macro = float('nan')
+
+                no_improvement = 0
             else:
                 no_improvement += 1
                 if no_improvement >= patience:
-                    print(f"Early stopping at epoch {epoch}")
+                    if verbose:
+                        print(f"Early stopping at epoch {epoch}")
                     break
 
-        if verbose and epoch % 50 == 0:
-            print(f"Epoch {epoch:03d} | NRF Loss: {loss2.item():.4f} | Val Acc: {acc:.4f}")
+        if verbose and (epoch % 50 == 0 or epoch == args['epochs'] - 1):
+            print(f"Epoch {epoch:03d} | NRF Loss: {train_loss_epoch:.4f} | Val Acc: {acc:.4f}")
 
         epoch_logs.append(time.time() - start_time)
 
-    print(f"Best validation acc: {best_acc:.4f} @ epoch {best_epoch}")
+    if verbose:
+        print(f"Best validation acc: {best_acc:.4f} @ epoch {best_epoch}")
 
-    # -------------------- Final evaluation on test set (semi-transductive/inductive) --------------------
-    if args['final_evaluation']:
+    # -------------------- Final evaluation on test set --------------------
+    if args.get('final_evaluation', True) and best_state_dict is not None:
+        if verbose:
             print("Evaluating on test set using full graph...")
-            neural_forest.load_state_dict(best_state_dict['ndf'])
+        neural_forest.load_state_dict(best_state_dict['ndf'])
+        neural_forest.eval()
 
-            neural_forest.eval()
+        with torch.no_grad():
+            test_logits_list = []
+            test_targets_list = []
+            for (batch_idx_cpu,) in test_loader:
+                batch_idx = batch_idx_cpu.to(device, non_blocking=True)
+                feat_batch = non_geo_features.index_select(0, batch_idx)
+                out_test_batch = neural_forest(feat_batch)
+                test_logits_list.append(out_test_batch)
+                test_targets_list.append(y_nrf.index_select(0, batch_idx))
 
-            with torch.no_grad():
+            out_test = torch.cat(test_logits_list, dim=0)
+            y_test_true = torch.cat(test_targets_list, dim=0)
 
-                test_row_idx = torch.tensor(test_df.index.values, dtype=torch.long, device=device)
+            pred_labels_test = out_test.argmax(dim=1)
+            test_acc = (pred_labels_test == y_test_true).float().mean().item()
 
-                feat_test = non_geo_features.index_select(0, test_row_idx)
+            y_pred = pred_labels_test.detach().cpu().numpy()
+            y_true = y_test_true.detach().cpu().numpy()
 
-                out_test = neural_forest(feat_test)     # shape: [#test_rows, n_class]
-
-                pred_labels = out_test.argmax(dim=1)
-
-                test_idx = torch.as_tensor(test_df.index.values, dtype=torch.long, device=device)
-                y_test_true = y_nrf.index_select(0, test_idx)
-                test_acc = (pred_labels == y_test_true).float().mean().item()
-                y_true = y_test_true.detach().cpu().numpy()
-
-                # Don't mask again — out_test is already test-only
-                pred_proba = F.softmax(out_test, dim=1)
-
-                y_pred = pred_labels.cpu().numpy()
-                #y_proba = pred_proba.cpu().numpy()
-                #y_true = y_nrf[row_test_mask].cpu().numpy()
-
-                y_pred_decoded = [index_to_label[i] for i in y_pred]
-                y_true_decoded = [index_to_label[i] for i in y_true]
+            y_pred_decoded = [index_to_label[i] for i in y_pred]
+            y_true_decoded = [index_to_label[i] for i in y_true]
     else:
         test_acc = best_acc
         y_pred_decoded = []
         y_true_decoded = []
 
-    # Return everything you were already returning (so your file-writing stays intact)
     return (
         test_acc, best_epoch, best_precision, best_recall, best_f1,
         y_pred_decoded, y_true_decoded,
@@ -238,4 +256,3 @@ def train_joint(df, args, label_index, verbose):
         roc_auc_weighted, roc_auc_micro, roc_auc_macro,
         epoch_logs
     )
-

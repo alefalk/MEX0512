@@ -53,6 +53,7 @@ class GTD100FeatureLayer(nn.Sequential):
         self.out_layer_size = out_layer_size
         if shallow:
             self.add_module('linear', nn.Linear(input_size, out_layer_size))
+            #self.add_module('relu', nn.ReLU()) #Non linear activation
             if dropout_rate and dropout_rate > 0:
                 self.add_module('dropout', nn.Dropout(dropout_rate))
         else:
@@ -232,19 +233,45 @@ class Forest(nn.Module):
         prob = torch.sum(probs, dim=2)/self.n_tree
         return prob
 
+def loss_with_label_smoothing(log_probs, target, smoothing=0.05):
+    n_class = log_probs.size(1)
+    with torch.no_grad():
+        true_dist = torch.zeros_like(log_probs)
+        true_dist.fill_(smoothing / (n_class - 1))
+        true_dist.scatter_(1, target.data.unsqueeze(1), 1.0 - smoothing)
+    return torch.mean(torch.sum(-true_dist * log_probs, dim=1))
+
 class NeuralDecisionForest(nn.Module):
     def __init__(self, feature_layer, forest):
         super(NeuralDecisionForest, self).__init__()
         self.feature_layer = feature_layer
         self.forest = forest
         self.criterion = nn.NLLLoss()
+        #self.criterion = nn.NLLLoss(label_smoothing=0.05)torch.log(output), label
+        #self.criterion = lambda log_probs, target: loss_with_label_smoothing(torch.log(output), label, smoothing=0.05)
+    #def __init__(self, feature_layer, forest, smoothing=0.05):
+    #    super().__init__()
+    #    self.feature_layer = feature_layer
+    #    self.forest = forest
+    #    self.smoothing = smoothing
+    #    # criterion expects log_probs and target
+    #    self.criterion = lambda log_probs, target: loss_with_label_smoothing(
+    #        log_probs, target, smoothing=self.smoothing
+    #    )
+
 
     def forward(self, x):
         out = self.feature_layer(x)
         out = out.view(x.size()[0], -1)
         out = self.forest(out)
         return out
+        #out = self.feature_layer(x)
+        #out = out.view(x.size(0), -1)
+        #out = self.forest(out)          # probabilities [B, C]
+        #return out
 
 
     def loss(self, output, label):
         return self.criterion(torch.log(output), label)
+        #log_probs = torch.log(output.clamp_min(1e-8))
+        #return self.criterion(log_probs, label)

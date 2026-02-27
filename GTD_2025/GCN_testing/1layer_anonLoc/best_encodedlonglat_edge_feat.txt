@@ -1,0 +1,45 @@
+=== Best configuration (by validation macro-F1) ===
+edge_mode   : equal
+k           : 14
+hidden_dim  : 512
+optimizer   : adam
+lr          : 0.01
+dropout     : 0.5
+
+--- Validation metrics ---
+val_loss    : 1.978601
+val_acc     : 0.545000
+val_prec_w  : 0.534093
+val_rec_w   : 0.545000
+val_f1_w    : 0.534730
+val_prec_mi : 0.545000
+val_rec_mi  : 0.545000
+val_f1_mi   : 0.545000
+val_prec_ma : 0.534093
+val_rec_ma  : 0.545000
+val_f1_ma   : 0.534730
+val_roc_w   : 0.905052
+val_roc_mi  : 0.918003
+val_roc_ma  : 0.905052
+
+--- Test metrics ---
+test_acc    : 0.508333
+test_prec_w : 0.525132
+test_rec_w  : 0.508333
+test_f1_w   : 0.505360
+test_prec_mi: 0.508333
+test_rec_mi : 0.508333
+test_f1_mi  : 0.508333
+test_prec_ma: 0.525132
+test_rec_ma : 0.508333
+test_f1_ma  : 0.505360
+test_roc_w  : 0.913698
+test_roc_mi : 0.923893
+test_roc_ma : 0.913698
+
+--- Data sizes ---
+train_nodes : 1800
+val_nodes   : 600
+test_nodes  : 600
+
+CSV of all runs: grid_search_results.csv

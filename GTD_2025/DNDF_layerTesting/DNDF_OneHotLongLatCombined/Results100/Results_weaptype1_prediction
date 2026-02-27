@@ -1,6 +1,6 @@
-Best acc: 0.4333 at epoch 2 for weaptype1 prediction
-Config: {'lr': 0.01, 'n_tree': 80, 'tree_depth': 14, 'tree_feature_rate': 0.1, 'feat_dropout': 0.1, 'out_size_nrf': 2048, 'partition': 'gtd100', 'n_class': 30, 'epochs': 3000, 'final_evaluation': True}
-Weighted Precision: 0.5419, Recall: 0.4650, F1: 0.4834
-Macro Precision: 0.5419, Recall: 0.4650, F1: 0.4834
-Micro Precision: 0.4650, Recall: 0.4650, F1: 0.4650
-AUROC Weighted: 0.8480, Micro: 0.8494, Macro: 0.8480
+Best acc: 0.4317 at epoch 27 for weaptype1 prediction
+Config: {'lr': 0.001, 'n_tree': 15, 'tree_depth': 10, 'tree_feature_rate': 0.5, 'feat_dropout': 0.3, 'out_size_nrf': 1024, 'batch_size': 128, 'partition': 'gtd100', 'n_class': 30, 'epochs': 3000, 'final_evaluation': True}
+Weighted Precision: 0.7233, Recall: 0.4683, F1: 0.5163
+Macro Precision: 0.7233, Recall: 0.4683, F1: 0.5163
+Micro Precision: 0.4683, Recall: 0.4683, F1: 0.4683
+AUROC Weighted: 0.8711, Micro: 0.8667, Macro: 0.8711

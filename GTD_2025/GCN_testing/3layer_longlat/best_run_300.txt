@@ -1,0 +1,45 @@
+=== Best configuration (by validation macro-F1) ===
+edge_mode   : geo_equal_radius
+k           : 6
+h1          : 256
+h2          : 16
+h3          : 512
+optimizer   : adamw
+lr          : 0.01
+dropout     : 0.3
+
+--- Validation metrics ---
+val_loss    : 0.304162
+val_acc     : 0.900556
+val_prec_w  : 0.904557
+val_rec_w   : 0.900556
+val_f1_w    : 0.898298
+val_prec_mi : 0.900556
+val_rec_mi  : 0.900556
+val_f1_mi   : 0.900556
+val_prec_ma : 0.904557
+val_rec_ma  : 0.900556
+val_f1_ma   : 0.898298
+val_roc_w   : 0.996324
+val_roc_mi  : 0.997994
+val_roc_ma  : 0.996324
+
+--- Test metrics ---
+test_acc    : 0.887222
+test_prec_w : 0.891022
+test_rec_w  : 0.887222
+test_f1_w   : 0.885330
+test_prec_mi: 0.887222
+test_rec_mi : 0.887222
+test_f1_mi  : 0.887222
+test_prec_ma: 0.891022
+test_rec_ma : 0.887222
+test_f1_ma  : 0.885330
+test_roc_w  : 0.995259
+test_roc_mi : 0.997241
+test_roc_ma : 0.995259
+
+--- Data sizes ---
+train_nodes : 5400
+val_nodes   : 1800
+test_nodes  : 1800

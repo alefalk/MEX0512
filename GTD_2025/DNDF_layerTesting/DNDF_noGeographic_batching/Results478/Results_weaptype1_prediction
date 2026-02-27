@@ -1,0 +1,6 @@
+Best acc: 0.5490 at epoch 1416 for weaptype1 prediction
+Config: {'lr': 0.01, 'n_tree': 120, 'tree_depth': 7, 'tree_feature_rate': 0.5, 'feat_dropout': 0.2, 'out_size_nrf': 512, 'batch_size': 128, 'partition': 'gtd478', 'n_class': 30, 'epochs': 3000, 'final_evaluation': True}
+Weighted Precision: 0.6303, Recall: 0.6007, F1: 0.5968
+Macro Precision: 0.6303, Recall: 0.6007, F1: 0.5968
+Micro Precision: 0.6007, Recall: 0.6007, F1: 0.6007
+AUROC Weighted: 0.9447, Micro: 0.9498, Macro: 0.9447

@@ -1,0 +1,17 @@
+Run saved: 2025-09-30T08:47:22
+acc     : 0.9108333333333334
+epoch   : 1645
+f1_ma   : 0.9097569365938689
+f1_mi   : 0.9108333333333334
+f1_w    : 0.9097569365938688
+prec_ma : 0.9149042781181642
+prec_mi : 0.9108333333333334
+prec_w  : 0.9149042781181642
+rec_ma  : 0.9108333333333334
+rec_mi  : 0.9108333333333334
+rec_w   : 0.9108333333333334
+roc_ma  : 0.9971882183908047
+roc_mi  : 0.9975470545977012
+roc_w   : 0.9971882183908047
+
+#{'hidden_dims': 32, 'dropouts_gcn': 0.5, 'lr': 0.01, 'n_tree': 50, 'tree_depth': 9, 'tree_feature_rate': 0.3, 'feat_dropout': 0.1, 'out_size_nrf': 768, 'epochs': 400, 'partition': 'gtd200', 'final_evaluation': False, 'n_class': 30}

@@ -1,0 +1,44 @@
+=== Best configuration (by validation macro-F1) ===
+edge_mode   : hybrid_equal_knn
+k           : 6
+hidden_dim  : 128
+optimizer   : adamw
+lr          : 0.001
+dropout     : 0.5
+wd          : 0.05
+
+--- Validation metrics ---
+val_loss    : 1.248479
+val_acc     : 0.688333
+val_prec_w  : 0.719267
+val_rec_w   : 0.688333
+val_f1_w    : 0.691621
+val_prec_mi : 0.688333
+val_rec_mi  : 0.688333
+val_f1_mi   : 0.688333
+val_prec_ma : 0.719267
+val_rec_ma  : 0.688333
+val_f1_ma   : 0.691621
+val_roc_w   : 0.953595
+val_roc_mi  : 0.955308
+val_roc_ma  : 0.953595
+
+--- Test metrics ---
+test_acc    : 0.600000
+test_prec_w : 0.606253
+test_rec_w  : 0.600000
+test_f1_w   : 0.590589
+test_prec_mi: 0.600000
+test_rec_mi : 0.600000
+test_f1_mi  : 0.600000
+test_prec_ma: 0.606253
+test_rec_ma : 0.600000
+test_f1_ma  : 0.590589
+test_roc_w  : 0.922095
+test_roc_mi : 0.922429
+test_roc_ma : 0.922095
+
+--- Data sizes ---
+train_nodes : 1800
+val_nodes   : 600
+test_nodes  : 600
